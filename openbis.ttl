@@ -1,0 +1,205 @@
+@prefix : <http:///iwm.fraunhofer.de/ontologies/openbis#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http:///iwm.fraunhofer.de/ontologies/openbis> .
+
+<http:///iwm.fraunhofer.de/ontologies/openbis> rdf:type owl:Ontology ;
+                                                owl:versionIRI <http:///iwm.fraunhofer.de/ontologies/openbis/0.0.1> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#dataType
+:dataType rdf:type owl:ObjectProperty .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#partOf
+:partOf rdf:type owl:ObjectProperty ;
+        owl:inverseOf :parts ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :DataContainer ,
+                    :HirarchialStructure ;
+        rdfs:range :DataContainer ,
+                   :HirarchialStructure .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#parts
+:parts rdf:type owl:ObjectProperty .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#propertyAssignment
+:propertyAssignment rdf:type owl:ObjectProperty ;
+                    rdfs:domain :MetadataContainer ;
+                    rdfs:range :PropertyAssignment .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#code
+:code rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdf:type owl:FunctionalProperty ;
+      rdfs:domain :DataContainer ,
+                  :HirarchialStructure ,
+                  :MetadataContainer ,
+                  :PropertyAssignment ,
+                  :PropertyType ;
+      rdfs:range xsd:string .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#description
+:description rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :DataContainer ,
+                         :HirarchialStructure ,
+                         :MetadataContainer ,
+                         :Project ,
+                         :Space ;
+             rdfs:range xsd:string .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#email
+:email rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdf:type owl:FunctionalProperty ;
+       rdfs:domain :User ;
+       rdfs:range xsd:string .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#firstName
+:firstName rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :User ;
+           rdfs:range xsd:string .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#identifier
+:identifier rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :DataContainer ,
+                        :Project ,
+                        :Space ;
+            rdfs:range xsd:string .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#label
+:label rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty ;
+       rdfs:domain :PropertyType ;
+       rdfs:range xsd:string .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#lastName
+:lastName rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :User ;
+          rdfs:range xsd:string .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#permID
+:permID rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :DataContainer ,
+                    :Project ;
+        rdfs:range xsd:string .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#userID
+:userID rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :User ;
+        rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#Collection
+:Collection rdf:type owl:Class ;
+            rdfs:subClassOf :DataContainer .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#CollectionType
+:CollectionType rdf:type owl:Class ;
+                rdfs:subClassOf :MetadataContainer .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#DataContainer
+:DataContainer rdf:type owl:Class .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#Dataset
+:Dataset rdf:type owl:Class ;
+         rdfs:subClassOf :DataContainer .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#DatasetType
+:DatasetType rdf:type owl:Class ;
+             rdfs:subClassOf :MetadataContainer .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#HirarchialStructure
+:HirarchialStructure rdf:type owl:Class .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#Instance
+:Instance rdf:type owl:Class ;
+          rdfs:subClassOf :HirarchialStructure .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#MetadataContainer
+:MetadataContainer rdf:type owl:Class .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#Object
+:Object rdf:type owl:Class ;
+        rdfs:subClassOf :DataContainer .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#ObjectType
+:ObjectType rdf:type owl:Class ;
+            rdfs:subClassOf :MetadataContainer .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#Project
+:Project rdf:type owl:Class ;
+         rdfs:subClassOf :HirarchialStructure ;
+         rdfs:comment [ rdf:type [ rdf:type owl:Restriction ;
+                                   owl:onProperty :partOf ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :Space
+                                 ]
+                      ] .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#Property
+:Property rdf:type owl:Class .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#PropertyAssignment
+:PropertyAssignment rdf:type owl:Class .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#PropertyType
+:PropertyType rdf:type owl:Class .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#Space
+:Space rdf:type owl:Class ;
+       rdfs:subClassOf :HirarchialStructure .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#User
+:User rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

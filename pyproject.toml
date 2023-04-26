@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-data]
+openbis_json_parser = ["../openbis.ttl"]
+
+[project]
+name = "openbis_json_parser"
+description = "OpenBIS JSON Parser"
+version = "0.0.1"
+authors = [
+    { name = "Rasmus Antons", email = "rasmus.antons@iwm.fraunhofer.de" }
+]
+dependencies = [
+    "Owlready2~=0.41",
+    "rdflib~=6.3.2",
+]
+
+[project.scripts]
+openbis-json-parser = "openbis_json_parser.cli:main"

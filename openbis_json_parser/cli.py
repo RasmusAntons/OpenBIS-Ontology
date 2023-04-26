@@ -3,9 +3,9 @@ import argparse
 import sys
 import urllib.request
 
-from parser import parse_json, parse_dict
+from openbis_json_parser.parser import parse_json, parse_dict
 
-if __name__ == '__main__':
+def main():
     parser = argparse.ArgumentParser(
         prog='OpenBIS JSON Parser'
     )
@@ -22,3 +22,7 @@ if __name__ == '__main__':
         onto.save(sys.stdout.buffer, format='ntriples')
     else:
         onto.save(args.output_file, format='ntriples')
+
+
+if __name__ == '__main__':
+    main()

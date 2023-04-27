@@ -1,2 +1,5 @@
 /.idea
 /OpenBIS-Ontology.iml
+/build
+/openbis_json_parser.egg-info
+/catalog-v*.xml

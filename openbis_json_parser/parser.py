@@ -16,6 +16,21 @@ def load_ontology():
     return onto
 
 
+def write_ontology(onto, target_file, target_format):
+    if target_format in ('ntriples', 'nquads', 'rdfxml'):
+        onto.save(target_file, format=target_format)
+    elif target_format in ('turtle', 'ttl', 'json-ld'):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            onto.save(str(pathlib.Path(tmpdir, 'openbis.nt')), format='ntriples')
+            g = rdflib.Graph()
+            g.parse(str(pathlib.Path(tmpdir, 'openbis.nt')))
+        if isinstance(target_file, str):
+            with open(target_file, 'wb') as f:
+                f.write(g.serialize(format=target_format).encode('utf-8'))
+        else:
+            target_file.write(g.serialize(format=target_format).encode('utf-8'))
+
+
 def _find_or_create(instance, cls, data):
     if data is None:
         return None

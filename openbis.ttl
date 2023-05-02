@@ -36,13 +36,6 @@
                      rdfs:range :PropertyAssignment .
 
 
-###  http:///iwm.fraunhofer.de/ontologies/openbis#propertyType
-:propertyType rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf owl:topObjectProperty ;
-              rdfs:domain :Property ;
-              rdfs:range :PropertyType .
-
-
 ###  http:///iwm.fraunhofer.de/ontologies/openbis#registrator
 :registrator rdf:type owl:ObjectProperty ,
                       owl:FunctionalProperty ;
@@ -56,6 +49,15 @@
        rdf:type owl:FunctionalProperty ;
        rdfs:domain :DataContainer ,
                    :Project .
+
+
+###  http:///iwm.fraunhofer.de/ontologies/openbis#type
+:type rdf:type owl:ObjectProperty ,
+               owl:FunctionalProperty ;
+      rdfs:domain :HirarchialStructure ,
+                  :Property ;
+      rdfs:range :MetadataContainer ,
+                 :PropertyType .
 
 
 #################################################################

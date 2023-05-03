@@ -2,6 +2,7 @@ import datetime
 import json
 import tempfile
 import pathlib
+from urllib.parse import urljoin
 
 import owlready2 as owl
 import rdflib
@@ -31,26 +32,24 @@ def write_ontology(onto, target_file, target_format):
             target_file.write(g.serialize(format=target_format).encode('utf-8'))
 
 
-def _find_or_create(instance, cls, data):
+def _find_or_create(onto, cls, data, namespace=None):
     if data is None:
         return None
-    obj = next(filter(lambda e: e.code == data['code'], instance.namespace.get_instances_of(cls)), None)
+    obj = next(filter(lambda e: e.code == data['code'], onto.get_instances_of(cls)), None)
     if obj is None:
-        obj = add_data(instance, data)
+        obj = add_data(onto, data, namespace=namespace)
     return obj
 
 
-def add_sample(instance, data):
-    onto = instance.namespace
-    sample = onto.Object()
-    sample.permID = data['permId']['permId']
+def add_sample(onto, data, namespace=None):
+    sample = onto.Object(name=data['permId']['permId'], namespace=namespace)
     sample.identifier = data['identifier']['identifier']
     sample.code = data.get('code')
-    sample.project = _find_or_create(instance, onto.Project, data.get('project'))
-    sample.space = _find_or_create(instance, onto.Space, data.get('space'))
-    sample.type = _find_or_create(instance, onto.ObjectType, data.get('type'))
+    sample.project = _find_or_create(onto, onto.Project, data.get('project'), namespace=namespace)
+    sample.space = _find_or_create(onto, onto.Space, data.get('space'), namespace=namespace)
+    sample.type = _find_or_create(onto, onto.ObjectType, data.get('type'), namespace=namespace)
     for p_code, p_value in data.get('properties', {}).items():
-        p = onto.Property()
+        p = onto.Property(name=f'{sample.name}.{p_code}', namespace=namespace)
         p.type = next(filter(lambda e: e.code == p_code, onto.get_instances_of(onto.PropertyType)), None)
         if p.type is None:
             raise Exception(f'invalid property type {p_type}')
@@ -67,29 +66,27 @@ def add_sample(instance, data):
     return sample
 
 
-def add_sample_type(instance, data):
-    onto = instance.namespace
-    sample_type = onto.ObjectType()
+def add_sample_type(onto, data, namespace=None):
+    sample_type = onto.ObjectType(name=data['permId']['permId'], namespace=namespace)
     sample_type.code = data.get('code')
     sample_type.description = data.get('description')
     for pa in data.get('propertyAssignments', []):
-        sample_type.propertyAssignments.append(add_property_assignment(instance, pa))
+        sample_type.propertyAssignments.append(add_property_assignment(onto, pa, namespace=namespace))
     return sample_type
 
 
-def add_property_assignment(instance, data):
-    onto = instance.namespace
-    pa = onto.PropertyAssignment()
+def add_property_assignment(onto, data, namespace=None):
+    perm_id = data['permId']['entityTypeId']['permId'] + '.' + data['permId']['propertyTypeId']['permId']
+    pa = onto.PropertyAssignment(name=perm_id, namespace=namespace)
     pa.ordinal = data.get('ordinal')
     pa.mandatory = data.get('mandatory')
-    pa.type = _find_or_create(instance, onto.PropertyType, data.get('propertyType'))
+    pa.type = _find_or_create(onto, onto.PropertyType, data.get('propertyType'), namespace=namespace)
     pa.registrationDate = datetime.datetime.fromtimestamp(data['registrationDate'] / 1000)
     return pa
 
 
-def add_property_type(instance, data):
-    onto = instance.namespace
-    pt = onto.PropertyType()
+def add_property_type(onto, data, namespace=None):
+    pt = onto.PropertyType(name=data['permId']['permId'], namespace=namespace)
     pt.code = data.get('code')
     pt.label = data.get('label')
     pt.description = data.get('description')
@@ -97,21 +94,19 @@ def add_property_type(instance, data):
     return pt
 
 
-def add_project(instance, data):
-    onto = instance.namespace
-    project = onto.Project()
+def add_project(onto, data, namespace=None):
+    project = onto.Project(name=data['permId']['permId'], namespace=namespace)
     project.permID = data['permId']['permId']
     project.identifier = data['identifier']['identifier']
     project.code = data.get('code')
     project.description = data.get('description')
     project.registrationDate = datetime.datetime.fromtimestamp(data['registrationDate'] / 1000)
-    project.space = _find_or_create(instance, onto.Space, data.get('space'))
+    project.space = _find_or_create(onto, onto.Space, data.get('space'), namespace=namespace)
     return project
 
 
-def add_collection(instance, data):
-    onto = instance.namespace
-    collection = onto.Collection()
+def add_collection(onto, data, namespace=None):
+    collection = onto.Collection(name=data['permId']['permId'], namespace=namespace)
     collection.permId = data['permId']['permId']
     collection.identifier = data['identifier']['identifier']
     collection.code = data.get('code')
@@ -119,9 +114,8 @@ def add_collection(instance, data):
     return collection
 
 
-def add_space(instance, data):
-    onto = instance.namespace
-    space = onto.Space()
+def add_space(onto, data, namespace=None):
+    space = onto.Space(name=data['permId']['permId'], namespace=namespace)
     space.permID = data['permId']['permId']
     space.code = data.get('code')
     space.description = data.get('description')
@@ -129,35 +123,38 @@ def add_space(instance, data):
     return space
 
 
-def add_data(instance, data):
+def add_data(onto, data, namespace=None):
     match data.get('@type'):
         case 'as.dto.sample.Sample':
-            return add_sample(instance, data)
+            return add_sample(onto, data, namespace=namespace)
         case 'as.dto.sample.SampleType':
-            return add_sample_type(instance, data)
+            return add_sample_type(onto, data, namespace=namespace)
         case 'as.dto.property.PropertyAssignment':
-            return add_property_assignment(instance, data)
+            return add_property_assignment(onto, data, namespace=namespace)
         case 'as.dto.property.PropertyType':
-            return add_property_type(instance, data)
+            return add_property_type(onto, data, namespace=namespace)
         case 'as.dto.experiment.Experiment':
-            return add_collection(instance, data)
+            return add_collection(onto, data, namespace=namespace)
         case 'as.dto.project.Project':
-            return add_project(instance, data)
+            return add_project(onto, data, namespace=namespace)
         case 'as.dto.space.Space':
-            return add_space(instance, data)
+            return add_space(onto, data, namespace=namespace)
         case _:
             raise Exception(f'invalid data type: {data.get("@type")}')
 
 
-def parse_dict(data):
+def parse_dict(data, base_url=None):
     onto = load_ontology()
-    instance = onto.Instance()
     for entity in data.values():
-        add_data(instance, entity)
+        if base_url is None:
+            namespace = None
+        else:
+            namespace = onto.get_namespace(urljoin(base_url, '/openbis/webapp/openbismantic/entity'))
+        add_data(onto, entity, namespace=namespace)
     return onto
 
 
-def parse_json(file_path):
+def parse_json(file_path, base_url=None):
     with open(file_path) as f:
         data = json.load(f)
-    return parse_dict(data)
+    return parse_dict(data, base_url=base_url)

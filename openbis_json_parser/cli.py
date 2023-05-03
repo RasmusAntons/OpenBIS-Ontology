@@ -12,16 +12,17 @@ def main():
     )
     parser.add_argument('json_file', metavar='json-file')
     parser.add_argument('-o', '--output-file', help='Resulting ntriples')
+    parser.add_argument('-b', '--base-url', help='Base URL of the openbis instance, e.g. https://openbis.iwm.fraunhofer.de')
     parser.add_argument('-f', '--format', choices=['ntriples', 'nquads', 'rdfxml', 'turtle', 'ttl', 'json-ld'], default='ntriples')
     args = parser.parse_args()
     if args.json_file.startswith('http://') or args.json_file.startswith('https://'):
         with urllib.request.urlopen(args.json_file) as resp:
             data = json.load(resp)
-        onto = parse_dict(data)
+        onto = parse_dict(data, base_url=args.base_url)
     elif args.json_file == '-':
-        onto = parse_dict(json.load(sys.stdin.buffer))
+        onto = parse_dict(json.load(sys.stdin.buffer), base_url=args.base_url)
     else:
-        onto = parse_json(args.json_file)
+        onto = parse_json(args.json_file, base_url=args.base_url)
     if args.output_file is None or args.output_file == '-':
         write_ontology(onto, sys.stdout.buffer, target_format=args.format)
     else:

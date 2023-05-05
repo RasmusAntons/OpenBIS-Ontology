@@ -4081,9 +4081,9 @@
                                                 "@type": "as.dto.person.id.PersonPermId"
                                               },
                                               "userId": "admin",
-                                              "firstName": "",
-                                              "lastName": "",
-                                              "email": "",
+                                              "firstName": "Test",
+                                              "lastName": "Tester",
+                                              "email": "test.tester@example.com",
                                               "registrationDate": 1677488348718,
                                               "active": true,
                                               "space": null,

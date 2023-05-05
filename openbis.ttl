@@ -6,9 +6,13 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix prov: <http://www.w3.org/ns/prov#> .
 
 <https://purl.matolab.org/openbis> rdf:type owl:Ontology ;
-                                     dc:contributor "Thomas Hanke (Fraunhofer IWM)"@en ;
+                                     dc:contributor "Rasmus Antons (Fraunhofer IWM)"@en,
+        "Andre Valdestilhas (Bundesanstalt für Materalprüfung und -forschung BAM)"@en,
+        "Thomas Hanke (Fraunhofer IWM)"@en ;
                                      rdfs:comment "This is a simple Ontology expaining the data model of OpenBis."@en .
 
 #################################################################
@@ -48,13 +52,13 @@
 
 :Identifier a rdfs:Class ;
     rdfs:label "Identifier" ;
-    :openbis_json_key "as.dto.sample.id.SampleIdentifier";
-    :openbis_json_key "as.dto.entitytype.id.EntityTypePermId";
-    :openbis_json_key "as.dto.experiment.id.ExperimentIdentifier";
-    :openbis_json_key "as.dto.project.id.ProjectIdentifier";
+    :openbis_json_key "as.dto.sample.id.SampleIdentifier",
+        "as.dto.experiment.id.ExperimentIdentifier",
+        "as.dto.project.id.ProjectIdentifier";
     skos:definition "A String as additional Identifier.".
 
 :User a rdfs:Class ;
+    owl:equivalentClass foaf:Person, prov:Agent;
     rdfs:label "User" ;
     :openbis_json_key "as.dto.person.Person";
     skos:definition "An named openBIS user.".
@@ -62,11 +66,12 @@
 :PermanentIdentifier a rdfs:Class ;
     rdfs:subClassOf :Identifier ;
     rdfs:label "Permanent Identifier" ;
-    :openbis_json_key "as.dto.entitytype.id.EntityTypePermId";
-    :openbis_json_key "as.dto.experiment.id.ExperimentPermId";
-    :openbis_json_key "as.dto.sample.id.SamplePermId";
-    :openbis_json_key "as.dto.project.id.ProjectPermId";
-    :openbis_json_key "as.dto.space.id.SpacePermId";
+    :openbis_json_key "as.dto.entitytype.id.EntityTypePermId",
+        "as.dto.experiment.id.ExperimentPermId",
+        "as.dto.sample.id.SamplePermId",
+        "as.dto.project.id.ProjectPermId",
+        "as.dto.space.id.SpacePermId",
+        "as.dto.person.id.PersonPermId";
     skos:definition "A additional String given by the OpenBIS data storage which will never be changed.".
 
 
@@ -115,11 +120,6 @@
 
 owl:ObjectProperty :openbis_json_key "as.dto.property.PropertyType" .
 
-#:openbis_property rdf:type owl:ObjectProperty ;
-#    rdfs:label "openbis property"@en ;
-#    skos:definition "A user generated property with a given name as Permanent ID." ;
-#    :openbis_json_key "as.dto.property.PropertyType".
-
 #################################################################
 #    Annotation Properties
 #################################################################
@@ -132,10 +132,12 @@ owl:ObjectProperty :openbis_json_key "as.dto.property.PropertyType" .
   rdfs:range xsd:string .
 
 rdf:value  :openbis_json_key "permId", "identifier".
-
 rdfs:comment  :openbis_json_key "description" .
 rdfs:label  :openbis_json_key "label" .
 
+foaf:givenname :openbis_json_key "firstName".
+foaf:family_name :openbis_json_key "lastName".
+foaf:mbox :openbis_json_key "email".
 
 dcterms:created :openbis_json_key "registrationDate" .
 dcterms:modified :openbis_json_key "modificationDate" .

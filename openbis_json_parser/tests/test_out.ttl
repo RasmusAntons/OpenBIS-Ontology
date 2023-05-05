@@ -1,1963 +1,1428 @@
+@prefix data: <https://openbis.matolab.org/openbis/webapp/openbismantic/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <http://example.com/> .
-@prefix ns2: <http://example.com/$> .
-@prefix ns3: <https://purl.matolab.org/openbis/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <https://openbis.matolab.org/openbis/webapp/openbismantic/$> .
+@prefix obis: <https://purl.matolab.org/openbis/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ns2:NAME a owl:ObjectProperty ;
+ns1:NAME a owl:ObjectProperty ;
     rdfs:label "Name" ;
-    dcterms:created "2023-02-27T09:58:43.040000" ;
+    dcterms:created "2023-02-27T09:58:43.040000"^^xsd:dateTimeStamp ;
     rdfs:comment "Name" ;
-    ns3:code "$NAME" .
+    obis:code "$NAME" .
 
-ns1:1001 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080227626-328" .
-
-ns1:1004 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224359-321" .
-
-ns1:1007 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080349906-356" .
-
-ns1:101 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL" .
-
-ns1:1010 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080439433-367" .
-
-ns1:1013 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080458567-372" .
-
-ns1:1029 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224904-323" .
-
-ns1:1032 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080228501-329" .
-
-ns1:1035 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080228501-329" .
-
-ns1:1038 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080239537-332" .
-
-ns1:1041 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080239537-332" .
-
-ns1:1044 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080251564-336" .
-
-ns1:1047 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080251564-336" .
-
-ns1:1050 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080310642-343" .
-
-ns1:1053 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080310642-343" .
-
-ns1:1056 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080325446-350" .
-
-ns1:1059 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080325446-350" .
-
-ns1:1062 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080346814-355" .
-
-ns1:1065 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080346814-355" .
-
-ns1:1068 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080353066-357" .
-
-ns1:107 a ns3:PermanentIdentifier ;
-    rdf:value "20230227085915753-23" .
-
-ns1:1071 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080353066-357" .
-
-ns1:1079 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080254692-337" .
-
-ns1:108 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL" .
-
-ns1:1080 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL274" .
-
-ns1:1112 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080251564-336" .
-
-ns1:1115 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:1118 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080334396-352" .
-
-ns1:1119 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL289" .
-
-ns1:112 a ns3:PermanentIdentifier ;
-    rdf:value "EMODUL" .
-
-ns1:115 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:1151 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080251564-336" .
-
-ns1:1154 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:1157 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080341100-353" .
-
-ns1:1158 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL290" .
-
-ns1:116 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_EMODUL_COLLECTION" .
-
-ns1:119 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080310642-343" .
-
-ns1:1190 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080251564-336" .
-
-ns1:1193 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:120 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX280" .
-
-ns1:122 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:1221 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080225345-324" .
-
-ns1:1224 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080226108-325" .
-
-ns1:1227 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080226649-326" .
-
-ns1:1230 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080227207-327" .
-
-ns1:1233 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080227626-328" .
-
-ns1:1236 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224359-321" .
-
-ns1:1239 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080254692-337" .
-
-ns1:1242 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080334396-352" .
-
-ns1:1245 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080341100-353" .
-
-ns1:125 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:1260 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224904-323" .
-
-ns1:1263 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080228501-329" .
-
-ns1:1266 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080228501-329" .
-
-ns1:1269 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080239537-332" .
-
-ns1:1272 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080239537-332" .
-
-ns1:1275 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080251564-336" .
-
-ns1:1278 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080251564-336" .
-
-ns1:1281 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080310642-343" .
-
-ns1:1284 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080310642-343" .
-
-ns1:1287 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080346814-355" .
-
-ns1:1290 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080346814-355" .
-
-ns1:1293 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080353066-357" .
-
-ns1:1296 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080353066-357" .
-
-ns1:1304 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080243477-333" .
-
-ns1:1305 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL270" .
-
-ns1:131 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:1337 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080239537-332" .
-
-ns1:1340 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:1343 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080319673-345" .
-
-ns1:1344 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL282" .
-
-ns1:137 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:1376 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080239537-332" .
-
-ns1:1379 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:1382 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080414859-363" .
-
-ns1:1383 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL300" .
-
-ns1:1415 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080239537-332" .
-
-ns1:1418 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:143 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:1446 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080225345-324" .
-
-ns1:1449 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080226108-325" .
-
-ns1:1452 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080226649-326" .
-
-ns1:1455 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080227207-327" .
-
-ns1:1458 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080227626-328" .
-
-ns1:1461 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224359-321" .
-
-ns1:1464 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080243477-333" .
-
-ns1:1467 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080319673-345" .
-
-ns1:1470 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080414859-363" .
-
-ns1:1486 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224904-323" .
-
-ns1:1489 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080228501-329" .
-
-ns1:149 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:1492 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080228501-329" .
-
-ns1:1495 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080239537-332" .
-
-ns1:1498 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080239537-332" .
-
-ns1:1501 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080251564-336" .
-
-ns1:1504 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080251564-336" .
-
-ns1:1507 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080310642-343" .
-
-ns1:1510 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080310642-343" .
-
-ns1:1513 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080325446-350" .
-
-ns1:1516 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080325446-350" .
-
-ns1:1519 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080346814-355" .
-
-ns1:1522 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080346814-355" .
-
-ns1:1525 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080353066-357" .
-
-ns1:1528 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080353066-357" .
-
-ns1:1536 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080233850-330" .
-
-ns1:1537 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL267" .
-
-ns1:155 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:1569 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080228501-329" .
-
-ns1:1572 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:1575 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080302831-339" .
-
-ns1:1576 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL276" .
-
-ns1:1608 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080228501-329" .
-
-ns1:161 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:1611 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:1614 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080426710-365" .
-
-ns1:1615 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL302" .
-
-ns1:1647 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080228501-329" .
-
-ns1:1650 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:167 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:1678 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080225345-324" .
-
-ns1:1681 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080226108-325" .
-
-ns1:1684 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080226649-326" .
-
-ns1:1687 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080227207-327" .
-
-ns1:1690 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080227626-328" .
-
-ns1:1693 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224359-321" .
-
-ns1:1696 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080233850-330" .
-
-ns1:1699 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080302831-339" .
-
-ns1:17 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080313774-344" .
-
-ns1:1702 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080426710-365" .
-
-ns1:1717 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224904-323" .
-
-ns1:1720 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080228501-329" .
-
-ns1:1723 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080228501-329" .
-
-ns1:1726 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080239537-332" .
-
-ns1:1729 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080239537-332" .
-
-ns1:173 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:1732 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080251564-336" .
-
-ns1:1735 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080251564-336" .
-
-ns1:1738 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080310642-343" .
-
-ns1:1741 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080310642-343" .
-
-ns1:1744 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080346814-355" .
-
-ns1:1747 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080346814-355" .
-
-ns1:1750 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080353066-357" .
-
-ns1:1753 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080353066-357" .
-
-ns1:1756 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080309923-342" .
-
-ns1:1757 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING279" .
-
-ns1:1767 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224904-323" .
-
-ns1:1770 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080310642-343" .
-
-ns1:1773 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080310642-343" .
-
-ns1:1781 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080402128-359" .
-
-ns1:1782 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL296" .
-
-ns1:179 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:18 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL281" .
-
-ns1:1814 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080310642-343" .
-
-ns1:1817 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:1820 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080432571-366" .
-
-ns1:1821 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL303" .
-
-ns1:185 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:1853 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080310642-343" .
-
-ns1:1856 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:1884 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080225345-324" .
-
-ns1:1887 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080226108-325" .
-
-ns1:1890 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080226649-326" .
-
-ns1:1893 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080227207-327" .
-
-ns1:1896 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080309923-342" .
-
-ns1:1899 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224359-321" .
-
-ns1:1902 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080313774-344" .
-
-ns1:1905 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080402128-359" .
-
-ns1:1908 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080432571-366" .
-
-ns1:191 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:1940 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080310642-343" .
-
-ns1:1943 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:197 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:20 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL" .
-
-ns1:203 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:209 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:213 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:219 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:225 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:23 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL" .
-
-ns1:231 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:237 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:243 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:249 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:255 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:261 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:267 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:273 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:279 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:285 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:29 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL" .
-
-ns1:291 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:297 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:303 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:307 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:311 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL_MIX" .
-
-ns1:317 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224359-321" .
-
-ns1:318 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_MIXTURE_COLLECTION" .
-
-ns1:321 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080225345-324" .
-
-ns1:322 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING261" .
-
-ns1:324 a ns3:Identifier ;
-    rdf:value "EMODUL_INGREDIENT" .
-
-ns1:327 a ns3:Identifier ;
-    rdf:value "EMODUL_INGREDIENT" .
-
-ns1:331 a ns3:Identifier ;
-    rdf:value "EMODUL_INGREDIENT" .
-
-ns1:337 a ns3:Identifier ;
-    rdf:value "EMODUL_INGREDIENT" .
-
-ns1:343 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224904-323" .
-
-ns1:344 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_INGREDIENT_COLLECTION" .
-
-ns1:347 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080228501-329" .
-
-ns1:348 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX266" .
-
-ns1:35 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL" .
-
-ns1:351 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080226108-325" .
-
-ns1:352 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING262" .
-
-ns1:355 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080239537-332" .
-
-ns1:356 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX269" .
-
-ns1:359 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080226649-326" .
-
-ns1:360 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING263" .
-
-ns1:363 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080251564-336" .
-
-ns1:364 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX273" .
-
-ns1:367 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080227207-327" .
-
-ns1:368 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING264" .
-
-ns1:371 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080325446-350" .
-
-ns1:372 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX287" .
-
-ns1:375 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080323816-347" .
-
-ns1:376 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING284" .
-
-ns1:386 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224904-323" .
-
-ns1:389 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080325446-350" .
-
-ns1:392 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080325446-350" .
-
-ns1:393 a ns3:User ;
-    dcterms:created "2023-02-27T09:59:08.718000" .
-
-ns1:398 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080324276-348" .
-
-ns1:399 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING285" .
-
-ns1:409 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224904-323" .
-
-ns1:41 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL" .
-
-ns1:412 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080325446-350" .
-
-ns1:415 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080325446-350" .
-
-ns1:418 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080324730-349" .
-
-ns1:419 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING286" .
-
-ns1:429 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224904-323" .
-
-ns1:432 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080325446-350" .
-
-ns1:435 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080325446-350" .
-
-ns1:443 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080328563-351" .
-
-ns1:444 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL288" .
-
-ns1:47 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL" .
-
-ns1:476 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080325446-350" .
-
-ns1:479 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:482 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080420767-364" .
-
-ns1:483 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL301" .
-
-ns1:515 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080325446-350" .
-
-ns1:518 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:521 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080512666-375" .
-
-ns1:522 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL312" .
-
-ns1:53 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL" .
-
-ns1:554 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080325446-350" .
-
-ns1:557 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:585 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080226108-325" .
-
-ns1:588 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080227207-327" .
-
-ns1:59 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL" .
-
-ns1:591 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080323816-347" .
-
-ns1:594 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080324276-348" .
-
-ns1:597 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080324730-349" .
-
-ns1:600 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224359-321" .
-
-ns1:603 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080328563-351" .
-
-ns1:606 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080420767-364" .
-
-ns1:609 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080512666-375" .
-
-ns1:612 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080346814-355" .
-
-ns1:613 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX292" .
-
-ns1:616 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080227626-328" .
-
-ns1:617 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING265" .
-
-ns1:620 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080353066-357" .
-
-ns1:621 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX294" .
-
-ns1:629 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080356194-358" .
-
-ns1:630 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL295" .
-
-ns1:65 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL" .
-
-ns1:662 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080353066-357" .
-
-ns1:665 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:668 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080445524-368" .
-
-ns1:669 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL305" .
-
-ns1:701 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080353066-357" .
-
-ns1:704 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:707 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080506758-374" .
-
-ns1:708 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL311" .
-
-ns1:71 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL" .
-
-ns1:740 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080353066-357" .
-
-ns1:743 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:77 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL" .
-
-ns1:771 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080225345-324" .
-
-ns1:774 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080226108-325" .
-
-ns1:777 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080226649-326" .
-
-ns1:780 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080227207-327" .
-
-ns1:783 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080227626-328" .
-
-ns1:786 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224359-321" .
-
-ns1:789 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080356194-358" .
-
-ns1:792 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080445524-368" .
-
-ns1:795 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080506758-374" .
-
-ns1:809 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224904-323" .
-
-ns1:812 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080228501-329" .
-
-ns1:815 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080228501-329" .
-
-ns1:818 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080239537-332" .
-
-ns1:821 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080239537-332" .
-
-ns1:824 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080251564-336" .
-
-ns1:827 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080251564-336" .
-
-ns1:83 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL" .
-
-ns1:830 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080346814-355" .
-
-ns1:833 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080346814-355" .
-
-ns1:836 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080353066-357" .
-
-ns1:839 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080353066-357" .
-
-ns1:847 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080349906-356" .
-
-ns1:848 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL293" .
-
-ns1:880 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080346814-355" .
-
-ns1:883 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:886 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080439433-367" .
-
-ns1:887 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL304" .
-
-ns1:89 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL" .
-
-ns1:919 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080346814-355" .
-
-ns1:922 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:925 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080458567-372" .
-
-ns1:926 a ns3:Identifier ;
-    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL309" .
-
-ns1:95 a ns3:Identifier ;
-    rdf:value "EXPERIMENTAL_STEP_EMODUL" .
-
-ns1:958 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080346814-355" .
-
-ns1:961 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080224639-322" .
-
-ns1:989 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080225345-324" .
-
-ns1:992 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080226108-325" .
-
-ns1:995 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080226649-326" .
-
-ns1:998 a ns3:PermanentIdentifier ;
-    rdf:value "20230419080227207-327" .
-
-ns1:EMODUL267 a ns3:Object ;
-    ns2:NAME "BA-Losert MI E-Modul 28d v. 04.08.14 Probe 6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA-Losert MI E-Modul 28d v. 04.08.14 Probe 6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MI.xlsx" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "13:42:28" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA-Losert E-Modul 28d v. 04.08.14 Probe 6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5314.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2014-01-09 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:02:33.850000" ;
-    dcterms:modified "2023-04-19T10:02:33.850000" ;
-    ns3:code "EMODUL267" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL270 a ns3:Object ;
-    ns2:NAME "BA Los M V-4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA Los M V-4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MV.xlsx" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "13:31:54" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA Los M V-4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5428.5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2014-11-09 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:02:43.477000" ;
-    dcterms:modified "2023-04-19T10:02:43.477000" ;
-    ns3:code "EMODUL270" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL274 a ns3:Object ;
-    ns2:NAME "Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.7" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MIV.xlsx" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "09:21:10" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5351.9" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2014-03-09 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:02:54.692000" ;
-    dcterms:modified "2023-04-19T10:02:54.692000" ;
-    ns3:code "EMODUL274" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL276 a ns3:Object ;
-    ns2:NAME "BA-Losert MI E-Modul 28d v. 04.08.14 Probe 4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA-Losert MI E-Modul 28d v. 04.08.14 Probe 4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.3" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MI.xlsx" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "13:25:39" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA-Losert E-Modul 28d v. 04.08.14 Probe 4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5342.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2014-01-09 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:03:02.831000" ;
-    dcterms:modified "2023-04-19T10:03:02.831000" ;
-    ns3:code "EMODUL276" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL281 a ns3:Object ;
-    ns2:NAME "BA Los M VI-4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA Los M VI-4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MVI.xlsx" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "13:04:45" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA Los M VI-4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5354.5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2014-11-09 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:03:13.774000" ;
-    dcterms:modified "2023-04-19T10:03:13.774000" ;
-    ns3:code "EMODUL281" .
-
-ns1:EMODUL282 a ns3:Object ;
-    ns2:NAME "BA Los M V-5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.7" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA Los M V-5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MV.xlsx" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "13:37:55" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA Los M V-5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5454.6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2014-11-09 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:03:19.673000" ;
-    dcterms:modified "2023-04-19T10:03:19.673000" ;
-    ns3:code "EMODUL282" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL288 a ns3:Object ;
-    ns2:NAME "Wolf 8.2 Probe 1" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "Wolf 8.2 Probe 1" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_12_10 Wolf.xls" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "10:56:24" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "Wolf 8.2 Probe 1" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5328.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2015-01-28 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:03:28.563000" ;
-    dcterms:modified "2023-04-19T10:03:28.563000" ;
-    ns3:code "EMODUL288" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL289 a ns3:Object ;
-    ns2:NAME "Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.3" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MIV.xlsx" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "09:13:28" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5392.1" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2014-03-09 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:03:34.396000" ;
-    dcterms:modified "2023-04-19T10:03:34.396000" ;
-    ns3:code "EMODUL289" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL290 a ns3:Object ;
-    ns2:NAME "Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MIV.xlsx" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "09:30:43" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5335.7" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2014-03-09 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:03:41.100000" ;
-    dcterms:modified "2023-04-19T10:03:41.100000" ;
-    ns3:code "EMODUL290" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL293 a ns3:Object ;
-    ns2:NAME "Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MIII.xlsx" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "08:36:04" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5350.5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2014-03-09 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:03:49.906000" ;
-    dcterms:modified "2023-04-19T10:03:49.906000" ;
-    ns3:code "EMODUL293" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL295 a ns3:Object ;
-    ns2:NAME "BA-Losert MII E-Modul 28d v. 04.08.14 Probe 6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA-Losert MII E-Modul 28d v. 04.08.14 Probe 6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "299.8" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MII.xlsx" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "14:48:39" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA-Losert MII E-Modul 28d v. 04.08.14 Probe 6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5359.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2014-01-09 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:03:56.194000" ;
-    dcterms:modified "2023-04-19T10:03:56.194000" ;
-    ns3:code "EMODUL295" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL296 a ns3:Object ;
-    ns2:NAME "BA Los M VI-5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA Los M VI-5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MVI.xlsx" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "13:14:09" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA Los M VI-5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5340.6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2014-11-09 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:04:02.128000" ;
-    dcterms:modified "2023-04-19T10:04:02.128000" ;
-    ns3:code "EMODUL296" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL300 a ns3:Object ;
-    ns2:NAME "BA Los M V-6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA Los M V-6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.1" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MV.xlsx" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "13:43:57" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA Los M V-6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5439.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2014-11-09 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:04:14.859000" ;
-    dcterms:modified "2023-04-19T10:04:14.859000" ;
-    ns3:code "EMODUL300" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL301 a ns3:Object ;
-    ns2:NAME "Wolf 8.2 Probe 5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.7" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "Wolf 8.2 Probe 5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "299.8" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_12_10 Wolf.xls" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "11:17:28" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "Wolf 8.2 Probe 5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5349.4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2015-01-28 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:04:20.767000" ;
-    dcterms:modified "2023-04-19T10:04:20.767000" ;
-    ns3:code "EMODUL301" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL302 a ns3:Object ;
-    ns2:NAME "BA-Losert MI E-Modul 28d v. 04.08.14 Probe 5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.7" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA-Losert MI E-Modul 28d v. 04.08.14 Probe 5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MI.xlsx" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "13:33:10" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA-Losert E-Modul 28d v. 04.08.14 Probe 5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5404.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2014-01-09 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:04:26.710000" ;
-    dcterms:modified "2023-04-19T10:04:26.710000" ;
-    ns3:code "EMODUL302" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL303 a ns3:Object ;
-    ns2:NAME "BA Los M VI-6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.7" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA Los M VI-6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.3" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MVI.xlsx" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "13:22:36" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA Los M VI-6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5367.6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2014-11-09 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:04:32.571000" ;
-    dcterms:modified "2023-04-19T10:04:32.571000" ;
-    ns3:code "EMODUL303" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL304 a ns3:Object ;
-    ns2:NAME "Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MIII.xlsx" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "08:44:24" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5369.5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2014-03-09 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:04:39.433000" ;
-    dcterms:modified "2023-04-19T10:04:39.433000" ;
-    ns3:code "EMODUL304" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL305 a ns3:Object ;
-    ns2:NAME "BA-Losert MII E-Modul 28d v. 04.08.14 Probe 4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA-Losert MII E-Modul 28d v. 04.08.14 Probe 4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MII.xlsx" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "14:30:07" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA-Losert MII E-Modul 28d v. 04.08.14 Probe 4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5374.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2014-01-09 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:04:45.524000" ;
-    dcterms:modified "2023-04-19T10:04:45.524000" ;
-    ns3:code "EMODUL305" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL309 a ns3:Object ;
-    ns2:NAME "Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MIII.xlsx" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "08:55:26" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5361.6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2014-03-09 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:04:58.567000" ;
-    dcterms:modified "2023-04-19T10:04:58.567000" ;
-    ns3:code "EMODUL309" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL311 a ns3:Object ;
-    ns2:NAME "BA-Losert MII E-Modul 28d v. 04.08.14 Probe 5-" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.7" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA-Losert MII E-Modul 28d v. 04.08.14 Probe 5-" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MII.xlsx" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "14:41:00" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA-Losert MII E-Modul 28d v. 04.08.14 Probe 5" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5365.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2014-01-09 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:05:06.758000" ;
-    dcterms:modified "2023-04-19T10:05:06.758000" ;
-    ns3:code "EMODUL311" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL312 a ns3:Object ;
-    ns2:NAME "Wolf 8.2 Probe 4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "Wolf 8.2 Probe 4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.3" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_12_10 Wolf.xls" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "11:08:33" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "Wolf 8.2 Probe 4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5352.4" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
-    ns1:OPERATOR_DATE "2015-01-28 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Kh" ;
-    dcterms:created "2023-04-19T10:05:12.666000" ;
-    dcterms:modified "2023-04-19T10:05:12.666000" ;
-    ns3:code "EMODUL312" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_EMODUL_COLLECTION .
-
-ns1:EMODUL_ING261 a ns3:Object ;
-    ns2:NAME "cement" ;
-    ns1:EMODUL_INGREDIENT.ANNOTATION "CEM I 42.5 R" ;
-    ns1:EMODUL_INGREDIENT.BULKDENSITY "3.123" ;
-    dcterms:created "2023-04-19T10:02:25.345000" ;
-    dcterms:modified "2023-04-19T10:05:04.423000" ;
-    ns3:code "EMODUL_ING261" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL .
-
-ns1:EMODUL_ING262 a ns3:Object ;
-    ns2:NAME "water_total" ;
-    ns1:EMODUL_INGREDIENT.ANNOTATION "no annotation" ;
-    ns1:EMODUL_INGREDIENT.BULKDENSITY "1.0" ;
-    dcterms:created "2023-04-19T10:02:26.108000" ;
-    dcterms:modified "2023-04-19T10:05:10.713000" ;
-    ns3:code "EMODUL_ING262" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_INGREDIENT_COLLECTION .
-
-ns1:EMODUL_ING263 a ns3:Object ;
-    ns2:NAME "admixture" ;
-    ns1:EMODUL_INGREDIENT.ANNOTATION "FM 595 BASF" ;
-    ns1:EMODUL_INGREDIENT.BULKDENSITY "1.05" ;
-    dcterms:created "2023-04-19T10:02:26.649000" ;
-    dcterms:modified "2023-04-19T10:05:05.184000" ;
-    ns3:code "EMODUL_ING263" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_INGREDIENT_COLLECTION .
-
-ns1:EMODUL_ING264 a ns3:Object ;
-    ns2:NAME "aggregate" ;
-    ns1:EMODUL_INGREDIENT.ANNOTATION "no annotation" ;
-    ns1:EMODUL_INGREDIENT.BULKDENSITY "0.0" ;
-    dcterms:created "2023-04-19T10:02:27.207000" ;
-    dcterms:modified "2023-04-19T10:05:11.477000" ;
-    ns3:code "EMODUL_ING264" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_INGREDIENT_COLLECTION .
-
-ns1:EMODUL_ING265 a ns3:Object ;
-    ns2:NAME "addition1" ;
-    ns1:EMODUL_INGREDIENT.ANNOTATION "Medenbach - Kalksteinmehl" ;
-    ns1:EMODUL_INGREDIENT.BULKDENSITY "2.74" ;
-    dcterms:created "2023-04-19T10:02:27.626000" ;
-    dcterms:modified "2023-04-19T10:05:05.966000" ;
-    ns3:code "EMODUL_ING265" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_INGREDIENT_COLLECTION .
-
-ns1:EMODUL_ING279 a ns3:Object ;
-    ns2:NAME "addition1" ;
-    ns1:EMODUL_INGREDIENT.ANNOTATION "Mikrosilika" ;
-    ns1:EMODUL_INGREDIENT.BULKDENSITY "2.39" ;
-    dcterms:created "2023-04-19T10:03:09.923000" ;
-    dcterms:modified "2023-04-19T10:04:31.792000" ;
-    ns3:code "EMODUL_ING279" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_INGREDIENT_COLLECTION .
-
-ns1:EMODUL_ING284 a ns3:Object ;
-    ns2:NAME "cement" ;
-    ns1:EMODUL_INGREDIENT.ANNOTATION "CEM I 32.5 R Zementwerk Berlin" ;
-    ns1:EMODUL_INGREDIENT.BULKDENSITY "3.1" ;
-    dcterms:created "2023-04-19T10:03:23.816000" ;
-    dcterms:modified "2023-04-19T10:05:10.330000" ;
-    ns3:code "EMODUL_ING284" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_INGREDIENT_COLLECTION .
-
-ns1:EMODUL_ING285 a ns3:Object ;
-    ns2:NAME "admixture" ;
-    ns1:EMODUL_INGREDIENT.ANNOTATION "FM 21/BV 21" ;
-    ns1:EMODUL_INGREDIENT.BULKDENSITY "1.14" ;
-    dcterms:created "2023-04-19T10:03:24.276000" ;
-    dcterms:modified "2023-04-19T10:05:11.091000" ;
-    ns3:code "EMODUL_ING285" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_INGREDIENT_COLLECTION .
-
-ns1:EMODUL_ING286 a ns3:Object ;
-    ns2:NAME "addition1" ;
-    ns1:EMODUL_INGREDIENT.ANNOTATION "Bad KÃ¶sen - nan" ;
-    ns1:EMODUL_INGREDIENT.BULKDENSITY "2.73" ;
-    dcterms:created "2023-04-19T10:03:24.730000" ;
-    dcterms:modified "2023-04-19T10:05:11.861000" ;
-    ns3:code "EMODUL_ING286" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_INGREDIENT_COLLECTION .
-
-ns1:EMODUL_INGREDIENT.ANNOTATION a owl:ObjectProperty ;
+data:EMODUL_INGREDIENT.ANNOTATION a owl:ObjectProperty ;
     rdfs:label "source" ;
-    dcterms:created "2023-04-19T10:02:09.027000" ;
+    dcterms:created "2023-04-19T10:02:09.027000"^^xsd:dateTimeStamp ;
     rdfs:comment "source" ;
-    ns3:code "EMODUL_INGREDIENT.ANNOTATION" .
+    obis:code "EMODUL_INGREDIENT.ANNOTATION" .
 
-ns1:EMODUL_INGREDIENT.BULKDENSITY a owl:ObjectProperty ;
+data:EMODUL_INGREDIENT.BULKDENSITY a owl:ObjectProperty ;
     rdfs:label "Bulk Density" ;
-    dcterms:created "2023-04-19T10:02:08.846000" ;
+    dcterms:created "2023-04-19T10:02:08.846000"^^xsd:dateTimeStamp ;
     rdfs:comment "Bulk Density" ;
-    ns3:code "EMODUL_INGREDIENT.BULKDENSITY" .
+    obis:code "EMODUL_INGREDIENT.BULKDENSITY" .
 
-ns1:EMODUL_MIX266 a ns3:Object ;
-    ns2:NAME "2014_08_05 Rezeptur_MI" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--BULKDENSITY "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--QUANTITYINMIX "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--VOLUME "20.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.SPECIMEN_NAME "BA-Losert MI" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_CEMENT_RATIO "0.5303030303030303" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--BULKDENSITY "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--QUANTITYINMIX "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--VOLUME "0.0" ;
-    ns1:OPERATOR_DATE "2014-06-30 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Werner" ;
-    dcterms:created "2023-04-19T10:02:28.501000" ;
-    dcterms:modified "2023-04-19T10:04:26.710000" ;
-    ns3:code "EMODUL_MIX266" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_MIXTURE_COLLECTION .
-
-ns1:EMODUL_MIX269 a ns3:Object ;
-    ns2:NAME "2014_08_05 Rezeptur_MV" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--BULKDENSITY "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--QUANTITYINMIX "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--VOLUME "20.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.SPECIMEN_NAME "BA-Losert MV" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_CEMENT_RATIO "0.5303030303030303" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--BULKDENSITY "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--QUANTITYINMIX "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--VOLUME "0.0" ;
-    ns1:OPERATOR_DATE "2014-06-30 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Werner" ;
-    dcterms:created "2023-04-19T10:02:39.537000" ;
-    dcterms:modified "2023-04-19T10:04:14.859000" ;
-    ns3:code "EMODUL_MIX269" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_MIXTURE_COLLECTION .
-
-ns1:EMODUL_MIX273 a ns3:Object ;
-    ns2:NAME "2014_08_05 Rezeptur_MIV" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--BULKDENSITY "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--QUANTITYINMIX "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--VOLUME "20.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.SPECIMEN_NAME "BA-Losert MIV" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_CEMENT_RATIO "0.5303030303030303" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--BULKDENSITY "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--QUANTITYINMIX "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--VOLUME "0.0" ;
-    ns1:OPERATOR_DATE "2014-06-30 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Werner" ;
-    dcterms:created "2023-04-19T10:02:51.564000" ;
-    dcterms:modified "2023-04-19T10:03:41.100000" ;
-    ns3:code "EMODUL_MIX273" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_MIXTURE_COLLECTION .
-
-ns1:EMODUL_MIX280 a ns3:Object ;
-    ns2:NAME "2014_08_05 Rezeptur_MVI" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--BULKDENSITY "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--QUANTITYINMIX "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--VOLUME "20.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.SPECIMEN_NAME "BA-Losert MVI" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_CEMENT_RATIO "0.2982758620689655" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--BULKDENSITY "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--QUANTITYINMIX "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--VOLUME "0.0" ;
-    ns1:OPERATOR_DATE "2014-06-30 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Werner" ;
-    dcterms:created "2023-04-19T10:03:10.642000" ;
-    dcterms:modified "2023-04-19T10:04:32.571000" ;
-    ns3:code "EMODUL_MIX280" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL .
-
-ns1:EMODUL_MIX287 a ns3:Object ;
-    ns2:NAME "2014_12_10 Wolf" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--BULKDENSITY "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--QUANTITYINMIX "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--VOLUME "20.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.SPECIMEN_NAME "8.2 (Wolf)" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_CEMENT_RATIO "0.5454545454545454" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--BULKDENSITY "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--QUANTITYINMIX "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--VOLUME "0.0" ;
-    ns1:OPERATOR_DATE "2014-12-10 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Haamkens" ;
-    dcterms:created "2023-04-19T10:03:25.446000" ;
-    dcterms:modified "2023-04-19T10:05:12.666000" ;
-    ns3:code "EMODUL_MIX287" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_MIXTURE_COLLECTION .
-
-ns1:EMODUL_MIX292 a ns3:Object ;
-    ns2:NAME "2014_08_05 Rezeptur_MIII" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--BULKDENSITY "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--QUANTITYINMIX "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--VOLUME "20.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.SPECIMEN_NAME "BA-Losert MIII" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_CEMENT_RATIO "0.5303030303030303" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--BULKDENSITY "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--QUANTITYINMIX "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--VOLUME "0.0" ;
-    ns1:OPERATOR_DATE "2014-06-30 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Werner" ;
-    dcterms:created "2023-04-19T10:03:46.814000" ;
-    dcterms:modified "2023-04-19T10:04:58.567000" ;
-    ns3:code "EMODUL_MIX292" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_MIXTURE_COLLECTION .
-
-ns1:EMODUL_MIX294 a ns3:Object ;
-    ns2:NAME "2014_08_05 Rezeptur_MII" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--BULKDENSITY "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--QUANTITYINMIX "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--VOLUME "20.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.SPECIMEN_NAME "BA-Losert MII" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_CEMENT_RATIO "0.5303030303030303" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--BULKDENSITY "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--QUANTITYINMIX "0.0" ;
-    ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--VOLUME "0.0" ;
-    ns1:OPERATOR_DATE "2014-06-30 00:00:00 +0000" ;
-    ns1:TESTER_NAME "Werner" ;
-    dcterms:created "2023-04-19T10:03:53.066000" ;
-    dcterms:modified "2023-04-19T10:05:06.758000" ;
-    ns3:code "EMODUL_MIX294" ;
-    ns3:relates_to ns1:EMODUL,
-        ns1:LEBEDIGITAL,
-        ns1:LEBEDIGITAL_MIXTURE_COLLECTION .
-
-ns1:EXPERIMENTAL_STEP_EMODUL.DIAMETER a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL.DIAMETER a owl:ObjectProperty ;
     rdfs:label "diameter" ;
-    dcterms:created "2023-04-19T10:02:17.413000" ;
+    dcterms:created "2023-04-19T10:02:17.413000"^^xsd:dateTimeStamp ;
     rdfs:comment "diameter" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL.DIAMETER" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL.DIAMETER" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME a owl:ObjectProperty ;
     rdfs:label "experimentName" ;
-    dcterms:created "2023-04-19T10:02:17.588000" ;
+    dcterms:created "2023-04-19T10:02:17.588000"^^xsd:dateTimeStamp ;
     rdfs:comment "experimentName" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL.LENGTH a owl:ObjectProperty ;
     rdfs:label "length" ;
-    dcterms:created "2023-04-19T10:02:17.763000" ;
+    dcterms:created "2023-04-19T10:02:17.763000"^^xsd:dateTimeStamp ;
     rdfs:comment "length" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL.LENGTH" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL.LENGTH" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT a owl:ObjectProperty ;
     rdfs:label "length_unit" ;
-    dcterms:created "2023-04-19T10:02:17.938000" ;
+    dcterms:created "2023-04-19T10:02:17.938000"^^xsd:dateTimeStamp ;
     rdfs:comment "length_unit" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL.MIX_FILE a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE a owl:ObjectProperty ;
     rdfs:label "mix_file" ;
-    dcterms:created "2023-04-19T10:02:18.111000" ;
+    dcterms:created "2023-04-19T10:02:18.111000"^^xsd:dateTimeStamp ;
     rdfs:comment "mix_file" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL.MIX_FILE" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL.MIX_FILE" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP a owl:ObjectProperty ;
     rdfs:label "operator_timestamp" ;
-    dcterms:created "2023-04-19T10:02:18.281000" ;
+    dcterms:created "2023-04-19T10:02:18.281000"^^xsd:dateTimeStamp ;
     rdfs:comment "operator_timestamp" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL.REMARK a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL.REMARK a owl:ObjectProperty ;
     rdfs:label "remark" ;
-    dcterms:created "2023-04-19T10:02:18.451000" ;
+    dcterms:created "2023-04-19T10:02:18.451000"^^xsd:dateTimeStamp ;
     rdfs:comment "remark" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL.REMARK" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL.REMARK" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION a owl:ObjectProperty ;
     rdfs:label "software_specification" ;
-    dcterms:created "2023-04-19T10:02:18.623000" ;
+    dcterms:created "2023-04-19T10:02:18.623000"^^xsd:dateTimeStamp ;
     rdfs:comment "software_specification" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME a owl:ObjectProperty ;
     rdfs:label "specimen_name" ;
-    dcterms:created "2023-04-19T10:02:18.797000" ;
+    dcterms:created "2023-04-19T10:02:18.797000"^^xsd:dateTimeStamp ;
     rdfs:comment "specimen_name" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL.WEIGHT a owl:ObjectProperty ;
     rdfs:label "weight" ;
-    dcterms:created "2023-04-19T10:02:18.983000" ;
+    dcterms:created "2023-04-19T10:02:18.983000"^^xsd:dateTimeStamp ;
     rdfs:comment "weight" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL.WEIGHT" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL.WEIGHT" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT a owl:ObjectProperty ;
     rdfs:label "weight_unit" ;
-    dcterms:created "2023-04-19T10:02:19.158000" ;
+    dcterms:created "2023-04-19T10:02:19.158000"^^xsd:dateTimeStamp ;
     rdfs:comment "weight_unit" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION1--ANNOTATION a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION1--ANNOTATION a owl:ObjectProperty ;
     rdfs:label "addition1--Annotation" ;
-    dcterms:created "2023-04-26T11:27:37.057000" ;
+    dcterms:created "2023-04-26T11:27:37.057000"^^xsd:dateTimeStamp ;
     rdfs:comment "addition1--Annotation" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION1--ANNOTATION" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION1--ANNOTATION" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION1--BULKDENSITY a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION1--BULKDENSITY a owl:ObjectProperty ;
     rdfs:label "addition1--BulkDensity" ;
-    dcterms:created "2023-04-26T11:27:36.986000" ;
+    dcterms:created "2023-04-26T11:27:36.986000"^^xsd:dateTimeStamp ;
     rdfs:comment "addition1--BulkDensity" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION1--BULKDENSITY" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION1--BULKDENSITY" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION1--QUANTITYINMIX a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION1--QUANTITYINMIX a owl:ObjectProperty ;
     rdfs:label "addition1--QuantityInMix" ;
-    dcterms:created "2023-04-26T11:27:36.942000" ;
+    dcterms:created "2023-04-26T11:27:36.942000"^^xsd:dateTimeStamp ;
     rdfs:comment "addition1--QuantityInMix" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION1--QUANTITYINMIX" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION1--QUANTITYINMIX" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION1--VOLUME a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION1--VOLUME a owl:ObjectProperty ;
     rdfs:label "addition1--Volume" ;
-    dcterms:created "2023-04-26T11:27:37.023000" ;
+    dcterms:created "2023-04-26T11:27:37.023000"^^xsd:dateTimeStamp ;
     rdfs:comment "addition1--Volume" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION1--VOLUME" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION1--VOLUME" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION2--ANNOTATION a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION2--ANNOTATION a owl:ObjectProperty ;
     rdfs:label "addition2--Annotation" ;
-    dcterms:created "2023-04-26T11:27:37.233000" ;
+    dcterms:created "2023-04-26T11:27:37.233000"^^xsd:dateTimeStamp ;
     rdfs:comment "addition2--Annotation" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION2--ANNOTATION" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION2--ANNOTATION" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION2--BULKDENSITY a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION2--BULKDENSITY a owl:ObjectProperty ;
     rdfs:label "addition2--BulkDensity" ;
-    dcterms:created "2023-04-26T11:27:37.164000" ;
+    dcterms:created "2023-04-26T11:27:37.164000"^^xsd:dateTimeStamp ;
     rdfs:comment "addition2--BulkDensity" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION2--BULKDENSITY" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION2--BULKDENSITY" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION2--QUANTITYINMIX a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION2--QUANTITYINMIX a owl:ObjectProperty ;
     rdfs:label "addition2--QuantityInMix" ;
-    dcterms:created "2023-04-26T11:27:37.090000" ;
+    dcterms:created "2023-04-26T11:27:37.090000"^^xsd:dateTimeStamp ;
     rdfs:comment "addition2--QuantityInMix" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION2--QUANTITYINMIX" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION2--QUANTITYINMIX" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION2--VOLUME a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION2--VOLUME a owl:ObjectProperty ;
     rdfs:label "addition2--Volume" ;
-    dcterms:created "2023-04-26T11:27:37.200000" ;
+    dcterms:created "2023-04-26T11:27:37.200000"^^xsd:dateTimeStamp ;
     rdfs:comment "addition2--Volume" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION2--VOLUME" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADDITION2--VOLUME" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.ADMIXTURE--ANNOTATION a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.ADMIXTURE--ANNOTATION a owl:ObjectProperty ;
     rdfs:label "admixture--Annotation" ;
-    dcterms:created "2023-04-26T11:27:37.376000" ;
+    dcterms:created "2023-04-26T11:27:37.376000"^^xsd:dateTimeStamp ;
     rdfs:comment "admixture--Annotation" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADMIXTURE--ANNOTATION" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADMIXTURE--ANNOTATION" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.ADMIXTURE--BULKDENSITY a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.ADMIXTURE--BULKDENSITY a owl:ObjectProperty ;
     rdfs:label "admixture--BulkDensity" ;
-    dcterms:created "2023-04-26T11:27:37.309000" ;
+    dcterms:created "2023-04-26T11:27:37.309000"^^xsd:dateTimeStamp ;
     rdfs:comment "admixture--BulkDensity" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADMIXTURE--BULKDENSITY" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADMIXTURE--BULKDENSITY" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.ADMIXTURE--QUANTITYINMIX a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.ADMIXTURE--QUANTITYINMIX a owl:ObjectProperty ;
     rdfs:label "admixture--QuantityInMix" ;
-    dcterms:created "2023-04-26T11:27:37.272000" ;
+    dcterms:created "2023-04-26T11:27:37.272000"^^xsd:dateTimeStamp ;
     rdfs:comment "admixture--QuantityInMix" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADMIXTURE--QUANTITYINMIX" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADMIXTURE--QUANTITYINMIX" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.ADMIXTURE--VOLUME a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.ADMIXTURE--VOLUME a owl:ObjectProperty ;
     rdfs:label "admixture--Volume" ;
-    dcterms:created "2023-04-26T11:27:37.345000" ;
+    dcterms:created "2023-04-26T11:27:37.345000"^^xsd:dateTimeStamp ;
     rdfs:comment "admixture--Volume" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADMIXTURE--VOLUME" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.ADMIXTURE--VOLUME" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AGGREGATE--BULKDENSITY a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.AGGREGATE--BULKDENSITY a owl:ObjectProperty ;
     rdfs:label "aggregate--BulkDensity" ;
-    dcterms:created "2023-04-26T11:27:37.438000" ;
+    dcterms:created "2023-04-26T11:27:37.438000"^^xsd:dateTimeStamp ;
     rdfs:comment "aggregate--BulkDensity" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.AGGREGATE--BULKDENSITY" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.AGGREGATE--BULKDENSITY" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AGGREGATE--QUANTITYINMIX a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.AGGREGATE--QUANTITYINMIX a owl:ObjectProperty ;
     rdfs:label "aggregate--QuantityInMix" ;
-    dcterms:created "2023-04-26T11:27:37.407000" ;
+    dcterms:created "2023-04-26T11:27:37.407000"^^xsd:dateTimeStamp ;
     rdfs:comment "aggregate--QuantityInMix" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.AGGREGATE--QUANTITYINMIX" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.AGGREGATE--QUANTITYINMIX" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AGGREGATE--VOLUME a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.AGGREGATE--VOLUME a owl:ObjectProperty ;
     rdfs:label "aggregate--Volume" ;
-    dcterms:created "2023-04-26T11:27:37.467000" ;
+    dcterms:created "2023-04-26T11:27:37.467000"^^xsd:dateTimeStamp ;
     rdfs:comment "aggregate--Volume" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.AGGREGATE--VOLUME" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.AGGREGATE--VOLUME" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--BULKDENSITY a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--BULKDENSITY a owl:ObjectProperty ;
     rdfs:label "air_content--BulkDensity" ;
-    dcterms:created "2023-04-19T10:02:11.591000" ;
+    dcterms:created "2023-04-19T10:02:11.591000"^^xsd:dateTimeStamp ;
     rdfs:comment "air_content--BulkDensity" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--BULKDENSITY" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--BULKDENSITY" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--QUANTITYINMIX a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--QUANTITYINMIX a owl:ObjectProperty ;
     rdfs:label "air_content--QuantityInMix" ;
-    dcterms:created "2023-04-19T10:02:11.419000" ;
+    dcterms:created "2023-04-19T10:02:11.419000"^^xsd:dateTimeStamp ;
     rdfs:comment "air_content--QuantityInMix" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--QUANTITYINMIX" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--QUANTITYINMIX" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--VOLUME a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--VOLUME a owl:ObjectProperty ;
     rdfs:label "air_content--Volume" ;
-    dcterms:created "2023-04-19T10:02:11.767000" ;
+    dcterms:created "2023-04-19T10:02:11.767000"^^xsd:dateTimeStamp ;
     rdfs:comment "air_content--Volume" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--VOLUME" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--VOLUME" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.CEMENT--ANNOTATION a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.CEMENT--ANNOTATION a owl:ObjectProperty ;
     rdfs:label "cement--Annotation" ;
-    dcterms:created "2023-04-26T11:27:36.719000" ;
+    dcterms:created "2023-04-26T11:27:36.719000"^^xsd:dateTimeStamp ;
     rdfs:comment "cement--Annotation" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.CEMENT--ANNOTATION" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.CEMENT--ANNOTATION" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.CEMENT--BULKDENSITY a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.CEMENT--BULKDENSITY a owl:ObjectProperty ;
     rdfs:label "cement--BulkDensity" ;
-    dcterms:created "2023-04-26T11:27:36.620000" ;
+    dcterms:created "2023-04-26T11:27:36.620000"^^xsd:dateTimeStamp ;
     rdfs:comment "cement--BulkDensity" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.CEMENT--BULKDENSITY" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.CEMENT--BULKDENSITY" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.CEMENT--QUANTITYINMIX a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.CEMENT--QUANTITYINMIX a owl:ObjectProperty ;
     rdfs:label "cement--QuantityInMix" ;
-    dcterms:created "2023-04-26T11:27:36.549000" ;
+    dcterms:created "2023-04-26T11:27:36.549000"^^xsd:dateTimeStamp ;
     rdfs:comment "cement--QuantityInMix" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.CEMENT--QUANTITYINMIX" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.CEMENT--QUANTITYINMIX" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.CEMENT--VOLUME a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.CEMENT--VOLUME a owl:ObjectProperty ;
     rdfs:label "cement--Volume" ;
-    dcterms:created "2023-04-26T11:27:36.674000" ;
+    dcterms:created "2023-04-26T11:27:36.674000"^^xsd:dateTimeStamp ;
     rdfs:comment "cement--Volume" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.CEMENT--VOLUME" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.CEMENT--VOLUME" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.SPECIMEN_NAME a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.SPECIMEN_NAME a owl:ObjectProperty ;
     rdfs:label "specimen_name" ;
-    dcterms:created "2023-04-19T10:02:10.717000" ;
+    dcterms:created "2023-04-19T10:02:10.717000"^^xsd:dateTimeStamp ;
     rdfs:comment "specimen_name" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.SPECIMEN_NAME" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.SPECIMEN_NAME" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_CEMENT_RATIO a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_CEMENT_RATIO a owl:ObjectProperty ;
     rdfs:label "water_cement_ratio" ;
-    dcterms:created "2023-04-19T10:02:12.289000" ;
+    dcterms:created "2023-04-19T10:02:12.289000"^^xsd:dateTimeStamp ;
     rdfs:comment "water_cement_ratio" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.WATER_CEMENT_RATIO" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.WATER_CEMENT_RATIO" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--BULKDENSITY a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--BULKDENSITY a owl:ObjectProperty ;
     rdfs:label "water_effective--BulkDensity" ;
-    dcterms:created "2023-04-19T10:02:11.063000" ;
+    dcterms:created "2023-04-19T10:02:11.063000"^^xsd:dateTimeStamp ;
     rdfs:comment "water_effective--BulkDensity" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--BULKDENSITY" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--BULKDENSITY" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--QUANTITYINMIX a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--QUANTITYINMIX a owl:ObjectProperty ;
     rdfs:label "water_effective--QuantityInMix" ;
-    dcterms:created "2023-04-19T10:02:10.890000" ;
+    dcterms:created "2023-04-19T10:02:10.890000"^^xsd:dateTimeStamp ;
     rdfs:comment "water_effective--QuantityInMix" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--QUANTITYINMIX" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--QUANTITYINMIX" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--VOLUME a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--VOLUME a owl:ObjectProperty ;
     rdfs:label "water_effective--Volume" ;
-    dcterms:created "2023-04-19T10:02:11.236000" ;
+    dcterms:created "2023-04-19T10:02:11.236000"^^xsd:dateTimeStamp ;
     rdfs:comment "water_effective--Volume" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--VOLUME" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--VOLUME" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_TOTAL--BULKDENSITY a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_TOTAL--BULKDENSITY a owl:ObjectProperty ;
     rdfs:label "water_total--BulkDensity" ;
-    dcterms:created "2023-04-26T11:27:36.795000" ;
+    dcterms:created "2023-04-26T11:27:36.795000"^^xsd:dateTimeStamp ;
     rdfs:comment "water_total--BulkDensity" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.WATER_TOTAL--BULKDENSITY" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.WATER_TOTAL--BULKDENSITY" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_TOTAL--QUANTITYINMIX a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_TOTAL--QUANTITYINMIX a owl:ObjectProperty ;
     rdfs:label "water_total--QuantityInMix" ;
-    dcterms:created "2023-04-26T11:27:36.758000" ;
+    dcterms:created "2023-04-26T11:27:36.758000"^^xsd:dateTimeStamp ;
     rdfs:comment "water_total--QuantityInMix" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.WATER_TOTAL--QUANTITYINMIX" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.WATER_TOTAL--QUANTITYINMIX" .
 
-ns1:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_TOTAL--VOLUME a owl:ObjectProperty ;
+data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_TOTAL--VOLUME a owl:ObjectProperty ;
     rdfs:label "water_total--Volume" ;
-    dcterms:created "2023-04-26T11:27:36.830000" ;
+    dcterms:created "2023-04-26T11:27:36.830000"^^xsd:dateTimeStamp ;
     rdfs:comment "water_total--Volume" ;
-    ns3:code "EXPERIMENTAL_STEP_EMODUL_MIX.WATER_TOTAL--VOLUME" .
+    obis:code "EXPERIMENTAL_STEP_EMODUL_MIX.WATER_TOTAL--VOLUME" .
 
-ns1:OPERATOR_DATE a owl:ObjectProperty ;
+data:OPERATOR_DATE a owl:ObjectProperty ;
     rdfs:label "operator_date" ;
-    dcterms:created "2023-04-19T10:02:11.942000" ;
+    dcterms:created "2023-04-19T10:02:11.942000"^^xsd:dateTimeStamp ;
     rdfs:comment "operator_date" ;
-    ns3:code "OPERATOR_DATE" .
+    obis:code "OPERATOR_DATE" .
 
-ns1:TESTER_NAME a owl:ObjectProperty ;
+data:TESTER_NAME a owl:ObjectProperty ;
     rdfs:label "tester_name" ;
-    dcterms:created "2023-04-19T10:02:12.115000" ;
+    dcterms:created "2023-04-19T10:02:12.115000"^^xsd:dateTimeStamp ;
     rdfs:comment "tester_name" ;
-    ns3:code "TESTER_NAME" .
+    obis:code "TESTER_NAME" .
 
-ns1:LEBEDIGITAL_MIXTURE_COLLECTION a ns3:Collection ;
-    dcterms:created "2023-04-19T10:02:24.359000" ;
-    dcterms:modified "2023-04-19T10:03:53.066000" ;
-    ns3:code "LEBEDIGITAL_MIXTURE_COLLECTION" .
+data:107 a obis:PermanentIdentifier ;
+    rdf:value "20230227085915753-23" ;
+    obis:is_identifier_of data:20230227085915753-23 .
 
-ns1:LEBEDIGITAL_INGREDIENT_COLLECTION a ns3:Collection ;
-    dcterms:created "2023-04-19T10:02:24.904000" ;
-    dcterms:modified "2023-04-19T10:03:24.730000" ;
-    ns3:code "LEBEDIGITAL_INGREDIENT_COLLECTION" .
+data:1079 a obis:PermanentIdentifier ;
+    rdf:value "20230419080254692-337" ;
+    obis:is_identifier_of data:20230419080254692-337 .
 
-ns1:LEBEDIGITAL_EMODUL_COLLECTION a ns3:Collection ;
-    dcterms:created "2023-04-19T10:02:24.639000" ;
-    dcterms:modified "2023-04-19T10:05:20.640000" ;
-    ns3:code "LEBEDIGITAL_EMODUL_COLLECTION" .
+data:108 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL" ;
+    obis:is_identifier_of data:20230227085915753-23 .
 
-ns1:EMODUL a ns3:Space ;
-    dcterms:created "2023-02-27T09:59:15.707000" ;
-    dcterms:modified "2023-02-27T09:59:15.707000" ;
+data:1080 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL274" ;
+    obis:is_identifier_of data:20230419080254692-337 .
+
+data:1118 a obis:PermanentIdentifier ;
+    rdf:value "20230419080334396-352" ;
+    obis:is_identifier_of data:20230419080334396-352 .
+
+data:1119 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL289" ;
+    obis:is_identifier_of data:20230419080334396-352 .
+
+data:112 a obis:PermanentIdentifier ;
+    rdf:value "EMODUL" ;
+    obis:is_identifier_of data:EMODUL .
+
+data:115 a obis:PermanentIdentifier ;
+    rdf:value "20230419080224639-322" ;
+    obis:is_identifier_of data:20230419080224639-322 .
+
+data:1157 a obis:PermanentIdentifier ;
+    rdf:value "20230419080341100-353" ;
+    obis:is_identifier_of data:20230419080341100-353 .
+
+data:1158 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL290" ;
+    obis:is_identifier_of data:20230419080341100-353 .
+
+data:116 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_EMODUL_COLLECTION" ;
+    obis:is_identifier_of data:20230419080224639-322 .
+
+data:119 a obis:PermanentIdentifier ;
+    rdf:value "20230419080310642-343" ;
+    obis:is_identifier_of data:20230419080310642-343 .
+
+data:120 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX280" ;
+    obis:is_identifier_of data:20230419080310642-343 .
+
+data:1304 a obis:PermanentIdentifier ;
+    rdf:value "20230419080243477-333" ;
+    obis:is_identifier_of data:20230419080243477-333 .
+
+data:1305 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL270" ;
+    obis:is_identifier_of data:20230419080243477-333 .
+
+data:1343 a obis:PermanentIdentifier ;
+    rdf:value "20230419080319673-345" ;
+    obis:is_identifier_of data:20230419080319673-345 .
+
+data:1344 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL282" ;
+    obis:is_identifier_of data:20230419080319673-345 .
+
+data:1382 a obis:PermanentIdentifier ;
+    rdf:value "20230419080414859-363" ;
+    obis:is_identifier_of data:20230419080414859-363 .
+
+data:1383 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL300" ;
+    obis:is_identifier_of data:20230419080414859-363 .
+
+data:1536 a obis:PermanentIdentifier ;
+    rdf:value "20230419080233850-330" ;
+    obis:is_identifier_of data:20230419080233850-330 .
+
+data:1537 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL267" ;
+    obis:is_identifier_of data:20230419080233850-330 .
+
+data:1575 a obis:PermanentIdentifier ;
+    rdf:value "20230419080302831-339" ;
+    obis:is_identifier_of data:20230419080302831-339 .
+
+data:1576 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL276" ;
+    obis:is_identifier_of data:20230419080302831-339 .
+
+data:1614 a obis:PermanentIdentifier ;
+    rdf:value "20230419080426710-365" ;
+    obis:is_identifier_of data:20230419080426710-365 .
+
+data:1615 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL302" ;
+    obis:is_identifier_of data:20230419080426710-365 .
+
+data:17 a obis:PermanentIdentifier ;
+    rdf:value "20230419080313774-344" ;
+    obis:is_identifier_of data:20230419080313774-344 .
+
+data:1756 a obis:PermanentIdentifier ;
+    rdf:value "20230419080309923-342" ;
+    obis:is_identifier_of data:20230419080309923-342 .
+
+data:1757 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING279" ;
+    obis:is_identifier_of data:20230419080309923-342 .
+
+data:1781 a obis:PermanentIdentifier ;
+    rdf:value "20230419080402128-359" ;
+    obis:is_identifier_of data:20230419080402128-359 .
+
+data:1782 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL296" ;
+    obis:is_identifier_of data:20230419080402128-359 .
+
+data:18 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL281" ;
+    obis:is_identifier_of data:20230419080313774-344 .
+
+data:1820 a obis:PermanentIdentifier ;
+    rdf:value "20230419080432571-366" ;
+    obis:is_identifier_of data:20230419080432571-366 .
+
+data:1821 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL303" ;
+    obis:is_identifier_of data:20230419080432571-366 .
+
+data:317 a obis:PermanentIdentifier ;
+    rdf:value "20230419080224359-321" ;
+    obis:is_identifier_of data:20230419080224359-321 .
+
+data:318 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_MIXTURE_COLLECTION" ;
+    obis:is_identifier_of data:20230419080224359-321 .
+
+data:321 a obis:PermanentIdentifier ;
+    rdf:value "20230419080225345-324" ;
+    obis:is_identifier_of data:20230419080225345-324 .
+
+data:322 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING261" ;
+    obis:is_identifier_of data:20230419080225345-324 .
+
+data:343 a obis:PermanentIdentifier ;
+    rdf:value "20230419080224904-323" ;
+    obis:is_identifier_of data:20230419080224904-323 .
+
+data:344 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_INGREDIENT_COLLECTION" ;
+    obis:is_identifier_of data:20230419080224904-323 .
+
+data:347 a obis:PermanentIdentifier ;
+    rdf:value "20230419080228501-329" ;
+    obis:is_identifier_of data:20230419080228501-329 .
+
+data:348 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX266" ;
+    obis:is_identifier_of data:20230419080228501-329 .
+
+data:351 a obis:PermanentIdentifier ;
+    rdf:value "20230419080226108-325" ;
+    obis:is_identifier_of data:20230419080226108-325 .
+
+data:352 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING262" ;
+    obis:is_identifier_of data:20230419080226108-325 .
+
+data:355 a obis:PermanentIdentifier ;
+    rdf:value "20230419080239537-332" ;
+    obis:is_identifier_of data:20230419080239537-332 .
+
+data:356 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX269" ;
+    obis:is_identifier_of data:20230419080239537-332 .
+
+data:359 a obis:PermanentIdentifier ;
+    rdf:value "20230419080226649-326" ;
+    obis:is_identifier_of data:20230419080226649-326 .
+
+data:360 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING263" ;
+    obis:is_identifier_of data:20230419080226649-326 .
+
+data:363 a obis:PermanentIdentifier ;
+    rdf:value "20230419080251564-336" ;
+    obis:is_identifier_of data:20230419080251564-336 .
+
+data:364 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX273" ;
+    obis:is_identifier_of data:20230419080251564-336 .
+
+data:367 a obis:PermanentIdentifier ;
+    rdf:value "20230419080227207-327" ;
+    obis:is_identifier_of data:20230419080227207-327 .
+
+data:368 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING264" ;
+    obis:is_identifier_of data:20230419080227207-327 .
+
+data:371 a obis:PermanentIdentifier ;
+    rdf:value "20230419080325446-350" ;
+    obis:is_identifier_of data:20230419080325446-350 .
+
+data:372 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX287" ;
+    obis:is_identifier_of data:20230419080325446-350 .
+
+data:375 a obis:PermanentIdentifier ;
+    rdf:value "20230419080323816-347" ;
+    obis:is_identifier_of data:20230419080323816-347 .
+
+data:376 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING284" ;
+    obis:is_identifier_of data:20230419080323816-347 .
+
+data:395 a obis:PermanentIdentifier ;
+    rdf:value "admin" ;
+    obis:is_identifier_of data:admin .
+
+data:398 a obis:PermanentIdentifier ;
+    rdf:value "20230419080324276-348" ;
+    obis:is_identifier_of data:20230419080324276-348 .
+
+data:399 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING285" ;
+    obis:is_identifier_of data:20230419080324276-348 .
+
+data:418 a obis:PermanentIdentifier ;
+    rdf:value "20230419080324730-349" ;
+    obis:is_identifier_of data:20230419080324730-349 .
+
+data:419 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING286" ;
+    obis:is_identifier_of data:20230419080324730-349 .
+
+data:443 a obis:PermanentIdentifier ;
+    rdf:value "20230419080328563-351" ;
+    obis:is_identifier_of data:20230419080328563-351 .
+
+data:444 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL288" ;
+    obis:is_identifier_of data:20230419080328563-351 .
+
+data:482 a obis:PermanentIdentifier ;
+    rdf:value "20230419080420767-364" ;
+    obis:is_identifier_of data:20230419080420767-364 .
+
+data:483 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL301" ;
+    obis:is_identifier_of data:20230419080420767-364 .
+
+data:521 a obis:PermanentIdentifier ;
+    rdf:value "20230419080512666-375" ;
+    obis:is_identifier_of data:20230419080512666-375 .
+
+data:522 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL312" ;
+    obis:is_identifier_of data:20230419080512666-375 .
+
+data:612 a obis:PermanentIdentifier ;
+    rdf:value "20230419080346814-355" ;
+    obis:is_identifier_of data:20230419080346814-355 .
+
+data:613 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX292" ;
+    obis:is_identifier_of data:20230419080346814-355 .
+
+data:616 a obis:PermanentIdentifier ;
+    rdf:value "20230419080227626-328" ;
+    obis:is_identifier_of data:20230419080227626-328 .
+
+data:617 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING265" ;
+    obis:is_identifier_of data:20230419080227626-328 .
+
+data:620 a obis:PermanentIdentifier ;
+    rdf:value "20230419080353066-357" ;
+    obis:is_identifier_of data:20230419080353066-357 .
+
+data:621 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX294" ;
+    obis:is_identifier_of data:20230419080353066-357 .
+
+data:629 a obis:PermanentIdentifier ;
+    rdf:value "20230419080356194-358" ;
+    obis:is_identifier_of data:20230419080356194-358 .
+
+data:630 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL295" ;
+    obis:is_identifier_of data:20230419080356194-358 .
+
+data:668 a obis:PermanentIdentifier ;
+    rdf:value "20230419080445524-368" ;
+    obis:is_identifier_of data:20230419080445524-368 .
+
+data:669 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL305" ;
+    obis:is_identifier_of data:20230419080445524-368 .
+
+data:707 a obis:PermanentIdentifier ;
+    rdf:value "20230419080506758-374" ;
+    obis:is_identifier_of data:20230419080506758-374 .
+
+data:708 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL311" ;
+    obis:is_identifier_of data:20230419080506758-374 .
+
+data:847 a obis:PermanentIdentifier ;
+    rdf:value "20230419080349906-356" ;
+    obis:is_identifier_of data:20230419080349906-356 .
+
+data:848 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL293" ;
+    obis:is_identifier_of data:20230419080349906-356 .
+
+data:886 a obis:PermanentIdentifier ;
+    rdf:value "20230419080439433-367" ;
+    obis:is_identifier_of data:20230419080439433-367 .
+
+data:887 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL304" ;
+    obis:is_identifier_of data:20230419080439433-367 .
+
+data:925 a obis:PermanentIdentifier ;
+    rdf:value "20230419080458567-372" ;
+    obis:is_identifier_of data:20230419080458567-372 .
+
+data:926 a obis:Identifier ;
+    rdf:value "/EMODUL/LEBEDIGITAL/EMODUL309" ;
+    obis:is_identifier_of data:20230419080458567-372 .
+
+data:admin a obis:User ;
+    dcterms:created "2023-02-27T09:59:08.718000"^^xsd:dateTimeStamp ;
+    foaf:family_name "Tester" ;
+    foaf:givenname "Test" ;
+    foaf:mbox <mailto:test.tester@example.com> ;
+    obis:has_identifier data:395 .
+
+data:20230419080225345-324 a obis:Object ;
+    dcterms:created "2023-04-19T10:02:25.345000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:05:04.423000"^^xsd:dateTimeStamp ;
+    ns1:NAME "cement" ;
+    data:EMODUL_INGREDIENT.ANNOTATION "CEM I 42.5 R" ;
+    data:EMODUL_INGREDIENT.BULKDENSITY "3.123" ;
+    obis:code "EMODUL_ING261" ;
+    obis:has_identifier data:321,
+        data:322 ;
+    obis:relates_to data:20230227085915753-23,
+        data:EMODUL .
+
+data:20230419080226108-325 a obis:Object ;
+    dcterms:created "2023-04-19T10:02:26.108000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:05:10.713000"^^xsd:dateTimeStamp ;
+    ns1:NAME "water_total" ;
+    data:EMODUL_INGREDIENT.ANNOTATION "no annotation" ;
+    data:EMODUL_INGREDIENT.BULKDENSITY "1.0" ;
+    obis:code "EMODUL_ING262" ;
+    obis:has_identifier data:351,
+        data:352 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224904-323,
+        data:EMODUL .
+
+data:20230419080226649-326 a obis:Object ;
+    dcterms:created "2023-04-19T10:02:26.649000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:05:05.184000"^^xsd:dateTimeStamp ;
+    ns1:NAME "admixture" ;
+    data:EMODUL_INGREDIENT.ANNOTATION "FM 595 BASF" ;
+    data:EMODUL_INGREDIENT.BULKDENSITY "1.05" ;
+    obis:code "EMODUL_ING263" ;
+    obis:has_identifier data:359,
+        data:360 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224904-323,
+        data:EMODUL .
+
+data:20230419080227207-327 a obis:Object ;
+    dcterms:created "2023-04-19T10:02:27.207000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:05:11.477000"^^xsd:dateTimeStamp ;
+    ns1:NAME "aggregate" ;
+    data:EMODUL_INGREDIENT.ANNOTATION "no annotation" ;
+    data:EMODUL_INGREDIENT.BULKDENSITY "0.0" ;
+    obis:code "EMODUL_ING264" ;
+    obis:has_identifier data:367,
+        data:368 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224904-323,
+        data:EMODUL .
+
+data:20230419080227626-328 a obis:Object ;
+    dcterms:created "2023-04-19T10:02:27.626000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:05:05.966000"^^xsd:dateTimeStamp ;
+    ns1:NAME "addition1" ;
+    data:EMODUL_INGREDIENT.ANNOTATION "Medenbach - Kalksteinmehl" ;
+    data:EMODUL_INGREDIENT.BULKDENSITY "2.74" ;
+    obis:code "EMODUL_ING265" ;
+    obis:has_identifier data:616,
+        data:617 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224904-323,
+        data:EMODUL .
+
+data:20230419080228501-329 a obis:Object ;
+    dcterms:created "2023-04-19T10:02:28.501000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:04:26.710000"^^xsd:dateTimeStamp ;
+    ns1:NAME "2014_08_05 Rezeptur_MI" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--BULKDENSITY "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--QUANTITYINMIX "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--VOLUME "20.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.SPECIMEN_NAME "BA-Losert MI" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_CEMENT_RATIO "0.5303030303030303" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--BULKDENSITY "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--QUANTITYINMIX "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--VOLUME "0.0" ;
+    data:OPERATOR_DATE "2014-06-30 00:00:00 +0000" ;
+    data:TESTER_NAME "Werner" ;
+    obis:code "EMODUL_MIX266" ;
+    obis:has_identifier data:347,
+        data:348 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224359-321,
+        data:EMODUL .
+
+data:20230419080233850-330 a obis:Object ;
+    dcterms:created "2023-04-19T10:02:33.850000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:02:33.850000"^^xsd:dateTimeStamp ;
+    ns1:NAME "BA-Losert MI E-Modul 28d v. 04.08.14 Probe 6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA-Losert MI E-Modul 28d v. 04.08.14 Probe 6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MI.xlsx" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "13:42:28" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA-Losert E-Modul 28d v. 04.08.14 Probe 6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5314.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2014-01-09 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL267" ;
+    obis:has_identifier data:1536,
+        data:1537 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080239537-332 a obis:Object ;
+    dcterms:created "2023-04-19T10:02:39.537000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:04:14.859000"^^xsd:dateTimeStamp ;
+    ns1:NAME "2014_08_05 Rezeptur_MV" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--BULKDENSITY "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--QUANTITYINMIX "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--VOLUME "20.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.SPECIMEN_NAME "BA-Losert MV" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_CEMENT_RATIO "0.5303030303030303" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--BULKDENSITY "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--QUANTITYINMIX "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--VOLUME "0.0" ;
+    data:OPERATOR_DATE "2014-06-30 00:00:00 +0000" ;
+    data:TESTER_NAME "Werner" ;
+    obis:code "EMODUL_MIX269" ;
+    obis:has_identifier data:355,
+        data:356 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224359-321,
+        data:EMODUL .
+
+data:20230419080243477-333 a obis:Object ;
+    dcterms:created "2023-04-19T10:02:43.477000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:02:43.477000"^^xsd:dateTimeStamp ;
+    ns1:NAME "BA Los M V-4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA Los M V-4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MV.xlsx" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "13:31:54" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA Los M V-4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5428.5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2014-11-09 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL270" ;
+    obis:has_identifier data:1304,
+        data:1305 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080251564-336 a obis:Object ;
+    dcterms:created "2023-04-19T10:02:51.564000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:03:41.100000"^^xsd:dateTimeStamp ;
+    ns1:NAME "2014_08_05 Rezeptur_MIV" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--BULKDENSITY "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--QUANTITYINMIX "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--VOLUME "20.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.SPECIMEN_NAME "BA-Losert MIV" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_CEMENT_RATIO "0.5303030303030303" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--BULKDENSITY "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--QUANTITYINMIX "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--VOLUME "0.0" ;
+    data:OPERATOR_DATE "2014-06-30 00:00:00 +0000" ;
+    data:TESTER_NAME "Werner" ;
+    obis:code "EMODUL_MIX273" ;
+    obis:has_identifier data:363,
+        data:364 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224359-321,
+        data:EMODUL .
+
+data:20230419080254692-337 a obis:Object ;
+    dcterms:created "2023-04-19T10:02:54.692000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:02:54.692000"^^xsd:dateTimeStamp ;
+    ns1:NAME "Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.7" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MIV.xlsx" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "09:21:10" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5351.9" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2014-03-09 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL274" ;
+    obis:has_identifier data:1079,
+        data:1080 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080302831-339 a obis:Object ;
+    dcterms:created "2023-04-19T10:03:02.831000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:03:02.831000"^^xsd:dateTimeStamp ;
+    ns1:NAME "BA-Losert MI E-Modul 28d v. 04.08.14 Probe 4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA-Losert MI E-Modul 28d v. 04.08.14 Probe 4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.3" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MI.xlsx" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "13:25:39" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA-Losert E-Modul 28d v. 04.08.14 Probe 4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5342.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2014-01-09 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL276" ;
+    obis:has_identifier data:1575,
+        data:1576 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080309923-342 a obis:Object ;
+    dcterms:created "2023-04-19T10:03:09.923000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:04:31.792000"^^xsd:dateTimeStamp ;
+    ns1:NAME "addition1" ;
+    data:EMODUL_INGREDIENT.ANNOTATION "Mikrosilika" ;
+    data:EMODUL_INGREDIENT.BULKDENSITY "2.39" ;
+    obis:code "EMODUL_ING279" ;
+    obis:has_identifier data:1756,
+        data:1757 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224904-323,
+        data:EMODUL .
+
+data:20230419080310642-343 a obis:Object ;
+    dcterms:created "2023-04-19T10:03:10.642000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:04:32.571000"^^xsd:dateTimeStamp ;
+    ns1:NAME "2014_08_05 Rezeptur_MVI" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--BULKDENSITY "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--QUANTITYINMIX "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--VOLUME "20.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.SPECIMEN_NAME "BA-Losert MVI" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_CEMENT_RATIO "0.2982758620689655" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--BULKDENSITY "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--QUANTITYINMIX "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--VOLUME "0.0" ;
+    data:OPERATOR_DATE "2014-06-30 00:00:00 +0000" ;
+    data:TESTER_NAME "Werner" ;
+    obis:code "EMODUL_MIX280" ;
+    obis:has_identifier data:119,
+        data:120 ;
+    obis:relates_to data:20230227085915753-23,
+        data:EMODUL .
+
+data:20230419080313774-344 a obis:Object ;
+    dcterms:created "2023-04-19T10:03:13.774000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:03:13.774000"^^xsd:dateTimeStamp ;
+    ns1:NAME "BA Los M VI-4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA Los M VI-4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MVI.xlsx" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "13:04:45" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA Los M VI-4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5354.5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2014-11-09 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL281" ;
+    obis:has_identifier data:17,
+        data:18 .
+
+data:20230419080319673-345 a obis:Object ;
+    dcterms:created "2023-04-19T10:03:19.673000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:03:19.673000"^^xsd:dateTimeStamp ;
+    ns1:NAME "BA Los M V-5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.7" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA Los M V-5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MV.xlsx" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "13:37:55" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA Los M V-5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5454.6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2014-11-09 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL282" ;
+    obis:has_identifier data:1343,
+        data:1344 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080323816-347 a obis:Object ;
+    dcterms:created "2023-04-19T10:03:23.816000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:05:10.330000"^^xsd:dateTimeStamp ;
+    ns1:NAME "cement" ;
+    data:EMODUL_INGREDIENT.ANNOTATION "CEM I 32.5 R Zementwerk Berlin" ;
+    data:EMODUL_INGREDIENT.BULKDENSITY "3.1" ;
+    obis:code "EMODUL_ING284" ;
+    obis:has_identifier data:375,
+        data:376 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224904-323,
+        data:EMODUL .
+
+data:20230419080324276-348 a obis:Object ;
+    dcterms:created "2023-04-19T10:03:24.276000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:05:11.091000"^^xsd:dateTimeStamp ;
+    ns1:NAME "admixture" ;
+    data:EMODUL_INGREDIENT.ANNOTATION "FM 21/BV 21" ;
+    data:EMODUL_INGREDIENT.BULKDENSITY "1.14" ;
+    obis:code "EMODUL_ING285" ;
+    obis:has_identifier data:398,
+        data:399 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224904-323,
+        data:EMODUL .
+
+data:20230419080324730-349 a obis:Object ;
+    dcterms:created "2023-04-19T10:03:24.730000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:05:11.861000"^^xsd:dateTimeStamp ;
+    ns1:NAME "addition1" ;
+    data:EMODUL_INGREDIENT.ANNOTATION "Bad KÃ¶sen - nan" ;
+    data:EMODUL_INGREDIENT.BULKDENSITY "2.73" ;
+    obis:code "EMODUL_ING286" ;
+    obis:has_identifier data:418,
+        data:419 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224904-323,
+        data:EMODUL .
+
+data:20230419080325446-350 a obis:Object ;
+    dcterms:created "2023-04-19T10:03:25.446000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:05:12.666000"^^xsd:dateTimeStamp ;
+    ns1:NAME "2014_12_10 Wolf" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--BULKDENSITY "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--QUANTITYINMIX "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--VOLUME "20.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.SPECIMEN_NAME "8.2 (Wolf)" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_CEMENT_RATIO "0.5454545454545454" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--BULKDENSITY "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--QUANTITYINMIX "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--VOLUME "0.0" ;
+    data:OPERATOR_DATE "2014-12-10 00:00:00 +0000" ;
+    data:TESTER_NAME "Haamkens" ;
+    obis:code "EMODUL_MIX287" ;
+    obis:has_identifier data:371,
+        data:372 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224359-321,
+        data:EMODUL .
+
+data:20230419080328563-351 a obis:Object ;
+    dcterms:created "2023-04-19T10:03:28.563000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:03:28.563000"^^xsd:dateTimeStamp ;
+    ns1:NAME "Wolf 8.2 Probe 1" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "Wolf 8.2 Probe 1" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_12_10 Wolf.xls" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "10:56:24" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "Wolf 8.2 Probe 1" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5328.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2015-01-28 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL288" ;
+    obis:has_identifier data:443,
+        data:444 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080334396-352 a obis:Object ;
+    dcterms:created "2023-04-19T10:03:34.396000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:03:34.396000"^^xsd:dateTimeStamp ;
+    ns1:NAME "Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.3" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MIV.xlsx" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "09:13:28" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5392.1" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2014-03-09 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL289" ;
+    obis:has_identifier data:1118,
+        data:1119 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080341100-353 a obis:Object ;
+    dcterms:created "2023-04-19T10:03:41.100000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:03:41.100000"^^xsd:dateTimeStamp ;
+    ns1:NAME "Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MIV.xlsx" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "09:30:43" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5335.7" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2014-03-09 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL290" ;
+    obis:has_identifier data:1157,
+        data:1158 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080346814-355 a obis:Object ;
+    dcterms:created "2023-04-19T10:03:46.814000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:04:58.567000"^^xsd:dateTimeStamp ;
+    ns1:NAME "2014_08_05 Rezeptur_MIII" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--BULKDENSITY "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--QUANTITYINMIX "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--VOLUME "20.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.SPECIMEN_NAME "BA-Losert MIII" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_CEMENT_RATIO "0.5303030303030303" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--BULKDENSITY "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--QUANTITYINMIX "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--VOLUME "0.0" ;
+    data:OPERATOR_DATE "2014-06-30 00:00:00 +0000" ;
+    data:TESTER_NAME "Werner" ;
+    obis:code "EMODUL_MIX292" ;
+    obis:has_identifier data:612,
+        data:613 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224359-321,
+        data:EMODUL .
+
+data:20230419080349906-356 a obis:Object ;
+    dcterms:created "2023-04-19T10:03:49.906000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:03:49.906000"^^xsd:dateTimeStamp ;
+    ns1:NAME "Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MIII.xlsx" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "08:36:04" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5350.5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2014-03-09 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL293" ;
+    obis:has_identifier data:847,
+        data:848 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080353066-357 a obis:Object ;
+    dcterms:created "2023-04-19T10:03:53.066000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:05:06.758000"^^xsd:dateTimeStamp ;
+    ns1:NAME "2014_08_05 Rezeptur_MII" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--BULKDENSITY "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--QUANTITYINMIX "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.AIR_CONTENT--VOLUME "20.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.SPECIMEN_NAME "BA-Losert MII" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_CEMENT_RATIO "0.5303030303030303" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--BULKDENSITY "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--QUANTITYINMIX "0.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL_MIX.WATER_EFFECTIVE--VOLUME "0.0" ;
+    data:OPERATOR_DATE "2014-06-30 00:00:00 +0000" ;
+    data:TESTER_NAME "Werner" ;
+    obis:code "EMODUL_MIX294" ;
+    obis:has_identifier data:620,
+        data:621 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224359-321,
+        data:EMODUL .
+
+data:20230419080356194-358 a obis:Object ;
+    dcterms:created "2023-04-19T10:03:56.194000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:03:56.194000"^^xsd:dateTimeStamp ;
+    ns1:NAME "BA-Losert MII E-Modul 28d v. 04.08.14 Probe 6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA-Losert MII E-Modul 28d v. 04.08.14 Probe 6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "299.8" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MII.xlsx" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "14:48:39" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA-Losert MII E-Modul 28d v. 04.08.14 Probe 6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5359.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2014-01-09 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL295" ;
+    obis:has_identifier data:629,
+        data:630 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080402128-359 a obis:Object ;
+    dcterms:created "2023-04-19T10:04:02.128000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:04:02.128000"^^xsd:dateTimeStamp ;
+    ns1:NAME "BA Los M VI-5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA Los M VI-5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MVI.xlsx" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "13:14:09" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA Los M VI-5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5340.6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2014-11-09 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL296" ;
+    obis:has_identifier data:1781,
+        data:1782 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080414859-363 a obis:Object ;
+    dcterms:created "2023-04-19T10:04:14.859000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:04:14.859000"^^xsd:dateTimeStamp ;
+    ns1:NAME "BA Los M V-6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA Los M V-6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.1" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MV.xlsx" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "13:43:57" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA Los M V-6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5439.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2014-11-09 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL300" ;
+    obis:has_identifier data:1382,
+        data:1383 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080420767-364 a obis:Object ;
+    dcterms:created "2023-04-19T10:04:20.767000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:04:20.767000"^^xsd:dateTimeStamp ;
+    ns1:NAME "Wolf 8.2 Probe 5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.7" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "Wolf 8.2 Probe 5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "299.8" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_12_10 Wolf.xls" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "11:17:28" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "Wolf 8.2 Probe 5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5349.4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2015-01-28 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL301" ;
+    obis:has_identifier data:482,
+        data:483 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080426710-365 a obis:Object ;
+    dcterms:created "2023-04-19T10:04:26.710000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:04:26.710000"^^xsd:dateTimeStamp ;
+    ns1:NAME "BA-Losert MI E-Modul 28d v. 04.08.14 Probe 5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.7" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA-Losert MI E-Modul 28d v. 04.08.14 Probe 5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MI.xlsx" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "13:33:10" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA-Losert E-Modul 28d v. 04.08.14 Probe 5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5404.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2014-01-09 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL302" ;
+    obis:has_identifier data:1614,
+        data:1615 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080432571-366 a obis:Object ;
+    dcterms:created "2023-04-19T10:04:32.571000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:04:32.571000"^^xsd:dateTimeStamp ;
+    ns1:NAME "BA Los M VI-6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.7" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA Los M VI-6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.3" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MVI.xlsx" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "13:22:36" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA Los M VI-6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5367.6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2014-11-09 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL303" ;
+    obis:has_identifier data:1820,
+        data:1821 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080439433-367 a obis:Object ;
+    dcterms:created "2023-04-19T10:04:39.433000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:04:39.433000"^^xsd:dateTimeStamp ;
+    ns1:NAME "Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MIII.xlsx" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "08:44:24" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5369.5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2014-03-09 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL304" ;
+    obis:has_identifier data:886,
+        data:887 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080445524-368 a obis:Object ;
+    dcterms:created "2023-04-19T10:04:45.524000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:04:45.524000"^^xsd:dateTimeStamp ;
+    ns1:NAME "BA-Losert MII E-Modul 28d v. 04.08.14 Probe 4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA-Losert MII E-Modul 28d v. 04.08.14 Probe 4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MII.xlsx" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "14:30:07" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA-Losert MII E-Modul 28d v. 04.08.14 Probe 4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5374.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2014-01-09 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL305" ;
+    obis:has_identifier data:668,
+        data:669 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080458567-372 a obis:Object ;
+    dcterms:created "2023-04-19T10:04:58.567000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:04:58.567000"^^xsd:dateTimeStamp ;
+    ns1:NAME "Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MIII.xlsx" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "08:55:26" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5361.6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2014-03-09 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL309" ;
+    obis:has_identifier data:925,
+        data:926 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080506758-374 a obis:Object ;
+    dcterms:created "2023-04-19T10:05:06.758000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:05:06.758000"^^xsd:dateTimeStamp ;
+    ns1:NAME "BA-Losert MII E-Modul 28d v. 04.08.14 Probe 5-" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.7" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "BA-Losert MII E-Modul 28d v. 04.08.14 Probe 5-" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.2" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_08_05 Rezeptur_MII.xlsx" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "14:41:00" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "BA-Losert MII E-Modul 28d v. 04.08.14 Probe 5" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5365.0" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2014-01-09 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL311" ;
+    obis:has_identifier data:707,
+        data:708 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080512666-375 a obis:Object ;
+    dcterms:created "2023-04-19T10:05:12.666000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:05:12.666000"^^xsd:dateTimeStamp ;
+    ns1:NAME "Wolf 8.2 Probe 4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.DIAMETER "98.6" ;
+    data:EXPERIMENTAL_STEP_EMODUL.EXPERIMENTNAME "Wolf 8.2 Probe 4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH "300.3" ;
+    data:EXPERIMENTAL_STEP_EMODUL.LENGTH_UNIT "MM" ;
+    data:EXPERIMENTAL_STEP_EMODUL.MIX_FILE "2014_12_10 Wolf.xls" ;
+    data:EXPERIMENTAL_STEP_EMODUL.OPERATOR_TIMESTAMP "11:08:33" ;
+    data:EXPERIMENTAL_STEP_EMODUL.REMARK "Kraftgeregelt 3,9 kN/s" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SOFTWARE_SPECIFICATION "MTS793|MPT|DEU|1|2|,|.|:|49|1|1|A" ;
+    data:EXPERIMENTAL_STEP_EMODUL.SPECIMEN_NAME "Wolf 8.2 Probe 4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT "5352.4" ;
+    data:EXPERIMENTAL_STEP_EMODUL.WEIGHT_UNIT "G" ;
+    data:OPERATOR_DATE "2015-01-28 00:00:00 +0000" ;
+    data:TESTER_NAME "Kh" ;
+    obis:code "EMODUL312" ;
+    obis:has_identifier data:521,
+        data:522 ;
+    obis:relates_to data:20230227085915753-23,
+        data:20230419080224639-322,
+        data:EMODUL .
+
+data:20230419080224359-321 a obis:Collection ;
+    dcterms:created "2023-04-19T10:02:24.359000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:03:53.066000"^^xsd:dateTimeStamp ;
+    obis:code "LEBEDIGITAL_MIXTURE_COLLECTION" ;
+    obis:has_identifier data:317,
+        data:318 .
+
+data:20230419080224904-323 a obis:Collection ;
+    dcterms:created "2023-04-19T10:02:24.904000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:03:24.730000"^^xsd:dateTimeStamp ;
+    obis:code "LEBEDIGITAL_INGREDIENT_COLLECTION" ;
+    obis:has_identifier data:343,
+        data:344 .
+
+data:20230419080224639-322 a obis:Collection ;
+    dcterms:created "2023-04-19T10:02:24.639000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:05:20.640000"^^xsd:dateTimeStamp ;
+    obis:code "LEBEDIGITAL_EMODUL_COLLECTION" ;
+    obis:has_identifier data:115,
+        data:116 .
+
+data:EMODUL a obis:Space ;
+    dcterms:created "2023-02-27T09:59:15.707000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-02-27T09:59:15.707000"^^xsd:dateTimeStamp ;
     rdfs:comment "Space for Emodul samples" ;
-    ns3:code "EMODUL" .
+    obis:code "EMODUL" ;
+    obis:has_identifier data:112 .
 
-ns1:LEBEDIGITAL a ns3:Project ;
-    dcterms:created "2023-02-27T09:59:15.753000" ;
-    dcterms:modified "2023-04-19T10:05:20.640000" ;
+data:20230227085915753-23 a obis:Project ;
+    dcterms:created "2023-02-27T09:59:15.753000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-04-19T10:05:20.640000"^^xsd:dateTimeStamp ;
     rdfs:comment "Project for Emodul samples" ;
-    ns3:code "LEBEDIGITAL" .
+    obis:code "LEBEDIGITAL" ;
+    obis:has_identifier data:107,
+        data:108 .
 

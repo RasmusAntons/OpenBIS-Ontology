@@ -19,51 +19,51 @@
 #    Classes
 #################################################################
 
-:Space a rdfs:Class ;
+:Space a owl:Class ;
     rdfs:label "Space" ;
     :openbis_json_key "as.dto.space.Space";
     skos:definition "A folder with Code and Description.".
 
-:Project a rdfs:Class ;
+:Project a owl:Class ;
     rdfs:subClassOf :Space ;
     rdfs:label "Project" ;
     :openbis_json_key "as.dto.project.Project";
     skos:definition "A folder with Code and Description.".
 
-:Collection a rdfs:Class ;
+:Collection a owl:Class ;
     rdfs:subClassOf :Project ;
     rdfs:label "Collection" ;
     skos:definition "A folder with user-defined properties.";
     :openbis_json_key "as.dto.experiment.Experiment";
     skos:altLabel "Experiment" .
 
-:Object a rdfs:Class ;
+:Object a owl:Class ;
     rdfs:subClassOf :Collection ;
     rdfs:label "Object" ;
     skos:definition "An entity with user-defined properties.";
     :openbis_json_key "as.dto.sample.Sample";
     skos:altLabel "Sample" .
 
-:DataSet a rdfs:Class ;
+:DataSet a owl:Class ;
     rdfs:subClassOf :Collection ;
     rdfs:label "Data Set" ;
     :openbis_json_key "as.dto.dataset.Dataset";
     skos:definition "An folder where data files are stored. A data set has user-defined properties.".
 
-:Identifier a rdfs:Class ;
+:Identifier a owl:Class ;
     rdfs:label "Identifier" ;
     :openbis_json_key "as.dto.sample.id.SampleIdentifier",
         "as.dto.experiment.id.ExperimentIdentifier",
         "as.dto.project.id.ProjectIdentifier";
     skos:definition "A String as additional Identifier.".
 
-:User a rdfs:Class ;
+:User a owl:Class ;
     owl:equivalentClass foaf:Person, prov:Agent;
     rdfs:label "User" ;
     :openbis_json_key "as.dto.person.Person";
     skos:definition "An named openBIS user.".
 
-:PermanentIdentifier a rdfs:Class ;
+:PermanentIdentifier a owl:Class ;
     rdfs:subClassOf :Identifier ;
     rdfs:label "Permanent Identifier" ;
     :openbis_json_key "as.dto.entitytype.id.EntityTypePermId",

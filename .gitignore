@@ -3,3 +3,5 @@
 /build
 /openbis_json_parser.egg-info
 /catalog-v*.xml
+
+*__pycache__*

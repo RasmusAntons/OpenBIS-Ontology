@@ -13,7 +13,6 @@ authors = [
     { name = "Rasmus Antons", email = "rasmus.antons@iwm.fraunhofer.de" }
 ]
 dependencies = [
-    "Owlready2~=0.41",
     "rdflib~=6.3.2",
 ]
 

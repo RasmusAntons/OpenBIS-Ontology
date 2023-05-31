@@ -1,5 +1,5 @@
-import json
 import argparse
+import json
 import sys
 import urllib.request
 
@@ -12,7 +12,8 @@ def main():
     )
     parser.add_argument('json_file', metavar='json-file')
     parser.add_argument('-o', '--output-file', help='Resulting ntriples')
-    parser.add_argument('-f', '--format', choices=['ntriples', 'nquads', 'rdfxml', 'turtle', 'ttl', 'json-ld'], default='ntriples')
+    parser.add_argument('-f', '--format', choices=['ntriples', 'nquads', 'rdfxml', 'turtle', 'ttl', 'json-ld'],
+                        default='ntriples')
     args = parser.parse_args()
     if args.json_file.startswith('http://') or args.json_file.startswith('https://'):
         with urllib.request.urlopen(args.json_file) as resp:

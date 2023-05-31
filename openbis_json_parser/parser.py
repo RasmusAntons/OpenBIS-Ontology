@@ -7,7 +7,7 @@ from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF, RDFS, XSD, OWL, FOAF
 
 #plugin api entpoint for permId s schould be here
-ns=Namespace('https://openbis.matolab.org/openbis/webapp/openbismantic/')
+ns=Namespace('https://openbis.matolab.org/openbismantic/')
 def load_ontology():
     with tempfile.TemporaryDirectory() as tmpdir:
         g = Graph()
@@ -32,14 +32,11 @@ def get_custom_props(string: str, graph):
         return None
 
 def write_ontology(onto, target_file, target_format):
-    if target_format in ('ntriples', 'nquads', 'rdfxml'):
-        onto.save(target_file, format=target_format)
-    elif target_format in ('turtle', 'ttl', 'json-ld'):
-        if isinstance(target_file, str):
-            with open(target_file, 'wb') as f:
-                f.write(onto.serialize(format=target_format).encode('utf-8'))
-        else:
-            target_file.write(onto.serialize(format=target_format).encode('utf-8'))
+    if isinstance(target_file, str):
+        with open(target_file, 'wb') as f:
+            f.write(onto.serialize(format=target_format).encode('utf-8'))
+    else:
+        target_file.write(onto.serialize(format=target_format).encode('utf-8'))
 
 
 def parse_dict(data):
@@ -144,7 +141,8 @@ def fix_iris(graph):
     for permid in graph[: RDF.type: OBIS.PermanentIdentifier]:
         permid_value=graph.value(permid, RDF.value)
         identifies=graph.value(permid, OBIS.is_identifier_of)
-        new=ns[permid_value]        
+        identifies_type = graph.value(identifies, RDF.type).split('/')[-1].lower()
+        new = ns[f'{identifies_type}/{permid_value}']
         replace_iris(identifies,new,graph)
 
     #replace iri of created object properties with value of code if possible

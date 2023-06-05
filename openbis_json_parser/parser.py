@@ -110,6 +110,9 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
             elif isinstance(value, (dict, list)):
                 # recursively inter over all jason objects
                 iterate_json(value, graph, entity, base_url=base_url)
+                annotation = get_obis_entity(key)
+                if entity and annotation and key in ['project', 'space', 'experiment']:
+                    graph.add((entity, annotation, _get_ns(base_url)[str(value['@id'])]))
             else:
                 # if its no dict or list test if its kind of object/data/annotation property and set it
                 annotation = get_obis_entity(key)

@@ -4,6 +4,7 @@ import pathlib
 import tempfile
 import urllib.parse
 
+import rdflib
 from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF, XSD, OWL
 
@@ -166,4 +167,10 @@ def fix_iris(graph, base_url=None):
         if code_value:
             new = _get_ns(base_url)[code_value]
             replace_iris(property, new, graph)
+
+    for identifier in graph[: RDF.type: OBIS.Identifier]:
+        replace_iris(identifier, rdflib.BNode(), graph)
+
+    for identifier in graph[: RDF.type: OBIS.PermanentIdentifier]:
+        replace_iris(identifier, rdflib.BNode(), graph)
     return graph

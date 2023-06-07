@@ -6,7 +6,7 @@ import urllib.parse
 
 import rdflib
 from rdflib import Graph, Namespace, URIRef, Literal
-from rdflib.namespace import RDF, XSD, OWL
+from rdflib.namespace import RDF, XSD, OWL, RDFS
 
 # plugin api endpoint for permIds should be here
 default_ns = Namespace('https://openbis.matolab.org/openbismantic/')
@@ -20,6 +20,8 @@ def load_ontology():
 
 OBIS = Namespace('https://purl.matolab.org/openbis/')
 obis = load_ontology()
+
+TEMP = Namespace('https://example.com/')
 
 
 def _get_ns(base_url=None):
@@ -55,7 +57,7 @@ def write_ontology(onto, target_file, target_format):
 def parse_dict(data, base_url=None):
     result = Graph()
     result.bind('obis', OBIS)
-    result.bind('data', _get_ns(base_url))
+    #result.bind('data', _get_ns(base_url))
     iterate_json(data, result, base_url=base_url)
     result = fix_iris(result, base_url=base_url)
     return result
@@ -68,21 +70,25 @@ def parse_json(file_path, base_url=None):
 
 
 def create_instance_triple(data: dict, base_url=None):
+    entity=None
+    o_class=None
+    parent=None
     if all(prop in data.keys() for prop in ['@id', '@type']):
         instance_id = str(data['@id'])
         o_class = get_obis_entity(data['@type'])
         if o_class:
-            return _get_ns(base_url)[instance_id], o_class
-        else:
-            return None, None
-    else:
-        return None, None
+            entity=URIRef(instance_id, TEMP)
+        if data['@type']=='as.dto.sample.SampleType':
+            parent=OBIS.Object
+        elif data['@type']=='as.dto.experiment.ExperimentType':
+            parent=OBIS.Collection
+    return entity, o_class, parent
 
 
 def iterate_json(data, graph, last_entity=None, base_url=None):
     if isinstance(data, dict):
         # lookup if the id and type in dict result in a ontology entity
-        entity, e_class = create_instance_triple(data, base_url=base_url)
+        entity, e_class, parent = create_instance_triple(data, base_url=base_url)
         if entity and e_class:
             # if the entity is a Identifier, only create it if it relates to entity previously created
             if e_class in [OBIS.PermanentIdentifier, OBIS.Identifier]:
@@ -97,6 +103,10 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
             else:
                 # add the triple defining the entity
                 graph.add((entity, RDF.type, e_class))
+            if parent:
+                print(entity, e_class,parent)
+                graph.add((entity, RDFS.subClassOf, parent))
+                    
 
         for key, value in data.items():
             # if the key is properties all json keys in that dict are relations to openbis properties followed by there values
@@ -107,12 +117,22 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                     if obj_prop:
                         # print(prop_key,obj_prop,prop_value)
                         graph.add((entity, obj_prop, Literal(str(prop_value))))
-            elif isinstance(value, (dict, list)):
-                # recursively inter over all jason objects
+            elif isinstance(value, dict):
+                # recursively inter over all json objects
                 iterate_json(value, graph, entity, base_url=base_url)
                 annotation = get_obis_entity(key)
                 if entity and annotation and key in ['project', 'space', 'experiment']:
-                    graph.add((entity, annotation, _get_ns(base_url)[str(value['@id'])]))
+                    graph.add((entity, annotation, URIRef(str(value['@id']), TEMP)))
+                elif entity and key == 'type':
+                    print('type', entity, URIRef(str(value['@id']), TEMP))
+                    graph.add((entity, RDF.type, URIRef(str(value['@id']), TEMP)))
+            elif isinstance(value, list):
+                # recursively inter over all json objects
+                iterate_json(value, graph, entity, base_url=base_url)
+                annotation = get_obis_entity(key)
+                if entity and annotation and key in ['samples', 'dataSets']:
+                    for item in value:
+                        graph.add((entity, annotation, URIRef(str(item['@id']), TEMP)))
             else:
                 # if its no dict or list test if its kind of object/data/annotation property and set it
                 annotation = get_obis_entity(key)
@@ -130,7 +150,8 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                     graph.add((entity, annotation, URIRef("mailto:{}".format(value))))
                 elif entity and annotation and key in ['project', 'space', 'experiment']:
                     # these json keyword point to integers which relates to other entities
-                    graph.add((entity, annotation, _get_ns(base_url)[str(value)]))
+                    # graph.add((entity, annotation, _get_ns(base_url)[str(value)]))
+                    graph.add((entity, annotation, URIRef(str(value), TEMP)))
                 elif entity and annotation and isinstance(value, str):
                     graph.add((entity, annotation, Literal(value)))
 
@@ -156,13 +177,25 @@ def replace_iris(old: URIRef, new: URIRef, graph: Graph):
 
 
 def fix_iris(graph, base_url=None):
-    # replace int iris with permids if possible
+    #replace int iris with permids if possible
     for permid in graph[: RDF.type: OBIS.PermanentIdentifier]:
         permid_value = graph.value(permid, RDF.value)
         identifies = graph.value(permid, OBIS.is_identifier_of)
-        identifies_type = graph.value(identifies, RDF.type).split('/')[-1].lower()
-        new = _get_ns(base_url)[f'{identifies_type}/{permid_value}']
+        identifies_type = graph.value(identifies, RDF.type)
+        type_str = identifies_type.split('/')[-1].lower()
+        #print(identifies,identifies_type)
+        if identifies_type in [OWL.Class]:
+            type_str='class'
+        elif identifies_type in [OWL.ObjectProperty]:
+            type_str='object_property'
+        graph.bind(type_str,_get_ns(base_url)[f'{type_str}/'])
+        new = URIRef(f'{type_str}/{permid_value}',_get_ns(base_url))
         replace_iris(identifies, new, graph)
+        # else:
+        #     print(identifies,identifies_type)
+        #     new = URIRef(permid_value,OBIS)
+        #     replace_iris(identifies, new, graph)
+        print(identifies,new)
 
     # replace iri of created object properties with value of code if possible
     for property in graph[: RDF.type: OWL.ObjectProperty]:

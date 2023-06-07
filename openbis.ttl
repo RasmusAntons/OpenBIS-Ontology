@@ -99,6 +99,8 @@
                     :openbis_json_key "space";
                     :openbis_json_key "project";
                     :openbis_json_key "experiment";
+                    :openbis_json_key "samples";
+                    :openbis_json_key "dataSets";
                     rdfs:label "is child of"@en .
 
 :is_child_of rdf:type owl:ObjectProperty ;
@@ -119,6 +121,9 @@
                     rdfs:label "is identifier of"@en .
 
 owl:ObjectProperty :openbis_json_key "as.dto.property.PropertyType" .
+
+owl:Class   :openbis_json_key "as.dto.sample.SampleType" ;
+            :openbis_json_key "as.dto.experiment.ExperimentType" .
 
 #################################################################
 #    Annotation Properties

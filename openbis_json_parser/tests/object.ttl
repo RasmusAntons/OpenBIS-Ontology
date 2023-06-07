@@ -1,70 +1,95 @@
+@prefix class: <https://openbis.matolab.org/openbismantic/class/> .
+@prefix collection: <https://openbis.matolab.org/openbismantic/collection/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix obis: <https://purl.matolab.org/openbis/> .
+@prefix object: <https://openbis.matolab.org/openbismantic/object/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix project: <https://openbis.matolab.org/openbismantic/project/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix space: <https://openbis.matolab.org/openbismantic/space/> .
+@prefix user: <https://openbis.matolab.org/openbismantic/user/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://openbis.matolab.org/openbismantic/user/admin> a obis:User ;
+user:admin a obis:User ;
     dcterms:created "2023-05-31T16:08:47.133000"^^xsd:dateTimeStamp ;
     obis:has_identifier [ a obis:PermanentIdentifier ;
             rdf:value "admin" ;
-            obis:is_identifier_of <https://openbis.matolab.org/openbismantic/user/admin> ] .
+            obis:is_identifier_of user:admin ] .
 
-<https://openbis.matolab.org/openbismantic/object/20230531140916169-35> a obis:Object ;
+class:COLLECTION a owl:Class ;
+    dcterms:modified "2023-05-31T16:08:20.700000"^^xsd:dateTimeStamp ;
+    rdfs:subClassOf obis:Collection ;
+    obis:code "COLLECTION" ;
+    obis:has_identifier [ a obis:PermanentIdentifier ;
+            rdf:value "COLLECTION" ;
+            obis:is_identifier_of class:COLLECTION ] .
+
+class:EMODUL_INGREDIENT a owl:Class ;
+    dcterms:modified "2023-05-31T16:08:55.842000"^^xsd:dateTimeStamp ;
+    rdfs:subClassOf obis:Object ;
+    obis:code "EMODUL_INGREDIENT" ;
+    obis:has_identifier [ a obis:PermanentIdentifier ;
+            rdf:value "EMODUL_INGREDIENT" ;
+            obis:is_identifier_of class:EMODUL_INGREDIENT ] .
+
+object:20230531140916169-35 a class:EMODUL_INGREDIENT,
+        obis:Object ;
     dcterms:created "2023-05-31T16:09:16.169000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T16:10:18.357000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_ING9" ;
     obis:has_identifier [ a obis:Identifier ;
             rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING9" ;
-            obis:is_identifier_of <https://openbis.matolab.org/openbismantic/object/20230531140916169-35> ],
+            obis:is_identifier_of object:20230531140916169-35 ],
         [ a obis:PermanentIdentifier ;
             rdf:value "20230531140916169-35" ;
-            obis:is_identifier_of <https://openbis.matolab.org/openbismantic/object/20230531140916169-35> ] ;
-    obis:relates_to <https://openbis.matolab.org/openbismantic/collection/20230531140903847-26>,
-        <https://openbis.matolab.org/openbismantic/project/20230531140903039-23>,
-        <https://openbis.matolab.org/openbismantic/space/EMODUL> .
+            obis:is_identifier_of object:20230531140916169-35 ] ;
+    obis:relates_to collection:20230531140903847-26,
+        project:20230531140903039-23,
+        space:EMODUL .
 
-<https://openbis.matolab.org/openbismantic/object/20230531140918056-37> a obis:Object ;
+object:20230531140918056-37 a obis:Object ;
     dcterms:created "2023-05-31T16:09:18.056000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T16:10:18.917000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_MIX11" ;
     obis:has_identifier [ a obis:Identifier ;
             rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX11" ;
-            obis:is_identifier_of <https://openbis.matolab.org/openbismantic/object/20230531140918056-37> ],
+            obis:is_identifier_of object:20230531140918056-37 ],
         [ a obis:PermanentIdentifier ;
             rdf:value "20230531140918056-37" ;
-            obis:is_identifier_of <https://openbis.matolab.org/openbismantic/object/20230531140918056-37> ] .
+            obis:is_identifier_of object:20230531140918056-37 ] .
 
-<https://openbis.matolab.org/openbismantic/collection/20230531140903847-26> a obis:Collection ;
+collection:20230531140903847-26 a class:COLLECTION,
+        obis:Collection ;
     dcterms:created "2023-05-31T16:09:03.847000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T16:09:36.726000"^^xsd:dateTimeStamp ;
     obis:code "LEBEDIGITAL_INGREDIENT_COLLECTION" ;
     obis:has_identifier [ a obis:PermanentIdentifier ;
             rdf:value "20230531140903847-26" ;
-            obis:is_identifier_of <https://openbis.matolab.org/openbismantic/collection/20230531140903847-26> ],
+            obis:is_identifier_of collection:20230531140903847-26 ],
         [ a obis:Identifier ;
             rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_INGREDIENT_COLLECTION" ;
-            obis:is_identifier_of <https://openbis.matolab.org/openbismantic/collection/20230531140903847-26> ] .
+            obis:is_identifier_of collection:20230531140903847-26 ] .
 
-<https://openbis.matolab.org/openbismantic/project/20230531140903039-23> a obis:Project ;
+project:20230531140903039-23 a obis:Project ;
     dcterms:created "2023-05-31T16:09:03.039000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T16:10:27.618000"^^xsd:dateTimeStamp ;
     rdfs:comment "Project for Emodul samples" ;
     obis:code "LEBEDIGITAL" ;
-    obis:has_identifier [ a obis:PermanentIdentifier ;
-            rdf:value "20230531140903039-23" ;
-            obis:is_identifier_of <https://openbis.matolab.org/openbismantic/project/20230531140903039-23> ],
-        [ a obis:Identifier ;
+    obis:has_identifier [ a obis:Identifier ;
             rdf:value "/EMODUL/LEBEDIGITAL" ;
-            obis:is_identifier_of <https://openbis.matolab.org/openbismantic/project/20230531140903039-23> ] ;
-    obis:relates_to <https://openbis.matolab.org/openbismantic/space/EMODUL> .
+            obis:is_identifier_of project:20230531140903039-23 ],
+        [ a obis:PermanentIdentifier ;
+            rdf:value "20230531140903039-23" ;
+            obis:is_identifier_of project:20230531140903039-23 ] ;
+    obis:relates_to space:EMODUL .
 
-<https://openbis.matolab.org/openbismantic/space/EMODUL> a obis:Space ;
+space:EMODUL a obis:Space ;
     dcterms:created "2023-05-31T16:09:02.948000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T16:09:02.948000"^^xsd:dateTimeStamp ;
     rdfs:comment "Space for Emodul samples" ;
     obis:code "EMODUL" ;
     obis:has_identifier [ a obis:PermanentIdentifier ;
             rdf:value "EMODUL" ;
-            obis:is_identifier_of <https://openbis.matolab.org/openbismantic/space/EMODUL> ] .
+            obis:is_identifier_of space:EMODUL ] .
 

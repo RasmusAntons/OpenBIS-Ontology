@@ -1,1 +1,190 @@
-{"@type": "as.dto.space.Space", "@id": 1, "fetchOptions": {"@type": "as.dto.space.fetchoptions.SpaceFetchOptions", "@id": 2, "count": null, "from": null, "cacheMode": "NO_CACHE", "registrator": {"@type": "as.dto.person.fetchoptions.PersonFetchOptions", "@id": 3, "count": null, "from": null, "cacheMode": "NO_CACHE", "space": null, "registrator": null, "roleAssignments": null, "webAppSettings": null, "allWebAppSettings": false, "sort": null}, "samples": null, "projects": {"@type": "as.dto.project.fetchoptions.ProjectFetchOptions", "@id": 4, "count": null, "from": null, "cacheMode": "NO_CACHE", "experiments": null, "samples": null, "history": null, "space": {"@type": "as.dto.space.fetchoptions.SpaceFetchOptions", "@id": 5, "count": null, "from": null, "cacheMode": "NO_CACHE", "registrator": null, "samples": null, "projects": null, "sort": null, "sortBy": null}, "registrator": null, "modifier": null, "leader": null, "attachments": null, "sort": null, "sortBy": null}, "sort": null, "sortBy": null}, "id": {"@type": "as.dto.space.id.SpaceTechId", "@id": 6, "techId": 10, "id": "10"}, "permId": {"@type": "as.dto.space.id.SpacePermId", "@id": 7, "permId": "EMODUL"}, "code": "EMODUL", "description": "Space for Emodul samples", "frozen": false, "frozenForProjects": false, "frozenForSamples": false, "registrationDate": 1685542142948, "modificationDate": 1685542142948, "registrator": {"@type": "as.dto.person.Person", "@id": 8, "fetchOptions": {"@type": "as.dto.person.fetchoptions.PersonFetchOptions", "@id": 9, "count": null, "from": null, "cacheMode": "NO_CACHE", "space": null, "registrator": null, "roleAssignments": null, "webAppSettings": null, "allWebAppSettings": false, "sort": null}, "permId": {"@type": "as.dto.person.id.PersonPermId", "@id": 10, "permId": "admin"}, "userId": "admin", "firstName": "", "lastName": "", "email": "", "registrationDate": 1685542127133, "active": true, "space": null, "registrator": null, "roleAssignments": null, "webAppSettings": null}, "samples": null, "projects": [{"@type": "as.dto.project.Project", "@id": 11, "fetchOptions": {"@type": "as.dto.project.fetchoptions.ProjectFetchOptions", "@id": 12, "count": null, "from": null, "cacheMode": "NO_CACHE", "experiments": null, "samples": null, "history": null, "space": 5, "registrator": null, "modifier": null, "leader": null, "attachments": null, "sort": null, "sortBy": null}, "permId": {"@type": "as.dto.project.id.ProjectPermId", "@id": 13, "permId": "20230531140903039-23"}, "identifier": {"@type": "as.dto.project.id.ProjectIdentifier", "@id": 14, "identifier": "/EMODUL/LEBEDIGITAL"}, "code": "LEBEDIGITAL", "description": "Project for Emodul samples", "frozen": false, "frozenForExperiments": false, "frozenForSamples": false, "registrationDate": 1685542143039, "modificationDate": 1685542227618, "experiments": null, "samples": null, "history": null, "space": {"@type": "as.dto.space.Space", "@id": 15, "fetchOptions": {"@type": "as.dto.space.fetchoptions.SpaceFetchOptions", "@id": 16, "count": null, "from": null, "cacheMode": "NO_CACHE", "registrator": null, "samples": null, "projects": null, "sort": null, "sortBy": null}, "id": {"@type": "as.dto.space.id.SpaceTechId", "@id": 17, "techId": 10, "id": "10"}, "permId": {"@type": "as.dto.space.id.SpacePermId", "@id": 18, "permId": "EMODUL"}, "code": "EMODUL", "description": "Space for Emodul samples", "frozen": false, "frozenForProjects": false, "frozenForSamples": false, "registrationDate": 1685542142948, "modificationDate": 1685542142948, "registrator": null, "samples": null, "projects": null}, "registrator": null, "modifier": null, "leader": null, "attachments": null}]}
+{
+    "@type": "as.dto.space.Space",
+    "@id": 1,
+    "fetchOptions": {
+        "@type": "as.dto.space.fetchoptions.SpaceFetchOptions",
+        "@id": 2,
+        "count": null,
+        "from": null,
+        "cacheMode": "NO_CACHE",
+        "registrator": {
+            "@type": "as.dto.person.fetchoptions.PersonFetchOptions",
+            "@id": 3,
+            "count": null,
+            "from": null,
+            "cacheMode": "NO_CACHE",
+            "space": null,
+            "registrator": null,
+            "roleAssignments": null,
+            "webAppSettings": null,
+            "allWebAppSettings": false,
+            "sort": null
+        },
+        "samples": null,
+        "projects": {
+            "@type": "as.dto.project.fetchoptions.ProjectFetchOptions",
+            "@id": 4,
+            "count": null,
+            "from": null,
+            "cacheMode": "NO_CACHE",
+            "experiments": null,
+            "samples": null,
+            "history": null,
+            "space": {
+                "@type": "as.dto.space.fetchoptions.SpaceFetchOptions",
+                "@id": 5,
+                "count": null,
+                "from": null,
+                "cacheMode": "NO_CACHE",
+                "registrator": null,
+                "samples": null,
+                "projects": null,
+                "sort": null,
+                "sortBy": null
+            },
+            "registrator": null,
+            "modifier": null,
+            "leader": null,
+            "attachments": null,
+            "sort": null,
+            "sortBy": null
+        },
+        "sort": null,
+        "sortBy": null
+    },
+    "id": {
+        "@type": "as.dto.space.id.SpaceTechId",
+        "@id": 6,
+        "techId": 10,
+        "id": "10"
+    },
+    "permId": {
+        "@type": "as.dto.space.id.SpacePermId",
+        "@id": 7,
+        "permId": "EMODUL"
+    },
+    "code": "EMODUL",
+    "description": "Space for Emodul samples",
+    "frozen": false,
+    "frozenForProjects": false,
+    "frozenForSamples": false,
+    "registrationDate": 1685542142948,
+    "modificationDate": 1685542142948,
+    "registrator": {
+        "@type": "as.dto.person.Person",
+        "@id": 8,
+        "fetchOptions": {
+            "@type": "as.dto.person.fetchoptions.PersonFetchOptions",
+            "@id": 9,
+            "count": null,
+            "from": null,
+            "cacheMode": "NO_CACHE",
+            "space": null,
+            "registrator": null,
+            "roleAssignments": null,
+            "webAppSettings": null,
+            "allWebAppSettings": false,
+            "sort": null
+        },
+        "permId": {
+            "@type": "as.dto.person.id.PersonPermId",
+            "@id": 10,
+            "permId": "admin"
+        },
+        "userId": "admin",
+        "firstName": "",
+        "lastName": "",
+        "email": "",
+        "registrationDate": 1685542127133,
+        "active": true,
+        "space": null,
+        "registrator": null,
+        "roleAssignments": null,
+        "webAppSettings": null
+    },
+    "samples": null,
+    "projects": [
+        {
+            "@type": "as.dto.project.Project",
+            "@id": 11,
+            "fetchOptions": {
+                "@type": "as.dto.project.fetchoptions.ProjectFetchOptions",
+                "@id": 12,
+                "count": null,
+                "from": null,
+                "cacheMode": "NO_CACHE",
+                "experiments": null,
+                "samples": null,
+                "history": null,
+                "space": 5,
+                "registrator": null,
+                "modifier": null,
+                "leader": null,
+                "attachments": null,
+                "sort": null,
+                "sortBy": null
+            },
+            "permId": {
+                "@type": "as.dto.project.id.ProjectPermId",
+                "@id": 13,
+                "permId": "20230531140903039-23"
+            },
+            "identifier": {
+                "@type": "as.dto.project.id.ProjectIdentifier",
+                "@id": 14,
+                "identifier": "/EMODUL/LEBEDIGITAL"
+            },
+            "code": "LEBEDIGITAL",
+            "description": "Project for Emodul samples",
+            "frozen": false,
+            "frozenForExperiments": false,
+            "frozenForSamples": false,
+            "registrationDate": 1685542143039,
+            "modificationDate": 1685542227618,
+            "experiments": null,
+            "samples": null,
+            "history": null,
+            "space": {
+                "@type": "as.dto.space.Space",
+                "@id": 15,
+                "fetchOptions": {
+                    "@type": "as.dto.space.fetchoptions.SpaceFetchOptions",
+                    "@id": 16,
+                    "count": null,
+                    "from": null,
+                    "cacheMode": "NO_CACHE",
+                    "registrator": null,
+                    "samples": null,
+                    "projects": null,
+                    "sort": null,
+                    "sortBy": null
+                },
+                "id": {
+                    "@type": "as.dto.space.id.SpaceTechId",
+                    "@id": 17,
+                    "techId": 10,
+                    "id": "10"
+                },
+                "permId": {
+                    "@type": "as.dto.space.id.SpacePermId",
+                    "@id": 18,
+                    "permId": "EMODUL"
+                },
+                "code": "EMODUL",
+                "description": "Space for Emodul samples",
+                "frozen": false,
+                "frozenForProjects": false,
+                "frozenForSamples": false,
+                "registrationDate": 1685542142948,
+                "modificationDate": 1685542142948,
+                "registrator": null,
+                "samples": null,
+                "projects": null
+            },
+            "registrator": null,
+            "modifier": null,
+            "leader": null,
+            "attachments": null
+        }
+    ]
+}

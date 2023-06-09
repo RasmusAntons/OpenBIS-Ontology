@@ -1,3 +1,4 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix obis: <https://purl.matolab.org/openbis/> .
 @prefix project: <https://openbis.matolab.org/openbismantic/project/> .
@@ -27,6 +28,7 @@ project:20230531140903039-23 a obis:Project ;
     obis:relates_to space:EMODUL .
 
 space:EMODUL a obis:Space ;
+    dc:creator user:admin ;
     dcterms:created "2023-05-31T16:09:02.948000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T16:09:02.948000"^^xsd:dateTimeStamp ;
     rdfs:comment "Space for Emodul samples" ;
@@ -36,5 +38,6 @@ space:EMODUL a obis:Space ;
             obis:is_identifier_of space:EMODUL ],
         [ a obis:PermanentIdentifier ;
             rdf:value "EMODUL" ;
-            obis:is_identifier_of space:EMODUL ] .
+            obis:is_identifier_of space:EMODUL ] ;
+    obis:relates_to project:20230531140903039-23 .
 

@@ -98,22 +98,35 @@
 :relates_to rdf:type owl:ObjectProperty ;
                     :openbis_json_key "space";
                     :openbis_json_key "project";
+                    :openbis_json_key "projects";
                     :openbis_json_key "experiment";
+                    :openbis_json_key "experiments";
                     :openbis_json_key "samples";
                     :openbis_json_key "dataSets";
+                    :openbis_json_key "components";
+                    :openbis_json_key "attachments";
                     rdfs:label "is child of"@en .
 
-:is_child_of rdf:type owl:ObjectProperty ;
-                    rdfs:label "is child of"@en .
+:has_child rdf:type owl:ObjectProperty ;
+                    :openbis_json_key "children";
+                    rdfs:label "has_parent"@en .
 
 :has_parent rdf:type owl:ObjectProperty ;
-                    owl:inverseOf :is_child_of ;
+                    owl:inverseOf :has_child ;
+                    :openbis_json_key "parents";
                     rdfs:label "has parent"@en .
 
 :has_identifier rdf:type owl:ObjectProperty ;
                     owl:inverseOf :is_child_of ;
                     rdfs:range :Identifier ;
                     rdfs:label "has identifier"@en .
+
+:has_tag rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :is_tag_of ;
+                    :openbis_json_key "tags";
+                    rdfs:range :Identifier ;
+                    rdfs:label "has identifier"@en .
+
 
 :is_identifier_of rdf:type owl:ObjectProperty ;
                     owl:inverseOf :has_identifier ;
@@ -137,6 +150,7 @@ owl:Class   :openbis_json_key "as.dto.sample.SampleType" ;
   rdfs:range xsd:string .
 
 rdf:value  :openbis_json_key "permId", "identifier".
+rdf:type :openbis_json_key "permId", "type".
 rdfs:comment  :openbis_json_key "description" .
 rdfs:label  :openbis_json_key "label" .
 
@@ -147,3 +161,5 @@ foaf:mbox :openbis_json_key "email".
 dcterms:created :openbis_json_key "registrationDate" .
 dcterms:modified :openbis_json_key "modificationDate" .
 
+dc:creator :openbis_json_key "registrator" .
+dcterms:contributor :openbis_json_key "modifier" .

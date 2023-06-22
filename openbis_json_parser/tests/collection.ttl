@@ -57,11 +57,11 @@ object:20230531140904161-27 a obis:Object ;
     dcterms:created "2023-05-31T16:09:04.161000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T16:10:26.016000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_ING1" ;
-    obis:has_identifier [ a obis:Identifier ;
-            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING1" ;
-            obis:is_identifier_of object:20230531140904161-27 ],
-        [ a obis:PermanentIdentifier ;
+    obis:has_identifier [ a obis:PermanentIdentifier ;
             rdf:value "20230531140904161-27" ;
+            obis:is_identifier_of object:20230531140904161-27 ],
+        [ a obis:Identifier ;
+            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING1" ;
             obis:is_identifier_of object:20230531140904161-27 ] .
 
 object:20230531140905260-28 a obis:Object ;
@@ -101,55 +101,55 @@ object:20230531140907641-31 a obis:Object ;
     dcterms:created "2023-05-31T16:09:07.641000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T16:10:26.636000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_ING5" ;
-    obis:has_identifier [ a obis:Identifier ;
-            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING5" ;
-            obis:is_identifier_of object:20230531140907641-31 ],
-        [ a obis:PermanentIdentifier ;
+    obis:has_identifier [ a obis:PermanentIdentifier ;
             rdf:value "20230531140907641-31" ;
+            obis:is_identifier_of object:20230531140907641-31 ],
+        [ a obis:Identifier ;
+            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING5" ;
             obis:is_identifier_of object:20230531140907641-31 ] .
 
 object:20230531140915781-34 a obis:Object ;
     dcterms:created "2023-05-31T16:09:15.781000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T16:10:18.081000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_ING8" ;
-    obis:has_identifier [ a obis:PermanentIdentifier ;
-            rdf:value "20230531140915781-34" ;
-            obis:is_identifier_of object:20230531140915781-34 ],
-        [ a obis:Identifier ;
+    obis:has_identifier [ a obis:Identifier ;
             rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING8" ;
+            obis:is_identifier_of object:20230531140915781-34 ],
+        [ a obis:PermanentIdentifier ;
+            rdf:value "20230531140915781-34" ;
             obis:is_identifier_of object:20230531140915781-34 ] .
 
 object:20230531140916169-35 a obis:Object ;
     dcterms:created "2023-05-31T16:09:16.169000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T16:10:18.357000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_ING9" ;
-    obis:has_identifier [ a obis:Identifier ;
-            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING9" ;
-            obis:is_identifier_of object:20230531140916169-35 ],
-        [ a obis:PermanentIdentifier ;
+    obis:has_identifier [ a obis:PermanentIdentifier ;
             rdf:value "20230531140916169-35" ;
+            obis:is_identifier_of object:20230531140916169-35 ],
+        [ a obis:Identifier ;
+            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING9" ;
             obis:is_identifier_of object:20230531140916169-35 ] .
 
 object:20230531140916644-36 a obis:Object ;
     dcterms:created "2023-05-31T16:09:16.644000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T16:10:18.623000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_ING10" ;
-    obis:has_identifier [ a obis:PermanentIdentifier ;
-            rdf:value "20230531140916644-36" ;
-            obis:is_identifier_of object:20230531140916644-36 ],
-        [ a obis:Identifier ;
+    obis:has_identifier [ a obis:Identifier ;
             rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING10" ;
+            obis:is_identifier_of object:20230531140916644-36 ],
+        [ a obis:PermanentIdentifier ;
+            rdf:value "20230531140916644-36" ;
             obis:is_identifier_of object:20230531140916644-36 ] .
 
 object:20230531140936726-45 a obis:Object ;
     dcterms:created "2023-05-31T16:09:36.726000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T16:10:24.053000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_ING19" ;
-    obis:has_identifier [ a obis:Identifier ;
-            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING19" ;
-            obis:is_identifier_of object:20230531140936726-45 ],
-        [ a obis:PermanentIdentifier ;
+    obis:has_identifier [ a obis:PermanentIdentifier ;
             rdf:value "20230531140936726-45" ;
+            obis:is_identifier_of object:20230531140936726-45 ],
+        [ a obis:Identifier ;
+            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING19" ;
             obis:is_identifier_of object:20230531140936726-45 ] .
 
 project:20230531140903039-23 a obis:Project ;

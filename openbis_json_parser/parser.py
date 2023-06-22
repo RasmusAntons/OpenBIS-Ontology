@@ -1,9 +1,12 @@
-import datetime
+from dateutil.parser import parse as date_parse
+from datetime import datetime
+
 import json
 import pathlib
 import urllib.parse
 import re
-
+from  typing import Tuple
+import ast
 from rdflib import Graph, Namespace, URIRef, Literal, BNode
 from rdflib.namespace import RDF, XSD, OWL, RDFS
 
@@ -18,6 +21,9 @@ def load_ontology():
 
 
 OBIS = Namespace('https://purl.matolab.org/openbis/')
+QUDT = Namespace("http://qudt.org/schema/qudt/")
+OA = Namespace("http://www.w3.org/ns/oa#")
+
 obis = load_ontology()
 
 TEMP = Namespace('https://example.com/')
@@ -44,6 +50,70 @@ def get_custom_props(string: str, graph):
     else:
         return None
 
+def is_date(string, fuzzy=False)->bool:
+    try:
+        date_parse(string, fuzzy=fuzzy)
+        return True
+
+    except ValueError:
+        return False
+
+
+def get_value_type(string: str)-> Tuple:
+    string = str(string)
+    # remove spaces and replace , with . and
+    string = string.strip().replace(',', '.')
+    if len(string) == 0:
+        return 'BLANK', None
+    try:
+        t = ast.literal_eval(string)
+    except ValueError:
+        return 'TEXT', XSD.string
+    except SyntaxError:
+        if is_date(string):
+            return 'DATE', XSD.dateTime
+        else:
+            return 'TEXT', XSD.string
+    else:
+        if type(t) in [int, float, bool]:
+            if type(t) is int:
+                return 'INT', XSD.integer
+            if t in set((True, False)):
+                return 'BOOL', XSD.boolean
+            if type(t) is float:
+                return 'FLOAT', XSD.double
+        else:
+            #return 'TEXT'
+            return 'TEXT', XSD.string
+        
+def describe_value(graph, node, relation, value_string: str):
+    val_type=get_value_type(value_string)
+    if val_type:
+        body=BNode()
+        graph.add((node,relation,body))
+    
+    if val_type[0] == 'INT':
+        graph.add((body,RDF.type,QUDT.QuantityValue))
+        graph.add((body,QUDT.value,Literal(int(value_string),datatype=val_type[1])))
+    elif val_type[0] == 'BOOL':
+        body=BNode()
+        graph.add((body,RDF.type,QUDT.QuantityValue))
+        graph.add((body,QUDT.value,Literal(bool(value_string),datatype=val_type[1])))
+    elif val_type[0] == 'FLOAT':
+        if isinstance(value_string,str):
+            #replace , with . as decimal separator
+            value_string = value_string.strip().replace(',', '.')
+        graph.add((body,RDF.type,QUDT.QuantityValue))
+        graph.add((body,QUDT.value,Literal(float(value_string),datatype=val_type[1])))
+    elif val_type[0] == 'DATE':
+        print(value_string)
+        body=BNode()
+        graph.add((body,RDF.type,QUDT.QuantityValue))
+        graph.add((body,QUDT.value,Literal(str(date_parse(value_string).isoformat()),datatype=val_type[1])))
+    else:
+        graph.add((body,RDF.type,OA.Annotation))
+        graph.add((body,OA.hasLiteralBody,Literal(value_string.strip(),datatype=val_type[1])))
+
 
 def write_ontology(onto, target_file, target_format):
     if isinstance(target_file, str):
@@ -56,6 +126,9 @@ def write_ontology(onto, target_file, target_format):
 def parse_dict(data, base_url=None):
     result = Graph()
     result.bind('obis', OBIS)
+    result.bind('qudt', QUDT)
+    result.bind('oa',OA)
+    
     #result.bind('data', _get_ns(base_url))
     iterate_json(data, result, base_url=base_url)
     result = fix_iris(result, base_url=base_url)
@@ -72,7 +145,7 @@ def create_instance_triple(data: dict, base_url=None):
     entity=None
     o_class=None
     parent=None
-    if all(prop in data.keys() for prop in ['@id', '@type']):
+    if all(prop in data.keys() for prop in ['@type']):
         instance_id = str(data['@id'])
         o_class = get_obis_entity(data['@type'])
         if o_class:
@@ -128,7 +201,10 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                             graph.add((obj_prop_id, OBIS.is_identifier_of, obj_prop))
                             print("created a custom object property with permid: {}".format(prop_key))
                             # print(prop_key,obj_prop,prop_value)
-                        graph.add((entity, obj_prop, Literal(str(prop_value))))
+                        value
+                        describe_value(graph, entity, obj_prop, prop_value)
+                                    
+                        #graph.add((entity, obj_prop, Literal(str(prop_value))))
                         
                 elif isinstance(value, dict):
                     # recursively inter over all json objects
@@ -165,7 +241,7 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                     elif entity and annotation and key in ['registrationDate', 'modificationDate']:
                         # timestamp values are transformed to iso datetime strings
                         timestamp = value / 1000  # convert milliseconds to seconds
-                        dt = datetime.datetime.fromtimestamp(timestamp)
+                        dt = datetime.fromtimestamp(timestamp)
                         iso_string = dt.isoformat()
                         graph.add((entity, annotation, Literal(str(iso_string), datatype=XSD.dateTimeStamp)))
                     # emails should have mailto prefix

@@ -15,11 +15,11 @@ project:20230531140903039-23 a obis:Project ;
     dcterms:modified "2023-05-31T16:10:27.618000"^^xsd:dateTimeStamp ;
     rdfs:comment "Project for Emodul samples" ;
     obis:code "LEBEDIGITAL" ;
-    obis:has_identifier [ a obis:Identifier ;
-            rdf:value "/EMODUL/LEBEDIGITAL" ;
-            obis:is_identifier_of project:20230531140903039-23 ],
-        [ a obis:PermanentIdentifier ;
+    obis:has_identifier [ a obis:PermanentIdentifier ;
             rdf:value "20230531140903039-23" ;
+            obis:is_identifier_of project:20230531140903039-23 ],
+        [ a obis:Identifier ;
+            rdf:value "/EMODUL/LEBEDIGITAL" ;
             obis:is_identifier_of project:20230531140903039-23 ] ;
     obis:relates_to collection:20230531140903340-24,
         collection:20230531140903722-25,
@@ -45,22 +45,22 @@ collection:20230531140903340-24 a obis:Collection ;
     dcterms:created "2023-05-31T16:09:03.340000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T16:09:46.105000"^^xsd:dateTimeStamp ;
     obis:code "LEBEDIGITAL_MIXTURE_COLLECTION" ;
-    obis:has_identifier [ a obis:PermanentIdentifier ;
-            rdf:value "20230531140903340-24" ;
-            obis:is_identifier_of collection:20230531140903340-24 ],
-        [ a obis:Identifier ;
+    obis:has_identifier [ a obis:Identifier ;
             rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_MIXTURE_COLLECTION" ;
+            obis:is_identifier_of collection:20230531140903340-24 ],
+        [ a obis:PermanentIdentifier ;
+            rdf:value "20230531140903340-24" ;
             obis:is_identifier_of collection:20230531140903340-24 ] .
 
 collection:20230531140903722-25 a obis:Collection ;
     dcterms:created "2023-05-31T16:09:03.722000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T16:10:27.618000"^^xsd:dateTimeStamp ;
     obis:code "LEBEDIGITAL_EMODUL_COLLECTION" ;
-    obis:has_identifier [ a obis:Identifier ;
-            rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_EMODUL_COLLECTION" ;
-            obis:is_identifier_of collection:20230531140903722-25 ],
-        [ a obis:PermanentIdentifier ;
+    obis:has_identifier [ a obis:PermanentIdentifier ;
             rdf:value "20230531140903722-25" ;
+            obis:is_identifier_of collection:20230531140903722-25 ],
+        [ a obis:Identifier ;
+            rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_EMODUL_COLLECTION" ;
             obis:is_identifier_of collection:20230531140903722-25 ] .
 
 collection:20230531140903847-26 a obis:Collection ;

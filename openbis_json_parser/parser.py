@@ -289,7 +289,8 @@ def fix_iris(graph, base_url=None):
         elif identifies_type in [OWL.ObjectProperty]:
             type_str='object_property'
         graph.bind(type_str,_get_ns(base_url)[f'{type_str}/'])
-        new = URIRef(f'{type_str}/{permid_value}',_get_ns(base_url))
+        new = URIRef(urllib.parse.quote(f'{type_str}/{permid_value}').replace('.', '%2E'), _get_ns(base_url))
+        print(new)
         replace_iris(identifies, new, graph)
         #print(identifies,new)
 

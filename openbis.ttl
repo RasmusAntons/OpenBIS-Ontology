@@ -1,4 +1,4 @@
-@prefix : <https://purl.matolab.org/openbis/> .
+@prefix : <https://w3id.org/matolab/openbis/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -9,7 +9,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix prov: <http://www.w3.org/ns/prov#> .
 
-<https://purl.matolab.org/openbis> rdf:type owl:Ontology ;
+<https://w3id.org/matolab/openbis> rdf:type owl:Ontology ;
                                      dc:contributor "Rasmus Antons (Fraunhofer IWM)"@en,
         "Andre Valdestilhas (Bundesanstalt für Materalprüfung und -forschung BAM)"@en,
         "Thomas Hanke (Fraunhofer IWM)"@en ;
@@ -105,6 +105,7 @@
                     rdfs:label "is child of"@en .
 
 :has_child rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :has_parent ;
                     :openbis_json_key "children";
                     rdfs:label "has_child"@en .
 
@@ -114,7 +115,7 @@
                     rdfs:label "has parent"@en .
 
 :has_identifier rdf:type owl:ObjectProperty ;
-                    owl:inverseOf :is_child_of ;
+                    owl:inverseOf :is_identifier_of ;
                     rdfs:range :Identifier ;
                     rdfs:label "has identifier"@en .
 

@@ -2,7 +2,8 @@ name: Widoc
 on:
   push:
     branches:
-    - main
+      - main
+  workflow_dispatch:
 jobs:
   deploy:
     runs-on: ubuntu-latest

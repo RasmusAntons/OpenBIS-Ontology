@@ -22,25 +22,22 @@
 :Space a owl:Class ;
     rdfs:label "Space" ;
     :openbis_json_key "as.dto.space.Space";
-    skos:definition "A folder with Code and Description.".
+    skos:definition "An OpenBIS ElN Space.".
 
 :Project a owl:Class ;
-    rdfs:subClassOf :Space ;
     rdfs:label "Project" ;
     :openbis_json_key "as.dto.project.Project";
-    skos:definition "A folder with Code and Description.".
+    skos:definition "An OpenBIS Project.".
 
 :Collection a owl:Class ;
-    rdfs:subClassOf :Project ;
     rdfs:label "Collection" ;
-    skos:definition "A folder with user-defined properties.";
+    skos:definition "An OpenBIS Collection of Objects and DataSets.";
     :openbis_json_key "as.dto.experiment.Experiment";
     skos:altLabel "Experiment" .
 
 :Object a owl:Class ;
-    rdfs:subClassOf :Collection ;
     rdfs:label "Object" ;
-    skos:definition "An entity with user-defined properties.";
+    skos:definition "An OpenBIS entity of an object.";
     :openbis_json_key "as.dto.sample.Sample";
     skos:altLabel "Sample" .
 
@@ -109,7 +106,7 @@
 
 :has_child rdf:type owl:ObjectProperty ;
                     :openbis_json_key "children";
-                    rdfs:label "has_parent"@en .
+                    rdfs:label "has_child"@en .
 
 :has_parent rdf:type owl:ObjectProperty ;
                     owl:inverseOf :has_child ;
@@ -125,7 +122,7 @@
                     owl:inverseOf :is_tag_of ;
                     :openbis_json_key "tags";
                     rdfs:range :Identifier ;
-                    rdfs:label "has identifier"@en .
+                    rdfs:label "has tag"@en .
 
 
 :is_identifier_of rdf:type owl:ObjectProperty ;

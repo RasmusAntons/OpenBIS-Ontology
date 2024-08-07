@@ -1,4 +1,4 @@
-@prefix : <https://w3id.org/matolab/openbis/> .
+@prefix : <http://w3id.org/matolab/openbis/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -10,21 +10,21 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@base <https://w3id.org/matolab/openbis> .
+@base <http://w3id.org/matolab/openbis> .
 
-<https://w3id.org/matolab/openbis> rdf:type owl:Ontology ;
-                                    owl:versionIRI <https://w3id.org/matolab/openbis/1.0.0> ;
+<http://w3id.org/matolab/openbis> rdf:type owl:Ontology ;
+                                    owl:versionIRI <http://w3id.org/matolab/openbis/1.0.0> ;
                                     owl:versionInfo "1.0.0"@en ;
                                     dc:contributor "Rasmus Antons (Fraunhofer IWM)"@en ,
         "Andre Valdestilhas (Bundesanstalt für Materalprüfung und -forschung BAM)"@en ,
         "Thomas Hanke (Fraunhofer IWM)"@en ;
-                                     dcterms:bibliographicCitation "obis: MatoLab openbis ontology. Version 1.0.0, https://w3id.org/matolab/ontology/" ;
+                                     dcterms:bibliographicCitation "obis: MatoLab openbis ontology. Version 1.0.0, http://w3id.org/matolab/ontology/" ;
                                      dcterms:created "2024-01-15" ;
                                      dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
                                      dcterms:title "Matolab OpenBIS Ontology (OpenBISOnt)"@en ;
                                      dcterms:creator "Matolab OpenBISmatic Team"@en ;
                                      vann:preferredNamespacePrefix "obis"@en ;
-                                     vann:preferredNamespaceUri "https://w3id.org/matolab/openbis" ;
+                                     vann:preferredNamespaceUri "http://w3id.org/matolab/openbis" ;
                                      rdfs:comment "This is a simple Ontology expaining the data model of OpenBIS."@en .
 
 #################################################################

@@ -1,22 +1,29 @@
 @prefix : <https://w3id.org/matolab/openbis/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix prov: <http://www.w3.org/ns/prov#> .
 
 <https://w3id.org/matolab/openbis> rdf:type owl:Ontology ;
-                                     dc:contributor "Rasmus Antons (Fraunhofer IWM)"@en,
-        "Andre Valdestilhas (Bundesanstalt für Materalprüfung und -forschung BAM)"@en,
+                                    owl:versionIRI <https://w3id.org/matolab/openbis/1.0.0> ;
+                                    owl:versionInfo "1.0.0"@en ;
+                                    dc:contributor "Rasmus Antons (Fraunhofer IWM)"@en ,
+        "Andre Valdestilhas (Bundesanstalt für Materalprüfung und -forschung BAM)"@en ,
         "Thomas Hanke (Fraunhofer IWM)"@en ;
-                                     <http://purl.org/dc/terms/bibliographicCitation> "OpenBISOnt: MatoLab openbis ontology. Version 1.0.0, https://w3id.org/matolab/ontology/" ;
-                                     <http://purl.org/dc/terms/created> "2024-01-15" ;
-                                     <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> ;
-                                     <http://purl.org/dc/terms/title> "Matolab OpenBIS Ontology (OpenBISOnt)"@en ;
+                                     dcterms:bibliographicCitation "OpenBISOnt: MatoLab openbis ontology. Version 1.0.0, https://w3id.org/matolab/ontology/" ;
+                                     dcterms:created "2024-01-15" ;
+                                     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+                                     dcterms:title "Matolab OpenBIS Ontology (OpenBISOnt)"@en ;
+                                     dcterms:creator "Matolab OpenBISmatic Team"@en ;
+                                     vann:preferredNamespacePrefix "bis"@en ;
+                                     vann:preferredNamespaceUri "https://w3id.org/matolab/openbis" ;
                                      rdfs:comment "This is a simple Ontology expaining the data model of OpenBIS."@en .
 
 #################################################################
@@ -138,6 +145,11 @@
                     owl:inverseOf :has_identifier ;
                     rdfs:domain :Identifier ;
                     rdfs:label "is identifier of"@en .
+
+:is_tag_of rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :has_tag ;
+                    rdfs:domain :Identifier ;
+                    rdfs:label "is tag of"@en .
 
 owl:ObjectProperty :openbis_json_key "as.dto.property.PropertyType" .
 

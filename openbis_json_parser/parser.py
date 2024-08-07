@@ -1,17 +1,17 @@
-from dateutil.parser import parse as date_parse
-from datetime import datetime
-
+import ast
 import json
 import pathlib
-import urllib.parse
 import re
-from  typing import Tuple
-import ast
-from rdflib import Graph, Namespace, URIRef, Literal, BNode
-from rdflib.namespace import RDF, XSD, OWL, RDFS
+import urllib.parse
+from datetime import datetime
+from typing import Tuple
+
+from dateutil.parser import parse as date_parse
+from rdflib import BNode, Graph, Literal, Namespace, URIRef
+from rdflib.namespace import OWL, RDF, RDFS, XSD
 
 # plugin api endpoint for permIds should be here
-default_ns = Namespace('https://openbis.matolab.org/openbismantic/')
+default_ns = Namespace('https://openbismantic.matolab.org/openbismantic/')
 
 
 def load_ontology():
@@ -20,7 +20,7 @@ def load_ontology():
     return g
 
 
-OBIS = Namespace('https://purl.matolab.org/openbis/')
+OBIS = Namespace('https://w3id.org/matolab/openbis/')
 QUDT = Namespace("http://qudt.org/schema/qudt/")
 OA = Namespace("http://www.w3.org/ns/oa#")
 

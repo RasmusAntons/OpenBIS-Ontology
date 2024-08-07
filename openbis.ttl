@@ -17,12 +17,12 @@
                                     dc:contributor "Rasmus Antons (Fraunhofer IWM)"@en ,
         "Andre Valdestilhas (Bundesanstalt für Materalprüfung und -forschung BAM)"@en ,
         "Thomas Hanke (Fraunhofer IWM)"@en ;
-                                     dcterms:bibliographicCitation "OpenBISOnt: MatoLab openbis ontology. Version 1.0.0, https://w3id.org/matolab/ontology/" ;
+                                     dcterms:bibliographicCitation "obis: MatoLab openbis ontology. Version 1.0.0, https://w3id.org/matolab/ontology/" ;
                                      dcterms:created "2024-01-15" ;
                                      dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
                                      dcterms:title "Matolab OpenBIS Ontology (OpenBISOnt)"@en ;
                                      dcterms:creator "Matolab OpenBISmatic Team"@en ;
-                                     vann:preferredNamespacePrefix "bis"@en ;
+                                     vann:preferredNamespacePrefix "obis"@en ;
                                      vann:preferredNamespaceUri "https://w3id.org/matolab/openbis" ;
                                      rdfs:comment "This is a simple Ontology expaining the data model of OpenBIS."@en .
 
@@ -33,7 +33,7 @@
 :Space a owl:Class ;
     rdfs:label "Space" ;
     :openbis_json_key "as.dto.space.Space";
-    skos:definition "An OpenBIS ElN Space.".
+    skos:definition "An OpenBIS Space.".
 
 :Project a owl:Class ;
     rdfs:label "Project" ;

@@ -13,7 +13,11 @@
                                      dc:contributor "Rasmus Antons (Fraunhofer IWM)"@en,
         "Andre Valdestilhas (Bundesanstalt für Materalprüfung und -forschung BAM)"@en,
         "Thomas Hanke (Fraunhofer IWM)"@en ;
-                                     rdfs:comment "This is a simple Ontology expaining the data model of OpenBis."@en .
+                                     <http://purl.org/dc/terms/bibliographicCitation> "OpenBISOnt: MatoLab openbis ontology. Version 1.0.0, https://w3id.org/matolab/ontology/" ;
+                                     <http://purl.org/dc/terms/created> "2024-01-15" ;
+                                     <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> ;
+                                     <http://purl.org/dc/terms/title> "Matolab OpenBIS Ontology (OpenBISOnt)"@en ;
+                                     rdfs:comment "This is a simple Ontology expaining the data model of OpenBIS."@en .
 
 #################################################################
 #    Classes
@@ -77,16 +81,20 @@
 #################################################################
 
 :Materials a owl:NamedIndividual,
-        :Space .
+        :Space ;
+        rdfs:label "Materials Space, a default OpenBIS space for material entities." .
 
 :Methods a owl:NamedIndividual,
-        :Space .
+        :Space ;
+        rdfs:label "Methods Space, a default OpenBIS space for methods and proceedures." .
 
 :Protocols a owl:NamedIndividual,
-        :Project .
+        :Project ;
+        rdfs:label "Protocols Project, a default OpenBIS project for proceedures." .
 
 :GeneralProtocols a owl:NamedIndividual,
-        :Collection .
+        :Collection ;
+        rdfs:label "General Protocols Collection, a default OpenBIS collection to contain the lab proceedures generally used in the lab." .
 
 #################################################################
 #    Object Properties

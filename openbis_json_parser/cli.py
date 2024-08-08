@@ -23,9 +23,7 @@ def main():
         default="https://openbis.matolab.org/",
     )
     args = parser.parse_args()
-    if args.json_file.startswith("http://") or args.json_file.startswith(
-        "https://"
-    ):
+    if args.json_file.startswith("http://") or args.json_file.startswith("https://"):
         with urllib.request.urlopen(args.json_file) as resp:
             data = json.load(resp)
         onto = parse_dict(data, base_url=args.base_url)

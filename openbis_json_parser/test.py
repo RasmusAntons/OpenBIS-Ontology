@@ -4,9 +4,7 @@ import unittest
 
 from openbis_json_parser.parser import parse_dict, write_ontology
 
-__location__ = os.path.realpath(
-    os.path.join(os.getcwd(), os.path.dirname(__file__))
-)
+__location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
 print(__location__)
 

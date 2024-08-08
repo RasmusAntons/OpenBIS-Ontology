@@ -4,7 +4,7 @@ import pathlib
 import re
 import urllib.parse
 from datetime import datetime
-from typing import Tuple
+from typing import Tuple, Union
 
 from dateutil.parser import parse as date_parse
 from rdflib import BNode, Graph, Literal, Namespace, URIRef
@@ -192,23 +192,53 @@ def create_instance_triple(data: dict, base_url=None):
     return entity, o_class, parent
 
 
+def add_identifier(
+    graph: Graph,
+    entity: URIRef,
+    identifier: Union(URIRef, BNode),
+    identifier_class: URIRef = OBIS.Identifier,
+    label: str = "",
+):
+    if entity:
+        # add the triple defining the entity only if the identifier is attached to something
+        graph.add((identifier, RDF.type, identifier_class))
+        if label:
+            graph.add(
+                (
+                    identifier,
+                    RDF.value,
+                    Literal(re.sub("[$:]", "", label)),
+                )
+            )
+        # add object properties
+        graph.add((entity, OBIS.has_identifier, identifier))
+        graph.add((identifier, OBIS.is_identifier_of, entity))
+        return identifier
+    else:
+        return None
+
+
+def create_new_property(graph: Graph, prop_key: str):
+    # create a new ObjectProperty
+    obj_prop = BNode()
+    obj_prop_id = BNode()
+    graph.add((obj_prop, RDF.type, OWL.ObjectProperty))
+    # add identifier
+    obj_prop_id = add_identifier(
+        graph, obj_prop, obj_prop_id, OBIS.PermanentIdentifier, label=prop_key
+    )
+    print("created a custom object property with permid: {}".format(prop_key))
+    return obj_prop
+
+
 def iterate_json(data, graph, last_entity=None, base_url=None):
     if isinstance(data, dict):
         # lookup if the id and type in dict result in a ontology entity
-        entity, e_class, parent = create_instance_triple(
-            data, base_url=base_url
-        )
+        entity, e_class, parent = create_instance_triple(data, base_url=base_url)
         if entity and e_class:
             # if the entity is a Identifier, only create it if it relates to entity previously created
             if e_class in [OBIS.PermanentIdentifier, OBIS.Identifier]:
-                if last_entity:
-                    # add the triple defining the entity only if the identifier is attached to something
-                    graph.add((entity, RDF.type, e_class))
-                    # add object properties
-                    graph.add((last_entity, OBIS.has_identifier, entity))
-                    graph.add((entity, OBIS.is_identifier_of, last_entity))
-                else:
-                    entity = None
+                entity = add_identifier(graph, last_entity, e_class)
             else:
                 # add the triple defining the entity
                 graph.add((entity, RDF.type, e_class))
@@ -228,43 +258,11 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                     # lookup in graph
                     for prop_key, prop_value in value.items():
                         obj_prop = get_custom_props(prop_key, graph)
-                        print(entity, key, prop_key, prop_value, obj_prop)
+                        # print(entity, key, prop_key, prop_value, obj_prop)
                         if not obj_prop:
                             # create a new ObjectProperty
-                            obj_prop = BNode()
-                            obj_prop_id = BNode()
-                            graph.add((obj_prop, RDF.type, OWL.ObjectProperty))
-                            # add identifier
-                            graph.add(
-                                (
-                                    obj_prop_id,
-                                    RDF.type,
-                                    OBIS.PermanentIdentifier,
-                                )
-                            )
-                            graph.add(
-                                (
-                                    obj_prop_id,
-                                    RDF.value,
-                                    Literal(re.sub("[$:]", "", prop_key)),
-                                )
-                            )
-                            # add object properties
-                            graph.add(
-                                (obj_prop, OBIS.has_identifier, obj_prop_id)
-                            )
-                            graph.add(
-                                (obj_prop_id, OBIS.is_identifier_of, obj_prop)
-                            )
-                            print(
-                                "created a custom object property with permid: {}".format(
-                                    prop_key
-                                )
-                            )
-                            # print(prop_key,obj_prop,prop_value)
-                        value
+                            obj_prop = create_new_property(graph, prop_key)
                         describe_value(graph, entity, obj_prop, prop_value)
-
                         # graph.add((entity, obj_prop, Literal(str(prop_value))))
 
                 elif isinstance(value, dict):
@@ -319,18 +317,14 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                         and key in ["registrationDate", "modificationDate"]
                     ):
                         # timestamp values are transformed to iso datetime strings
-                        timestamp = (
-                            value / 1000
-                        )  # convert milliseconds to seconds
+                        timestamp = value / 1000  # convert milliseconds to seconds
                         dt = datetime.fromtimestamp(timestamp)
                         iso_string = dt.isoformat()
                         graph.add(
                             (
                                 entity,
                                 annotation,
-                                Literal(
-                                    str(iso_string), datatype=XSD.dateTimeStamp
-                                ),
+                                Literal(str(iso_string), datatype=XSD.dateTimeStamp),
                             )
                         )
                     # emails should have mailto prefix
@@ -350,9 +344,7 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                     ):
                         # these json keyword point to integers which relates to other entities
                         # graph.add((entity, annotation, _get_ns(base_url)[str(value)]))
-                        graph.add(
-                            (entity, annotation, URIRef(str(value), TEMP))
-                        )
+                        graph.add((entity, annotation, URIRef(str(value), TEMP)))
                     elif entity and annotation and isinstance(value, str):
                         graph.add((entity, annotation, Literal(value)))
 
@@ -379,7 +371,7 @@ def replace_iris(old: URIRef, new: URIRef, graph: Graph):
 
 def fix_iris(graph, base_url=None):
     # replace int iris with permids if possible
-    for permid in graph[: RDF.type: OBIS.PermanentIdentifier]:
+    for permid in graph[: RDF.type : OBIS.PermanentIdentifier]:
         permid_value = graph.value(permid, RDF.value)
         identifies = graph.value(permid, OBIS.is_identifier_of)
         identifies_type = graph.value(identifies, RDF.type)
@@ -395,14 +387,14 @@ def fix_iris(graph, base_url=None):
         # print(identifies,new)
 
     # replace iri of created object properties with value of code if possible
-    for property in graph[: RDF.type: OWL.ObjectProperty]:
+    for property in graph[: RDF.type : OWL.ObjectProperty]:
         code_value = graph.value(property, OBIS.code)
         if code_value:
             new = _get_ns(base_url)[code_value]
             replace_iris(property, new, graph)
 
-    for identifier in graph[: RDF.type: OBIS.Identifier]:
+    for identifier in graph[: RDF.type : OBIS.Identifier]:
         replace_iris(identifier, BNode(), graph)
-    for identifier in graph[: RDF.type: OBIS.PermanentIdentifier]:
+    for identifier in graph[: RDF.type : OBIS.PermanentIdentifier]:
         replace_iris(identifier, BNode(), graph)
     return graph

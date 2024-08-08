@@ -80,11 +80,11 @@ ns1:NAME a owl:ObjectProperty ;
     dcterms:created "2023-05-31T16:09:18.056000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T16:10:18.917000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_MIX11" ;
-    obis:has_identifier [ a obis:Identifier ;
-            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX11" ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140918056-37> ],
-        [ a obis:PermanentIdentifier ;
+    obis:has_identifier [ a obis:PermanentIdentifier ;
             rdf:value "20230531140918056-37" ;
+            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140918056-37> ],
+        [ a obis:Identifier ;
+            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX11" ;
             obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140918056-37> ] .
 
 <https:/openbismantic.matolab.org/openbismantic/project/20230531140903039-23> a obis:Project ;
@@ -92,11 +92,11 @@ ns1:NAME a owl:ObjectProperty ;
     dcterms:modified "2023-05-31T16:10:27.618000"^^xsd:dateTimeStamp ;
     rdfs:comment "Project for Emodul samples" ;
     obis:code "LEBEDIGITAL" ;
-    obis:has_identifier [ a obis:Identifier ;
-            rdf:value "/EMODUL/LEBEDIGITAL" ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/project/20230531140903039-23> ],
-        [ a obis:PermanentIdentifier ;
+    obis:has_identifier [ a obis:PermanentIdentifier ;
             rdf:value "20230531140903039-23" ;
+            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/project/20230531140903039-23> ],
+        [ a obis:Identifier ;
+            rdf:value "/EMODUL/LEBEDIGITAL" ;
             obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/project/20230531140903039-23> ] ;
     obis:relates_to <https:/openbismantic.matolab.org/openbismantic/space/EMODUL> .
 

@@ -2,7 +2,7 @@ import json
 import os
 import unittest
 
-from openbis_json_parser.parser import parse_dict, write_ontology
+from main import parse_dict, write_ontology
 
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 

@@ -54,12 +54,12 @@ object:20230531140916169-35 a obis:Object,
     dcterms:modified "2023-05-31T14:10:18.357000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_ING9" ;
     obis:has_child object:20230531140918056-37 ;
-    obis:has_identifier [ a obis:PermanentIdentifier ;
+    obis:has_identifier [ a obis:Identifier ;
             obis:is_identifier_of object:20230531140916169-35 ;
-            rdf:value "20230531140916169-35" ],
-        [ a obis:Identifier ;
+            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING9" ],
+        [ a obis:PermanentIdentifier ;
             obis:is_identifier_of object:20230531140916169-35 ;
-            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING9" ] ;
+            rdf:value "20230531140916169-35" ] ;
     obis:relates_to collection:20230531140903847-26,
         project:20230531140903039-23,
         space:EMODUL ;

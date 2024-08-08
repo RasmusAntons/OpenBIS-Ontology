@@ -40,3 +40,7 @@ jobs:
         pip install .
         cd openbis_json_parser
         python test.py
+    - name: commit results
+      uses: EndBug/add-and-commit@v9
+      with:
+        message: 'update test data'

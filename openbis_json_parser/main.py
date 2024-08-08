@@ -233,19 +233,17 @@ def create_new_property(graph: Graph, prop_key: str):
 
 def iterate_json(data, graph, last_entity=None, base_url=None):
     if isinstance(data, dict):
-        print("its a dict")
         # lookup if the id and type in dict result in a ontology entity
         entity, e_class, parent = create_instance_triple(data, base_url=base_url)
-        print(entity)
         if entity and e_class:
-            print(f"its entity: {entity} and class {e_class}")
+            #print(f"its entity: {entity} and class {e_class}")
 
             # if the entity is a Identifier, only create it if it relates to entity previously created
             if e_class in [OBIS.PermanentIdentifier, OBIS.Identifier]:
                 entity = add_identifier(graph, last_entity, entity, e_class)
             else:
                 # add the triple defining the entity
-                print(entity, e_class)
+                #print(entity, e_class)
                 graph.add((entity, RDF.type, e_class))
             if parent:
                 print(
@@ -354,7 +352,6 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                         graph.add((entity, annotation, Literal(value)))
 
     elif isinstance(data, list):
-        print("its a list")
         for item in data:
             iterate_json(item, graph, base_url=base_url)
 

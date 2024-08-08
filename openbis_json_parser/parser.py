@@ -195,7 +195,7 @@ def create_instance_triple(data: dict, base_url=None):
 def add_identifier(
     graph: Graph,
     entity: URIRef,
-    identifier: Union(URIRef, BNode),
+    identifier: Union[URIRef, BNode],
     identifier_class: URIRef = OBIS.Identifier,
     label: str = "",
 ):

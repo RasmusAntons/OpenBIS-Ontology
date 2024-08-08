@@ -10,8 +10,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
-
+  lint:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -36,8 +35,10 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
   test:
+    needs: lint
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
     - name: Install as package and run test.py
       run: |
         pip install .

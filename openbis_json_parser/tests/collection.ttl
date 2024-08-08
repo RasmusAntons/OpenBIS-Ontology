@@ -1,167 +1,173 @@
+@prefix class: <https://openbismantic.matolab.org/openbismantic/class/> .
+@prefix collection: <https://openbismantic.matolab.org/openbismantic/collection/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix obis: <http://w3id.org/matolab/openbis/> .
+@prefix object: <https://openbismantic.matolab.org/openbismantic/object/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix project: <https://openbismantic.matolab.org/openbismantic/project/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix space: <https://openbismantic.matolab.org/openbismantic/space/> .
+@prefix user: <https://openbismantic.matolab.org/openbismantic/user/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https:/openbismantic.matolab.org/openbismantic/class/COLLECTION> a owl:Class ;
-    dcterms:modified "2023-05-31T16:08:20.700000"^^xsd:dateTimeStamp ;
+class:COLLECTION a owl:Class ;
+    dcterms:modified "2023-05-31T14:08:20.700000"^^xsd:dateTimeStamp ;
     obis:code "COLLECTION" ;
     obis:has_identifier [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/class/COLLECTION> ;
+            obis:is_identifier_of class:COLLECTION ;
             rdf:value "COLLECTION" ] ;
     rdfs:subClassOf obis:Collection .
 
-<https:/openbismantic.matolab.org/openbismantic/collection/20230531140903847-26> a obis:Collection,
-        <https:/openbismantic.matolab.org/openbismantic/class/COLLECTION> ;
-    dc:creator <https:/openbismantic.matolab.org/openbismantic/user/admin> ;
-    dcterms:contributor <https:/openbismantic.matolab.org/openbismantic/user/admin> ;
-    dcterms:created "2023-05-31T16:09:03.847000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2023-05-31T16:09:36.726000"^^xsd:dateTimeStamp ;
+collection:20230531140903847-26 a obis:Collection,
+        class:COLLECTION ;
+    dc:creator user:admin ;
+    dcterms:contributor user:admin ;
+    dcterms:created "2023-05-31T14:09:03.847000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-05-31T14:09:36.726000"^^xsd:dateTimeStamp ;
     obis:code "LEBEDIGITAL_INGREDIENT_COLLECTION" ;
-    obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/collection/20230531140903847-26> ;
-            rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_INGREDIENT_COLLECTION" ],
-        [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/collection/20230531140903847-26> ;
-            rdf:value "20230531140903847-26" ] ;
-    obis:relates_to <https:/openbismantic.matolab.org/openbismantic/object/20230531140904161-27>,
-        <https:/openbismantic.matolab.org/openbismantic/object/20230531140905260-28>,
-        <https:/openbismantic.matolab.org/openbismantic/object/20230531140906152-29>,
-        <https:/openbismantic.matolab.org/openbismantic/object/20230531140906933-30>,
-        <https:/openbismantic.matolab.org/openbismantic/object/20230531140907641-31>,
-        <https:/openbismantic.matolab.org/openbismantic/object/20230531140915781-34>,
-        <https:/openbismantic.matolab.org/openbismantic/object/20230531140916169-35>,
-        <https:/openbismantic.matolab.org/openbismantic/object/20230531140916644-36>,
-        <https:/openbismantic.matolab.org/openbismantic/object/20230531140936726-45>,
-        <https:/openbismantic.matolab.org/openbismantic/project/20230531140903039-23> .
+    obis:has_identifier [ a obis:PermanentIdentifier ;
+            obis:is_identifier_of collection:20230531140903847-26 ;
+            rdf:value "20230531140903847-26" ],
+        [ a obis:Identifier ;
+            obis:is_identifier_of collection:20230531140903847-26 ;
+            rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_INGREDIENT_COLLECTION" ] ;
+    obis:relates_to object:20230531140904161-27,
+        object:20230531140905260-28,
+        object:20230531140906152-29,
+        object:20230531140906933-30,
+        object:20230531140907641-31,
+        object:20230531140915781-34,
+        object:20230531140916169-35,
+        object:20230531140916644-36,
+        object:20230531140936726-45,
+        project:20230531140903039-23 .
 
-<https:/openbismantic.matolab.org/openbismantic/space/EMODUL> a obis:Space ;
-    dcterms:created "2023-05-31T16:09:02.948000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2023-05-31T16:09:02.948000"^^xsd:dateTimeStamp ;
+space:EMODUL a obis:Space ;
+    dcterms:created "2023-05-31T14:09:02.948000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-05-31T14:09:02.948000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL" ;
     obis:has_identifier [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/space/EMODUL> ;
+            obis:is_identifier_of space:EMODUL ;
             rdf:value "EMODUL" ] ;
     rdfs:comment "Space for Emodul samples" .
 
-<https:/openbismantic.matolab.org/openbismantic/object/20230531140904161-27> a obis:Object ;
-    dcterms:created "2023-05-31T16:09:04.161000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2023-05-31T16:10:26.016000"^^xsd:dateTimeStamp ;
+object:20230531140904161-27 a obis:Object ;
+    dcterms:created "2023-05-31T14:09:04.161000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-05-31T14:10:26.016000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_ING1" ;
     obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140904161-27> ;
+            obis:is_identifier_of object:20230531140904161-27 ;
             rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING1" ],
         [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140904161-27> ;
+            obis:is_identifier_of object:20230531140904161-27 ;
             rdf:value "20230531140904161-27" ] .
 
-<https:/openbismantic.matolab.org/openbismantic/object/20230531140905260-28> a obis:Object ;
-    dcterms:created "2023-05-31T16:09:05.260000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2023-05-31T16:10:26.167000"^^xsd:dateTimeStamp ;
+object:20230531140905260-28 a obis:Object ;
+    dcterms:created "2023-05-31T14:09:05.260000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-05-31T14:10:26.167000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_ING2" ;
     obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140905260-28> ;
+            obis:is_identifier_of object:20230531140905260-28 ;
             rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING2" ],
         [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140905260-28> ;
+            obis:is_identifier_of object:20230531140905260-28 ;
             rdf:value "20230531140905260-28" ] .
 
-<https:/openbismantic.matolab.org/openbismantic/object/20230531140906152-29> a obis:Object ;
-    dcterms:created "2023-05-31T16:09:06.152000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2023-05-31T16:10:26.345000"^^xsd:dateTimeStamp ;
+object:20230531140906152-29 a obis:Object ;
+    dcterms:created "2023-05-31T14:09:06.152000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-05-31T14:10:26.345000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_ING3" ;
-    obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140906152-29> ;
-            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING3" ],
-        [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140906152-29> ;
-            rdf:value "20230531140906152-29" ] .
+    obis:has_identifier [ a obis:PermanentIdentifier ;
+            obis:is_identifier_of object:20230531140906152-29 ;
+            rdf:value "20230531140906152-29" ],
+        [ a obis:Identifier ;
+            obis:is_identifier_of object:20230531140906152-29 ;
+            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING3" ] .
 
-<https:/openbismantic.matolab.org/openbismantic/object/20230531140906933-30> a obis:Object ;
-    dcterms:created "2023-05-31T16:09:06.933000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2023-05-31T16:10:26.493000"^^xsd:dateTimeStamp ;
+object:20230531140906933-30 a obis:Object ;
+    dcterms:created "2023-05-31T14:09:06.933000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-05-31T14:10:26.493000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_ING4" ;
-    obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140906933-30> ;
-            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING4" ],
-        [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140906933-30> ;
-            rdf:value "20230531140906933-30" ] .
+    obis:has_identifier [ a obis:PermanentIdentifier ;
+            obis:is_identifier_of object:20230531140906933-30 ;
+            rdf:value "20230531140906933-30" ],
+        [ a obis:Identifier ;
+            obis:is_identifier_of object:20230531140906933-30 ;
+            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING4" ] .
 
-<https:/openbismantic.matolab.org/openbismantic/object/20230531140907641-31> a obis:Object ;
-    dcterms:created "2023-05-31T16:09:07.641000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2023-05-31T16:10:26.636000"^^xsd:dateTimeStamp ;
+object:20230531140907641-31 a obis:Object ;
+    dcterms:created "2023-05-31T14:09:07.641000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-05-31T14:10:26.636000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_ING5" ;
     obis:has_identifier [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140907641-31> ;
+            obis:is_identifier_of object:20230531140907641-31 ;
             rdf:value "20230531140907641-31" ],
         [ a obis:Identifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140907641-31> ;
+            obis:is_identifier_of object:20230531140907641-31 ;
             rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING5" ] .
 
-<https:/openbismantic.matolab.org/openbismantic/object/20230531140915781-34> a obis:Object ;
-    dcterms:created "2023-05-31T16:09:15.781000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2023-05-31T16:10:18.081000"^^xsd:dateTimeStamp ;
+object:20230531140915781-34 a obis:Object ;
+    dcterms:created "2023-05-31T14:09:15.781000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-05-31T14:10:18.081000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_ING8" ;
     obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140915781-34> ;
+            obis:is_identifier_of object:20230531140915781-34 ;
             rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING8" ],
         [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140915781-34> ;
+            obis:is_identifier_of object:20230531140915781-34 ;
             rdf:value "20230531140915781-34" ] .
 
-<https:/openbismantic.matolab.org/openbismantic/object/20230531140916169-35> a obis:Object ;
-    dcterms:created "2023-05-31T16:09:16.169000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2023-05-31T16:10:18.357000"^^xsd:dateTimeStamp ;
+object:20230531140916169-35 a obis:Object ;
+    dcterms:created "2023-05-31T14:09:16.169000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-05-31T14:10:18.357000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_ING9" ;
-    obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140916169-35> ;
-            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING9" ],
-        [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140916169-35> ;
-            rdf:value "20230531140916169-35" ] .
+    obis:has_identifier [ a obis:PermanentIdentifier ;
+            obis:is_identifier_of object:20230531140916169-35 ;
+            rdf:value "20230531140916169-35" ],
+        [ a obis:Identifier ;
+            obis:is_identifier_of object:20230531140916169-35 ;
+            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING9" ] .
 
-<https:/openbismantic.matolab.org/openbismantic/object/20230531140916644-36> a obis:Object ;
-    dcterms:created "2023-05-31T16:09:16.644000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2023-05-31T16:10:18.623000"^^xsd:dateTimeStamp ;
+object:20230531140916644-36 a obis:Object ;
+    dcterms:created "2023-05-31T14:09:16.644000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-05-31T14:10:18.623000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_ING10" ;
     obis:has_identifier [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140916644-36> ;
+            obis:is_identifier_of object:20230531140916644-36 ;
             rdf:value "20230531140916644-36" ],
         [ a obis:Identifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140916644-36> ;
+            obis:is_identifier_of object:20230531140916644-36 ;
             rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING10" ] .
 
-<https:/openbismantic.matolab.org/openbismantic/object/20230531140936726-45> a obis:Object ;
-    dcterms:created "2023-05-31T16:09:36.726000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2023-05-31T16:10:24.053000"^^xsd:dateTimeStamp ;
+object:20230531140936726-45 a obis:Object ;
+    dcterms:created "2023-05-31T14:09:36.726000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-05-31T14:10:24.053000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL_ING19" ;
-    obis:has_identifier [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140936726-45> ;
-            rdf:value "20230531140936726-45" ],
-        [ a obis:Identifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20230531140936726-45> ;
-            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING19" ] .
+    obis:has_identifier [ a obis:Identifier ;
+            obis:is_identifier_of object:20230531140936726-45 ;
+            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING19" ],
+        [ a obis:PermanentIdentifier ;
+            obis:is_identifier_of object:20230531140936726-45 ;
+            rdf:value "20230531140936726-45" ] .
 
-<https:/openbismantic.matolab.org/openbismantic/project/20230531140903039-23> a obis:Project ;
-    dcterms:created "2023-05-31T16:09:03.039000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2023-05-31T16:10:27.618000"^^xsd:dateTimeStamp ;
+project:20230531140903039-23 a obis:Project ;
+    dcterms:created "2023-05-31T14:09:03.039000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-05-31T14:10:27.618000"^^xsd:dateTimeStamp ;
     obis:code "LEBEDIGITAL" ;
-    obis:has_identifier [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/project/20230531140903039-23> ;
-            rdf:value "20230531140903039-23" ],
-        [ a obis:Identifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/project/20230531140903039-23> ;
-            rdf:value "/EMODUL/LEBEDIGITAL" ] ;
-    obis:relates_to <https:/openbismantic.matolab.org/openbismantic/space/EMODUL> ;
+    obis:has_identifier [ a obis:Identifier ;
+            obis:is_identifier_of project:20230531140903039-23 ;
+            rdf:value "/EMODUL/LEBEDIGITAL" ],
+        [ a obis:PermanentIdentifier ;
+            obis:is_identifier_of project:20230531140903039-23 ;
+            rdf:value "20230531140903039-23" ] ;
+    obis:relates_to space:EMODUL ;
     rdfs:comment "Project for Emodul samples" .
 
-<https:/openbismantic.matolab.org/openbismantic/user/admin> a obis:User ;
-    dcterms:created "2023-05-31T16:08:47.133000"^^xsd:dateTimeStamp ;
+user:admin a obis:User ;
+    dcterms:created "2023-05-31T14:08:47.133000"^^xsd:dateTimeStamp ;
     obis:has_identifier [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/user/admin> ;
+            obis:is_identifier_of user:admin ;
             rdf:value "admin" ] .
 

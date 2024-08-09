@@ -17,6 +17,7 @@
                                     owl:versionInfo "1.0.0"@en ;
                                     dc:contributor "Rasmus Antons (Fraunhofer IWM)"@en ,
         "Andre Valdestilhas (Bundesanstalt für Materalprüfung und -forschung BAM)"@en ,
+        "Mariam Rizkallah (Fraunhofer IFAM)"@en ,
         "Thomas Hanke (Fraunhofer IWM)"@en ;
                                      dcterms:bibliographicCitation "obis: MatoLab openbis ontology. Version 1.0.0, http://w3id.org/matolab/ontology/" ;
                                      dcterms:created "2024-01-15" ;

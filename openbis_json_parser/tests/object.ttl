@@ -30,94 +30,90 @@ object_property:NAME a owl:ObjectProperty ;
             obis:is_identifier_of object_property:NAME ;
             rdf:value "NAME" ] .
 
-class:COLLECTION a owl:Class ;
-    dcterms:modified "2023-05-31T14:08:20.700000"^^xsd:dateTimeStamp ;
-    obis:code "COLLECTION" ;
-    obis:has_identifier [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of class:COLLECTION ;
-            rdf:value "COLLECTION" ] ;
-    rdfs:subClassOf obis:Collection .
-
-class:EMODUL_INGREDIENT a owl:Class ;
-    dcterms:modified "2023-05-31T14:08:55.842000"^^xsd:dateTimeStamp ;
-    obis:code "EMODUL_INGREDIENT" ;
-    obis:has_identifier [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of class:EMODUL_INGREDIENT ;
-            rdf:value "EMODUL_INGREDIENT" ] ;
-    rdfs:subClassOf obis:Object .
-
-object:20230531140916169-35 a obis:Object,
-        class:EMODUL_INGREDIENT ;
-    dc:creator user:admin ;
-    dcterms:contributor user:admin ;
-    dcterms:created "2023-05-31T14:09:16.169000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2023-05-31T14:10:18.357000"^^xsd:dateTimeStamp ;
-    obis:code "EMODUL_ING9" ;
-    obis:has_child object:20230531140918056-37 ;
+collection:None a obis:Collection,
+        class:None ;
+    dcterms:created "2023-05-31T14:09:03.847000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-05-31T14:09:36.726000"^^xsd:dateTimeStamp ;
+    obis:code "LEBEDIGITAL_INGREDIENT_COLLECTION" ;
     obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of object:20230531140916169-35 ;
+            obis:is_identifier_of collection:None ;
+            rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_INGREDIENT_COLLECTION" ],
+        [ a obis:PermanentIdentifier,
+                "20230531140903847-26" ;
+            obis:is_identifier_of collection:None ] .
+
+project:None a obis:Project ;
+    dcterms:created "2023-05-31T14:09:03.039000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-05-31T14:10:27.618000"^^xsd:dateTimeStamp ;
+    obis:code "LEBEDIGITAL" ;
+    obis:has_identifier [ a obis:Identifier ;
+            obis:is_identifier_of project:None ;
+            rdf:value "/EMODUL/LEBEDIGITAL" ],
+        [ a obis:PermanentIdentifier,
+                "20230531140903039-23" ;
+            obis:is_identifier_of project:None ] ;
+    obis:relates_to space:None ;
+    rdfs:comment "Project for Emodul samples" .
+
+space:None a obis:Space ;
+    dcterms:created "2023-05-31T14:09:02.948000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-05-31T14:09:02.948000"^^xsd:dateTimeStamp ;
+    obis:code "EMODUL" ;
+    obis:has_identifier [ a obis:PermanentIdentifier,
+                "EMODUL" ;
+            obis:is_identifier_of space:None ] ;
+    rdfs:comment "Space for Emodul samples" .
+
+user:None a obis:User ;
+    dcterms:created "2023-05-31T14:08:47.133000"^^xsd:dateTimeStamp ;
+    obis:has_identifier [ a obis:PermanentIdentifier,
+                "admin" ;
+            obis:is_identifier_of user:None ] .
+
+class:None a owl:Class ;
+    dcterms:modified "2023-05-31T14:08:20.700000"^^xsd:dateTimeStamp,
+        "2023-05-31T14:08:55.842000"^^xsd:dateTimeStamp ;
+    obis:code "COLLECTION",
+        "EMODUL_INGREDIENT" ;
+    obis:has_identifier [ a obis:PermanentIdentifier,
+                "EMODUL_INGREDIENT" ;
+            obis:is_identifier_of class:None ],
+        [ a obis:PermanentIdentifier,
+                "COLLECTION" ;
+            obis:is_identifier_of class:None ] ;
+    rdfs:subClassOf obis:Collection,
+        obis:Object .
+
+object:None a obis:Object,
+        class:None ;
+    dc:creator user:None ;
+    dcterms:contributor user:None ;
+    dcterms:created "2023-05-31T14:09:16.169000"^^xsd:dateTimeStamp,
+        "2023-05-31T14:09:18.056000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2023-05-31T14:10:18.357000"^^xsd:dateTimeStamp,
+        "2023-05-31T14:10:18.917000"^^xsd:dateTimeStamp ;
+    obis:code "EMODUL_ING9",
+        "EMODUL_MIX11" ;
+    obis:has_child object:None ;
+    obis:has_identifier [ a obis:Identifier ;
+            obis:is_identifier_of object:None ;
+            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX11" ],
+        [ a obis:PermanentIdentifier,
+                "20230531140918056-37" ;
+            obis:is_identifier_of object:None ],
+        [ a obis:Identifier ;
+            obis:is_identifier_of object:None ;
             rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_ING9" ],
-        [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of object:20230531140916169-35 ;
-            rdf:value "20230531140916169-35" ] ;
-    obis:relates_to collection:20230531140903847-26,
-        project:20230531140903039-23,
-        space:EMODUL ;
+        [ a obis:PermanentIdentifier,
+                "20230531140916169-35" ;
+            obis:is_identifier_of object:None ] ;
+    obis:relates_to collection:None,
+        project:None,
+        space:None ;
     object_property:EMODUL_INGREDIENT.ANNOTATION [ a oa:Annotation ;
             oa:hasLiteralBody "FM 21/BV 21"^^xsd:string ] ;
     object_property:EMODUL_INGREDIENT.BULKDENSITY [ a qudt:QuantityValue ;
             qudt:value 1.14e+00 ] ;
     object_property:NAME [ a oa:Annotation ;
             oa:hasLiteralBody "admixture"^^xsd:string ] .
-
-collection:20230531140903847-26 a obis:Collection,
-        class:COLLECTION ;
-    dcterms:created "2023-05-31T14:09:03.847000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2023-05-31T14:09:36.726000"^^xsd:dateTimeStamp ;
-    obis:code "LEBEDIGITAL_INGREDIENT_COLLECTION" ;
-    obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of collection:20230531140903847-26 ;
-            rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_INGREDIENT_COLLECTION" ],
-        [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of collection:20230531140903847-26 ;
-            rdf:value "20230531140903847-26" ] .
-
-object:20230531140918056-37 a obis:Object ;
-    dcterms:created "2023-05-31T14:09:18.056000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2023-05-31T14:10:18.917000"^^xsd:dateTimeStamp ;
-    obis:code "EMODUL_MIX11" ;
-    obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of object:20230531140918056-37 ;
-            rdf:value "/EMODUL/LEBEDIGITAL/EMODUL_MIX11" ],
-        [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of object:20230531140918056-37 ;
-            rdf:value "20230531140918056-37" ] .
-
-project:20230531140903039-23 a obis:Project ;
-    dcterms:created "2023-05-31T14:09:03.039000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2023-05-31T14:10:27.618000"^^xsd:dateTimeStamp ;
-    obis:code "LEBEDIGITAL" ;
-    obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of project:20230531140903039-23 ;
-            rdf:value "/EMODUL/LEBEDIGITAL" ],
-        [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of project:20230531140903039-23 ;
-            rdf:value "20230531140903039-23" ] ;
-    obis:relates_to space:EMODUL ;
-    rdfs:comment "Project for Emodul samples" .
-
-space:EMODUL a obis:Space ;
-    dcterms:created "2023-05-31T14:09:02.948000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2023-05-31T14:09:02.948000"^^xsd:dateTimeStamp ;
-    obis:code "EMODUL" ;
-    obis:has_identifier [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of space:EMODUL ;
-            rdf:value "EMODUL" ] ;
-    rdfs:comment "Space for Emodul samples" .
-
-user:admin a obis:User ;
-    dcterms:created "2023-05-31T14:08:47.133000"^^xsd:dateTimeStamp ;
-    obis:has_identifier [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of user:admin ;
-            rdf:value "admin" ] .
 

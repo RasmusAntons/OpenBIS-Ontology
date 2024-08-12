@@ -8,36 +8,36 @@
 @prefix user: <https://openbismantic.matolab.org/openbismantic/user/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-user:admin a obis:User ;
+user:None a obis:User ;
     dcterms:created "2023-05-31T14:08:47.133000"^^xsd:dateTimeStamp ;
-    obis:has_identifier [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of user:admin ;
-            rdf:value "admin" ] .
+    obis:has_identifier [ a obis:PermanentIdentifier,
+                "admin" ;
+            obis:is_identifier_of user:None ] .
 
-project:20230531140903039-23 a obis:Project ;
+project:None a obis:Project ;
     dcterms:created "2023-05-31T14:09:03.039000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T14:10:27.618000"^^xsd:dateTimeStamp ;
     obis:code "LEBEDIGITAL" ;
     obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of project:20230531140903039-23 ;
+            obis:is_identifier_of project:None ;
             rdf:value "/EMODUL/LEBEDIGITAL" ],
-        [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of project:20230531140903039-23 ;
-            rdf:value "20230531140903039-23" ] ;
-    obis:relates_to space:EMODUL ;
+        [ a obis:PermanentIdentifier,
+                "20230531140903039-23" ;
+            obis:is_identifier_of project:None ] ;
+    obis:relates_to space:None ;
     rdfs:comment "Project for Emodul samples" .
 
-space:EMODUL a obis:Space ;
-    dc:creator user:admin ;
+space:None a obis:Space ;
+    dc:creator user:None ;
     dcterms:created "2023-05-31T14:09:02.948000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T14:09:02.948000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL" ;
-    obis:has_identifier [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of space:EMODUL ;
-            rdf:value "EMODUL" ],
-        [ a obis:PermanentIdentifier ;
-            obis:is_identifier_of space:EMODUL ;
-            rdf:value "EMODUL" ] ;
-    obis:relates_to project:20230531140903039-23 ;
+    obis:has_identifier [ a obis:PermanentIdentifier,
+                "EMODUL" ;
+            obis:is_identifier_of space:None ],
+        [ a obis:PermanentIdentifier,
+                "EMODUL" ;
+            obis:is_identifier_of space:None ] ;
+    obis:relates_to project:None ;
     rdfs:comment "Space for Emodul samples" .
 

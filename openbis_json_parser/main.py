@@ -236,14 +236,22 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
         # lookup if the id and type in dict result in a ontology entity
         entity, e_class, parent = create_instance_triple(data, base_url=base_url)
         if entity and e_class:
-            #print(f"its entity: {entity} and class {e_class}")
+            # print(f"its entity: {entity} and class {e_class}")
 
             # if the entity is a Identifier, only create it if it relates to entity previously created
-            if e_class in [OBIS.PermanentIdentifier, OBIS.Identifier]:
-                entity = add_identifier(graph, last_entity, entity, e_class)
+            if e_class in [
+                OBIS.PermanentIdentifier,
+            ]:
+                label = data["permId"]
+                entity = add_identifier(graph, last_entity, entity, e_class, label)
+            elif e_class in [
+                OBIS.Identifier,
+            ]:
+                label = data["identifier"]
+                entity = add_identifier(graph, last_entity, entity, e_class, label)
             else:
                 # add the triple defining the entity
-                #print(entity, e_class)
+                # print(entity, e_class)
                 graph.add((entity, RDF.type, e_class))
             if parent:
                 print(
@@ -375,19 +383,21 @@ def replace_iris(old: URIRef, new: URIRef, graph: Graph):
 def fix_iris(graph, base_url=None):
     # replace int iris with permids if possible
     for permid in graph[: RDF.type : OBIS.PermanentIdentifier]:
-        permid_value = graph.value(permid, RDF.value)
-        identifies = graph.value(permid, OBIS.is_identifier_of)
-        identifies_type = graph.value(identifies, RDF.type)
-        type_str = identifies_type.split("/")[-1].lower()
-        # print(identifies,identifies_type)
-        if identifies_type in [OWL.Class]:
+        # test=list(graph.triples((permid, None, None)))
+        # [print(line) for line in test]
+        permid_value = str(graph.value(permid, RDF.value))
+        identities = graph.value(permid, OBIS.is_identifier_of)
+        identities_type = graph.value(identities, RDF.type)
+        type_str = identities_type.split("/")[-1].lower()
+        print(identities, identities_type, permid_value)
+        if identities_type in [OWL.Class]:
             type_str = "class"
-        elif identifies_type in [OWL.ObjectProperty]:
+        elif identities_type in [OWL.ObjectProperty]:
             type_str = "object_property"
         graph.bind(type_str, _get_ns(base_url)[f"{type_str}/"])
         new = URIRef(f"{type_str}/{permid_value}", _get_ns(base_url))
-        replace_iris(identifies, new, graph)
-        # print(identifies,new)
+        replace_iris(identities, new, graph)
+        print(identities, new)
 
     # replace iri of created object properties with value of code if possible
     for property in graph[: RDF.type : OWL.ObjectProperty]:

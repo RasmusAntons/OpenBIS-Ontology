@@ -14,13 +14,13 @@ project:20230531140903039-23 a obis:Project ;
     dcterms:created "2023-05-31T14:09:03.039000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T14:10:27.618000"^^xsd:dateTimeStamp ;
     obis:code "LEBEDIGITAL" ;
-    obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of project:20230531140903039-23 ;
-            rdf:value "/EMODUL/LEBEDIGITAL" ],
-        [ a obis:PermanentIdentifier,
+    obis:has_identifier [ a obis:PermanentIdentifier,
                 "20230531140903039-23" ;
             obis:is_identifier_of project:20230531140903039-23 ;
-            rdf:value "20230531140903039-23" ] ;
+            rdf:value "20230531140903039-23" ],
+        [ a obis:Identifier ;
+            obis:is_identifier_of project:20230531140903039-23 ;
+            rdf:value "/EMODUL/LEBEDIGITAL" ] ;
     obis:relates_to collection:20230531140903340-24,
         collection:20230531140903722-25,
         collection:20230531140903847-26,
@@ -48,35 +48,35 @@ collection:20230531140903340-24 a obis:Collection ;
     dcterms:created "2023-05-31T14:09:03.340000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T14:09:46.105000"^^xsd:dateTimeStamp ;
     obis:code "LEBEDIGITAL_MIXTURE_COLLECTION" ;
-    obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of collection:20230531140903340-24 ;
-            rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_MIXTURE_COLLECTION" ],
-        [ a obis:PermanentIdentifier,
+    obis:has_identifier [ a obis:PermanentIdentifier,
                 "20230531140903340-24" ;
             obis:is_identifier_of collection:20230531140903340-24 ;
-            rdf:value "20230531140903340-24" ] .
+            rdf:value "20230531140903340-24" ],
+        [ a obis:Identifier ;
+            obis:is_identifier_of collection:20230531140903340-24 ;
+            rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_MIXTURE_COLLECTION" ] .
 
 collection:20230531140903722-25 a obis:Collection ;
     dcterms:created "2023-05-31T14:09:03.722000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T14:10:27.618000"^^xsd:dateTimeStamp ;
     obis:code "LEBEDIGITAL_EMODUL_COLLECTION" ;
-    obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of collection:20230531140903722-25 ;
-            rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_EMODUL_COLLECTION" ],
-        [ a obis:PermanentIdentifier,
+    obis:has_identifier [ a obis:PermanentIdentifier,
                 "20230531140903722-25" ;
             obis:is_identifier_of collection:20230531140903722-25 ;
-            rdf:value "20230531140903722-25" ] .
+            rdf:value "20230531140903722-25" ],
+        [ a obis:Identifier ;
+            obis:is_identifier_of collection:20230531140903722-25 ;
+            rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_EMODUL_COLLECTION" ] .
 
 collection:20230531140903847-26 a obis:Collection ;
     dcterms:created "2023-05-31T14:09:03.847000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T14:09:36.726000"^^xsd:dateTimeStamp ;
     obis:code "LEBEDIGITAL_INGREDIENT_COLLECTION" ;
-    obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of collection:20230531140903847-26 ;
-            rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_INGREDIENT_COLLECTION" ],
-        [ a obis:PermanentIdentifier,
+    obis:has_identifier [ a obis:PermanentIdentifier,
                 "20230531140903847-26" ;
             obis:is_identifier_of collection:20230531140903847-26 ;
-            rdf:value "20230531140903847-26" ] .
+            rdf:value "20230531140903847-26" ],
+        [ a obis:Identifier ;
+            obis:is_identifier_of collection:20230531140903847-26 ;
+            rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_INGREDIENT_COLLECTION" ] .
 

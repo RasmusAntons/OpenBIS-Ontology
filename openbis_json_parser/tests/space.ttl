@@ -8,36 +8,40 @@
 @prefix user: <https://openbismantic.matolab.org/openbismantic/user/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-user:None a obis:User ;
+user:admin a obis:User ;
     dcterms:created "2023-05-31T14:08:47.133000"^^xsd:dateTimeStamp ;
     obis:has_identifier [ a obis:PermanentIdentifier,
                 "admin" ;
-            obis:is_identifier_of user:None ] .
+            obis:is_identifier_of user:admin ;
+            rdf:value "admin" ] .
 
-project:None a obis:Project ;
+project:20230531140903039-23 a obis:Project ;
     dcterms:created "2023-05-31T14:09:03.039000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T14:10:27.618000"^^xsd:dateTimeStamp ;
     obis:code "LEBEDIGITAL" ;
     obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of project:None ;
+            obis:is_identifier_of project:20230531140903039-23 ;
             rdf:value "/EMODUL/LEBEDIGITAL" ],
         [ a obis:PermanentIdentifier,
                 "20230531140903039-23" ;
-            obis:is_identifier_of project:None ] ;
-    obis:relates_to space:None ;
+            obis:is_identifier_of project:20230531140903039-23 ;
+            rdf:value "20230531140903039-23" ] ;
+    obis:relates_to space:EMODUL ;
     rdfs:comment "Project for Emodul samples" .
 
-space:None a obis:Space ;
-    dc:creator user:None ;
+space:EMODUL a obis:Space ;
+    dc:creator user:admin ;
     dcterms:created "2023-05-31T14:09:02.948000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T14:09:02.948000"^^xsd:dateTimeStamp ;
     obis:code "EMODUL" ;
     obis:has_identifier [ a obis:PermanentIdentifier,
                 "EMODUL" ;
-            obis:is_identifier_of space:None ],
+            obis:is_identifier_of space:EMODUL ;
+            rdf:value "EMODUL" ],
         [ a obis:PermanentIdentifier,
                 "EMODUL" ;
-            obis:is_identifier_of space:None ] ;
-    obis:relates_to project:None ;
+            obis:is_identifier_of space:EMODUL ;
+            rdf:value "EMODUL" ] ;
+    obis:relates_to project:20230531140903039-23 ;
     rdfs:comment "Space for Emodul samples" .
 

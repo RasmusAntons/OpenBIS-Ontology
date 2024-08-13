@@ -21,6 +21,7 @@
                                    dcterms:bibliographicCitation "obis: MatoLab openbis ontology. Version 1.0.0, http://w3id.org/matolab/ontology/" ;
                                    dcterms:created "2024-01-15" ;
                                    dcterms:creator "Matolab OpenBISmatic Team"@en ;
+                                   dcterms:description "A simple ontology with the scope to represent the database items of an OpenBIS instance semantically."@en ;
                                    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
                                    dcterms:title "Matolab OpenBIS Ontology (OpenBISOnt)"@en ;
                                    vann:preferredNamespacePrefix "obis"@en ;
@@ -47,6 +48,10 @@ dcterms:created rdf:type owl:AnnotationProperty ;
 
 ###  http://purl.org/dc/terms/creator
 dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/license
@@ -102,7 +107,7 @@ skos:definition rdf:type owl:AnnotationProperty .
            rdfs:domain :Object ;
            rdfs:range :Object ;
            :openbis_json_key "children" ;
-           rdfs:label "has_child"@en ;
+           rdfs:label "has child"@en ;
            skos:definition "Relation towards the child of an Object." .
 
 
@@ -153,9 +158,11 @@ skos:definition rdf:type owl:AnnotationProperty .
 ###  http://w3id.org/matolab/openbis/relates_to
 :relates_to rdf:type owl:ObjectProperty ,
                      owl:SymmetricProperty ;
-            rdfs:domain owl:Thing ;
+            rdfs:domain :Collection ,
+                        :Object ,
+                        :Project ,
+                        :Space ;
             rdfs:range :Collection ,
-                       :Identifier ,
                        :Object ,
                        :Project ,
                        :Space ;

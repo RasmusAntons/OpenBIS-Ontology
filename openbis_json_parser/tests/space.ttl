@@ -19,13 +19,13 @@ project:20230531140903039-23 a obis:Project ;
     dcterms:created "2023-05-31T14:09:03.039000"^^xsd:dateTimeStamp ;
     dcterms:modified "2023-05-31T14:10:27.618000"^^xsd:dateTimeStamp ;
     obis:code "LEBEDIGITAL" ;
-    obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of project:20230531140903039-23 ;
-            rdf:value "/EMODUL/LEBEDIGITAL" ],
-        [ a obis:PermanentIdentifier,
+    obis:has_identifier [ a obis:PermanentIdentifier,
                 "20230531140903039-23" ;
             obis:is_identifier_of project:20230531140903039-23 ;
-            rdf:value "20230531140903039-23" ] ;
+            rdf:value "20230531140903039-23" ],
+        [ a obis:Identifier ;
+            obis:is_identifier_of project:20230531140903039-23 ;
+            rdf:value "/EMODUL/LEBEDIGITAL" ] ;
     obis:relates_to space:EMODUL ;
     rdfs:comment "Project for Emodul samples" .
 

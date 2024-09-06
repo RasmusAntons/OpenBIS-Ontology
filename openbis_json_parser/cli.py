@@ -3,7 +3,7 @@ import json
 import sys
 import urllib.request
 
-from openbis_json_parser.parser import parse_dict, parse_json, write_ontology
+from openbis_json_parser.main import parse_dict, parse_json, write_ontology
 
 
 def main():

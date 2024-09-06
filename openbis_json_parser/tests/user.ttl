@@ -2,16 +2,15 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix obis: <http://w3id.org/matolab/openbis/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix user: <https://openbismantic.matolab.org/openbismantic/user/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-user:admin a obis:User ;
-    dcterms:created "2023-05-31T14:08:47.133000"^^xsd:dateTimeStamp ;
-    obis:has_identifier [ a obis:PermanentIdentifier,
-                "admin" ;
-            obis:is_identifier_of user:admin ;
-            rdf:value "admin" ] ;
+<https:/openbismantic.matolab.org/openbismantic/user/admin> a obis:User ;
+    dcterms:created "2023-05-31T16:08:47.133000"^^xsd:dateTimeStamp ;
+    obis:has_identifier <https:/openbismantic.matolab.org/openbismantic/permanentidentifier/admin> ;
     foaf:family_name "Mustermann" ;
     foaf:givenname "Max" ;
     foaf:mbox <mailto:max.musermann@example.com> .
+
+<https:/openbismantic.matolab.org/openbismantic/permanentidentifier/admin> a obis:PermanentIdentifier ;
+    rdf:value "admin" .
 

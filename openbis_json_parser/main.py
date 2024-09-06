@@ -8,7 +8,7 @@ from typing import Tuple, Union
 
 from dateutil.parser import parse as date_parse
 from rdflib import BNode, Graph, Literal, Namespace, URIRef
-from rdflib.namespace import OWL, RDF, RDFS, XSD
+from rdflib.namespace import OWL, RDF, RDFS, XSD, DCAT
 
 # plugin api endpoint for permIds should be here
 default_ns = Namespace("https://openbismantic.matolab.org/openbismantic/")
@@ -36,7 +36,7 @@ def _get_ns(base_url=None):
 
 
 def get_obis_entity(string: str):
-    hits = list(obis[: OBIS.openbis_json_key : Literal(string)])
+    hits=list(obis[:OBIS.openbis_json_key:Literal(string)])
     if hits:
         return hits[0]
     else:
@@ -166,6 +166,8 @@ def parse_dict(data, base_url=None):
     # result.bind('data', _get_ns(base_url))
     iterate_json(data, result, base_url=base_url)
     result = fix_iris(result, base_url=base_url)
+    result = attach_distributions(result)
+    
     return result
 
 
@@ -180,15 +182,19 @@ def create_instance_triple(data: dict, base_url=None):
     o_class = None
     parent = None
     if all(prop in data.keys() for prop in ["@type"]):
+
         instance_id = str(data["@id"])
         o_class = get_obis_entity(data["@type"])
-        # print(data["@id"],data["@type"],instance_id,o_class)
+        print(data["@id"],data["@type"],instance_id,o_class)
         if o_class:
             entity = URIRef(instance_id, TEMP)
+        else:
+            print("no type found in OBIS Ontology for key: {}".format(data["@type"]))
         if data["@type"] == "as.dto.sample.SampleType":
             parent = OBIS.Object
         elif data["@type"] == "as.dto.experiment.ExperimentType":
             parent = OBIS.Collection
+        
     return entity, o_class, parent
 
 
@@ -235,25 +241,43 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
     if isinstance(data, dict):
         # lookup if the id and type in dict result in a ontology entity
         entity, e_class, parent = create_instance_triple(data, base_url=base_url)
+        
+        if not e_class and "@type" in data.keys():
+            print(data["@id"],data["@type"])
+            if data["@type"]=="as.dto.common.search.SearchResult" and "objects" in data.keys():
+                for hit in data['objects']:
+                    iterate_json(hit, graph, None, base_url=base_url)
+        if e_class in [OBIS.DataSet, DCAT.Distribution,OBIS.DataStore]:
+            print(data.keys())
         if entity and e_class:
-            # print(f"its entity: {entity} and class {e_class}")
+            adid=data.get('@id',None)
+            print(f"its entity: {entity} and class {e_class} with {adid}")
 
             # if the entity is a Identifier, only create it if it relates to entity previously created
+            # if e_class in [
+            #     OBIS.PermanentIdentifier,
+            # ]:
+            #     prmid=data.get("permId",None)
+            #     if isinstance(prmid,str):
+            #         label = data["permId"]
+            #         entity = add_identifier(graph, last_entity, entity, e_class, label)
+            #         print(f"added identifier to {last_entity} with label {label}")
             if e_class in [
-                OBIS.PermanentIdentifier,
-            ]:
-                label = data["permId"]
-                entity = add_identifier(graph, last_entity, entity, e_class, label)
-            elif e_class in [
                 OBIS.Identifier,
             ]:
                 label = data["identifier"]
                 entity = add_identifier(graph, last_entity, entity, e_class, label)
+            #skipping directory DataSetFiles
+            if "directory" in data.keys() and data['directory']:
+                print(data['directory'],type(data['directory']),e_class)
+                print("{} is a directory, skipping".format(entity))
+                return
             else:
                 # add the triple defining the entity
-                # print(entity, e_class)
                 graph.add((entity, RDF.type, e_class))
-            if parent:
+                print(f"added {entity} with type {e_class}")
+                
+            if parent and e_class==OWL.Class:
                 print(
                     "new class {} of type {} has parent {}, adding subClassOf relation".format(
                         entity, e_class, parent
@@ -265,6 +289,30 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                 # if the key is properties all json keys in that dict are relations to openbis properties followed by there values
                 if key == "fetchOptions":
                     continue
+                # elif key == "files":
+                #     if "objects" in value.keys() and isinstance(value["objects"],list):
+                #         print("iterate list of files")
+                #         # recursively inter over all json objects
+                #         iterate_json(value["objects"], graph, entity, base_url=base_url)
+                # elif key == "dataStore" and isinstance(value,dict):
+                #     print(f"dataStore: {value}")
+                #     # if "dataStore" in value.keys() and isinstance(value["dataStore"],dict):
+                #     for k, v in value.items():
+                #         annotation = get_obis_entity(k)
+                #         if (
+                #             annotation and isinstance(v,str)
+                #         ):
+                #             graph.add(
+                #                 (
+                #                     entity,
+                #                     annotation,
+                #                     URIRef(v),
+                #                 )
+                #             )
+                            
+                #         else:
+                #             print(f"unhandled relation on entity {entity} dataStore with {k} and {v}.")
+                #             #print(entity, e_class, annotation, key)
                 elif key == "properties" and isinstance(value, dict):
                     # lookup in graph
                     for prop_key, prop_value in value.items():
@@ -275,14 +323,59 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                             obj_prop = create_new_property(graph, prop_key)
                         describe_value(graph, entity, obj_prop, prop_value)
                         # graph.add((entity, obj_prop, Literal(str(prop_value))))
-
+                #add nested dataSetPermID
+                # elif key == "permId" and isinstance(value, dict) and "dataSetId" in value.keys():
+                #     annotation = get_obis_entity("dataSetId")
+                #     prmid=value["dataSetId"].get("@id",None)
+                #     if annotation and prmid:
+                #         graph.add(
+                #                 (
+                #                     entity,
+                #                     annotation,
+                #                     URIRef(str(prmid), TEMP),
+                #                 )
+                #             )
+                elif key == "permId" and isinstance(value, dict) and "dataSetId" in value.keys():
+                    annotation = get_obis_entity("dataSetId")
+                    id_perident=str(value["dataSetId"]["permId"])
+                    print('adding tripple: {} {} {}'.format(entity,annotation,Literal(id_perident)))
+                    if annotation:
+                        graph.add(
+                                (
+                                    entity,
+                                    annotation,
+                                    Literal(id_perident)
+                                )
+                            )
+                    # need to add filePath
+                    if "filePath" in value.keys() and isinstance(value['filePath'],str):
+                        print('filePath found')
+                        entity = add_identifier(graph, entity, identifier=BNode(),identifier_class=OBIS.PermanentIdentifier, label=value['filePath'])
+                elif key == "permId" and isinstance(value, str):
+                    graph.add(
+                            (
+                                entity,
+                                RDF.value,
+                                Literal(value),
+                            )
+                        )
                 elif isinstance(value, dict):
+                    print("iterate dict")
                     # recursively inter over all json objects
                     iterate_json(value, graph, entity, base_url=base_url)
                     # add the ObjectProperty to the created instance
+
+                    # if key in ["files"]:
+                    #     print("files relation to parent, step over objects")
+                    #     #if data["@type"]=="as.dto.common.search.SearchResult":
+                    #     print('search results iteration through files')
+                    #     if "objects"in value.keys():
+                    #         #get_obis_entity(id):
+                    #         iterate_json(value["objects"], graph, entity, base_url=base_url)
+
                     annotation = get_obis_entity(key)
                     # identifiers are handled already
-                    if entity and key not in ["permId", "identifier", "id"]:
+                    if entity and key not in ["identifier", "id"]:
                         if (
                             annotation and "@id" in value.keys()
                         ):  # and key in ['project', 'space', 'experiment']:
@@ -293,10 +386,12 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                                     URIRef(str(value["@id"]), TEMP),
                                 )
                             )
+                            
                         else:
-                            print("unhandled relation to dict entry")
-                            print(entity, e_class, annotation, key)
+                            print(f"unhandled relation on entity {entity} with {key}.")
+                            #print(entity, e_class, annotation, key)
                 elif isinstance(value, list):
+                    print("iterate list")
                     # recursively inter over all json objects
                     iterate_json(value, graph, entity, base_url=base_url)
                     # see if an entity is created and relate it if necessary
@@ -312,12 +407,11 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                                     )
                                 )
                     else:
-                        print("unhandled relation to list entry")
-                        print(entity, e_class, annotation, key)
+                        print(f"unhandled relation on entity {entity} with {key}.")
                 else:
                     # if its no dict or list test if its kind of object/data/annotation property and set it
                     annotation = get_obis_entity(key)
-                    # print(key,value)
+                    print("non list or dict object {} {}".format(key,value))
                     # skip if the value is not set
                     if not value:
                         continue
@@ -358,7 +452,10 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                         graph.add((entity, annotation, URIRef(str(value), TEMP)))
                     elif entity and annotation and isinstance(value, str):
                         graph.add((entity, annotation, Literal(value)))
-
+                    else:
+                        if key not in ["@type","@id"]:
+                            print(f"possible unhandled annotation {key} with {value}")
+            
     elif isinstance(data, list):
         for item in data:
             iterate_json(item, graph, base_url=base_url)
@@ -385,19 +482,27 @@ def fix_iris(graph, base_url=None):
     for permid in graph[: RDF.type : OBIS.PermanentIdentifier]:
         # test=list(graph.triples((permid, None, None)))
         # [print(line) for line in test]
-        permid_value = str(graph.value(permid, RDF.value))
-        identities = graph.value(permid, OBIS.is_identifier_of)
-        identities_type = graph.value(identities, RDF.type)
-        type_str = identities_type.split("/")[-1].lower()
-        print(identities, identities_type, permid_value)
-        if identities_type in [OWL.Class]:
-            type_str = "class"
-        elif identities_type in [OWL.ObjectProperty]:
-            type_str = "object_property"
-        graph.bind(type_str, _get_ns(base_url)[f"{type_str}/"])
-        new = URIRef(f"{type_str}/{permid_value}", _get_ns(base_url))
-        replace_iris(identities, new, graph)
-        print(identities, new)
+        permid_value = graph.value(permid, RDF.value)
+        #identities = graph.value(permid, OBIS.is_identifier_of)
+        identities = list(graph.subjects(OBIS.has_identifier, permid))
+        
+        for identity in identities:
+            identities_type = graph.value(identity, RDF.type)
+            print(identity, identities_type, permid_value)
+            if identities_type and permid_value:
+                type_str = identities_type.split("/")[-1].lower()
+                prefix=type_str
+                if identities_type in [OWL.Class]:
+                    type_str = "class"
+                    prefix="obiclass"
+                elif identities_type in [OWL.ObjectProperty]:
+                    type_str = "object_property"
+                    prefix="obisop"
+                new = URIRef(f"{type_str}/{permid_value}", _get_ns(base_url))
+                graph.bind(prefix, _get_ns(base_url)[f"{type_str}/"])
+                replace_iris(identity, new, graph)
+                print(identity, new)
+
 
     # replace iri of created object properties with value of code if possible
     for property in graph[: RDF.type : OWL.ObjectProperty]:
@@ -405,9 +510,35 @@ def fix_iris(graph, base_url=None):
         if code_value:
             new = _get_ns(base_url)[code_value]
             replace_iris(property, new, graph)
-
     for identifier in graph[: RDF.type : OBIS.Identifier]:
         replace_iris(identifier, BNode(), graph)
+
+
     for identifier in graph[: RDF.type : OBIS.PermanentIdentifier]:
-        replace_iris(identifier, BNode(), graph)
+        type_str = str(OBIS.PermanentIdentifier).split("/")[-1].lower()
+        permid_value = str(graph.value(identifier, RDF.value))
+        graph.bind(type_str, _get_ns(base_url)[f"{type_str}/"])
+        new = URIRef(f"{type_str}/{permid_value}", _get_ns(base_url))
+        replace_iris(identifier, new, graph)
+
+
+    #if still int id left try to replace them with OBIS.code
+    for entity in graph.subjects(None,None,unique=True):
+        if str(entity).rsplit("/",1)[-1].isnumeric():
+            code_value = graph.value(entity, OBIS.code)
+            if code_value:
+                new = _get_ns(base_url)[code_value]
+                replace_iris(entity, new, graph)
+    return graph
+
+def attach_distributions(graph, base_url=None):
+    for distribution in graph[: RDF.type : DCAT.Distribution]:
+        permids = graph.objects(distribution, OBIS.dataset_permid)
+        for permid in permids:
+            identifer=next(graph.subjects(RDF.value,permid),None)
+            if identifer:
+                dataset=next(graph.subjects(OBIS.has_identifier, identifer),None)
+                graph.add((dataset,DCAT.distribution,distribution))
+
+
     return graph

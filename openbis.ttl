@@ -101,6 +101,14 @@ skos:definition rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://w3id.org/matolab/openbis/dataset_permid
+:dataset_permid rdf:type owl:ObjectProperty ;
+                    rdfs:domain <http://www.w3.org/ns/dcat#Distribution> ;
+                    rdfs:range :PermanentIdentifier ;
+                    :openbis_json_key "dataSetId" ;
+                    rdfs:label "dataset permId" .
+
+
 ###  http://w3id.org/matolab/openbis/has_child
 :has_child rdf:type owl:ObjectProperty ;
            owl:inverseOf :has_parent ;
@@ -116,6 +124,8 @@ skos:definition rdf:type owl:AnnotationProperty .
                 owl:inverseOf :is_identifier_of ;
                 rdfs:domain owl:Thing ;
                 rdfs:range :Identifier ;
+                :openbis_json_key "permId",
+                              "filePath" ;
                 rdfs:label "has identifier"@en ;
                 skos:definition "Relation pointing to an Identifier concretizing the Identity of the entity further." .
 
@@ -171,12 +181,24 @@ skos:definition rdf:type owl:AnnotationProperty .
                               "dataSets" ,
                               "experiment" ,
                               "experiments" ,
+                              "files" ,
                               "project" ,
                               "projects" ,
                               "samples" ,
                               "space" ;
             rdfs:label "relates to"@en ;
             skos:definition "A general relation of OpenBIS instance marking them related to each other." .
+
+
+###  http://www.w3.org/ns/dcat#distribution
+<http://www.w3.org/ns/dcat#distribution> rdf:type owl:ObjectProperty ;
+                                         rdfs:label "distribution" .
+
+
+###  http://www.w3.org/ns/dcat#downloadURL
+<http://www.w3.org/ns/dcat#downloadURL> rdf:type owl:ObjectProperty ;
+                                        :openbis_json_key "downloadUrl" ;
+                                        rdfs:label "download URL" .
 
 
 #################################################################
@@ -192,12 +214,12 @@ skos:definition rdf:type owl:AnnotationProperty .
             skos:definition "An OpenBIS Collection of Objects and DataSets." .
 
 
-###  http://w3id.org/matolab/openbis/DataSet
-:DataSet rdf:type owl:Class ;
-         rdfs:subClassOf :Collection ;
-         :openbis_json_key "as.dto.dataset.Dataset" ;
-         rdfs:label "Data Set" ;
-         skos:definition "An folder where data files are stored. A data set has user-defined properties." .
+###  http://w3id.org/matolab/openbis/DataStore
+:DataStore rdf:type owl:Class ;
+           rdfs:subClassOf prov:SoftwareAgent ;
+           :openbis_json_key "as.dto.datastore.DataStore" ;
+           rdfs:label "OpenBIS Data Store" ;
+           skos:definition "A openBIS database service hosting files." .
 
 
 ###  http://w3id.org/matolab/openbis/Identifier
@@ -222,7 +244,8 @@ skos:definition rdf:type owl:AnnotationProperty .
 ###  http://w3id.org/matolab/openbis/PermanentIdentifier
 :PermanentIdentifier rdf:type owl:Class ;
                      rdfs:subClassOf :Identifier ;
-                     :openbis_json_key "as.dto.entitytype.id.EntityTypePermId" ,
+                     :openbis_json_key "as.dto.dataset.id.DataSetPermId" ,
+                                       "as.dto.entitytype.id.EntityTypePermId" ,
                                        "as.dto.experiment.id.ExperimentPermId" ,
                                        "as.dto.person.id.PersonPermId" ,
                                        "as.dto.project.id.ProjectPermId" ,
@@ -257,12 +280,31 @@ skos:definition rdf:type owl:AnnotationProperty .
       skos:definition "An named openBIS user." .
 
 
+###  http://www.w3.org/ns/dcat#Dataset
+<http://www.w3.org/ns/dcat#Dataset> rdf:type owl:Class ;
+                                    rdfs:subClassOf :Collection ;
+                                    :openbis_json_key "as.dto.dataset.DataSet" ;
+                                    rdfs:label "Data Set" ;
+                                    skos:definition "An folder where data files are stored. A data set has user-defined properties." .
+
+
+###  http://www.w3.org/ns/dcat#Distribution
+<http://www.w3.org/ns/dcat#Distribution> rdf:type owl:Class ;
+                                         rdfs:subClassOf prov:Entity ;
+                                         :openbis_json_key "dss.dto.datasetfile.DataSetFile" ;
+                                         rdfs:label "Distribution"@en .
+
+
 ###  http://www.w3.org/ns/prov#Agent
 prov:Agent rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/prov#Entity
 prov:Entity rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#SoftwareAgent
+prov:SoftwareAgent rdf:type owl:Class .
 
 
 ###  http://xmlns.com/foaf/0.1/Person
@@ -310,15 +352,15 @@ dcterms:contributor :openbis_json_key "modifier" .
 dcterms:modified :openbis_json_key "modificationDate" .
 
 
-rdf:type :openbis_json_key "permId" ,
-                           "type" .
+rdf:type :openbis_json_key "type" .
 
 
 rdf:value :openbis_json_key "identifier" ,
                             "permId" .
 
 
-owl:Class :openbis_json_key "as.dto.experiment.ExperimentType" ,
+owl:Class :openbis_json_key "as.dto.dataset.DataSetType" ,
+                            "as.dto.experiment.ExperimentType" ,
                             "as.dto.sample.SampleType" .
 
 

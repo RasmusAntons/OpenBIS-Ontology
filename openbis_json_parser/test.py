@@ -49,7 +49,13 @@ class TestMain(unittest.TestCase):
         output_file = os.path.join(__location__, "tests", "space.ttl")
         write_ontology(onto, output_file, target_format="turtle")
         self.assertTrue(os.path.exists(output_file))
-
+    def test_dataset(self):
+        with open(os.path.join(__location__, "tests", "dataset.json")) as f:
+            data = json.load(f)
+        onto = parse_dict(data)
+        output_file = os.path.join(__location__, "tests", "dataset.ttl")
+        write_ontology(onto, output_file, target_format="turtle")
+        self.assertTrue(os.path.exists(output_file))
 
 if __name__ == "__main__":
     unittest.main()

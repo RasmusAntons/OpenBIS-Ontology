@@ -289,30 +289,6 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                 # if the key is properties all json keys in that dict are relations to openbis properties followed by there values
                 if key == "fetchOptions":
                     continue
-                # elif key == "files":
-                #     if "objects" in value.keys() and isinstance(value["objects"],list):
-                #         print("iterate list of files")
-                #         # recursively inter over all json objects
-                #         iterate_json(value["objects"], graph, entity, base_url=base_url)
-                # elif key == "dataStore" and isinstance(value,dict):
-                #     print(f"dataStore: {value}")
-                #     # if "dataStore" in value.keys() and isinstance(value["dataStore"],dict):
-                #     for k, v in value.items():
-                #         annotation = get_obis_entity(k)
-                #         if (
-                #             annotation and isinstance(v,str)
-                #         ):
-                #             graph.add(
-                #                 (
-                #                     entity,
-                #                     annotation,
-                #                     URIRef(v),
-                #                 )
-                #             )
-                            
-                #         else:
-                #             print(f"unhandled relation on entity {entity} dataStore with {k} and {v}.")
-                #             #print(entity, e_class, annotation, key)
                 elif key == "properties" and isinstance(value, dict):
                     # lookup in graph
                     for prop_key, prop_value in value.items():
@@ -324,17 +300,6 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                         describe_value(graph, entity, obj_prop, prop_value)
                         # graph.add((entity, obj_prop, Literal(str(prop_value))))
                 #add nested dataSetPermID
-                # elif key == "permId" and isinstance(value, dict) and "dataSetId" in value.keys():
-                #     annotation = get_obis_entity("dataSetId")
-                #     prmid=value["dataSetId"].get("@id",None)
-                #     if annotation and prmid:
-                #         graph.add(
-                #                 (
-                #                     entity,
-                #                     annotation,
-                #                     URIRef(str(prmid), TEMP),
-                #                 )
-                #             )
                 elif key == "permId" and isinstance(value, dict) and "dataSetId" in value.keys():
                     annotation = get_obis_entity("dataSetId")
                     id_perident=str(value["dataSetId"]["permId"])
@@ -364,15 +329,6 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                     # recursively inter over all json objects
                     iterate_json(value, graph, entity, base_url=base_url)
                     # add the ObjectProperty to the created instance
-
-                    # if key in ["files"]:
-                    #     print("files relation to parent, step over objects")
-                    #     #if data["@type"]=="as.dto.common.search.SearchResult":
-                    #     print('search results iteration through files')
-                    #     if "objects"in value.keys():
-                    #         #get_obis_entity(id):
-                    #         iterate_json(value["objects"], graph, entity, base_url=base_url)
-
                     annotation = get_obis_entity(key)
                     # identifiers are handled already
                     if entity and key not in ["identifier", "id"]:

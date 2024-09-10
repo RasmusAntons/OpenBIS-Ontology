@@ -198,17 +198,31 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 ###  http://www.w3.org/ns/dcat#downloadURL
 <http://www.w3.org/ns/dcat#downloadURL> rdf:type owl:ObjectProperty ;
-                                        :openbis_json_key "downloadUrl" ;
+                                        rdfs:domain <http://www.w3.org/ns/dcat#Distribution> ;
                                         rdfs:label "download URL" .
+
+
+###  http://www.w3.org/ns/dcat#endpointURL
+<http://www.w3.org/ns/dcat#endpointURL> rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                        rdfs:domain <http://www.w3.org/ns/dcat#DataService> ;
+                                        :openbis_json_key "downloadUrl" ;
+                                        rdfs:label "endpoint URL" .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
+###  http://w3id.org/matolab/openbis/file_path
+:file_path rdf:type owl:DatatypeProperty ;
+           :openbis_json_key "path" .
+
+
 ###  http://www.w3.org/ns/dcat#byteSize
 <http://www.w3.org/ns/dcat#byteSize> rdf:type owl:DatatypeProperty ;
-                                      :openbis_json_key "fileLength" .
+                                     rdfs:domain <http://www.w3.org/ns/dcat#Distribution> ;
+                                     :openbis_json_key "fileLength" .
 
 
 #################################################################
@@ -226,7 +240,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 ###  http://w3id.org/matolab/openbis/DataStore
 :DataStore rdf:type owl:Class ;
-           rdfs:subClassOf prov:SoftwareAgent ;
+           rdfs:subClassOf <http://www.w3.org/ns/dcat#DataService> ;
            :openbis_json_key "as.dto.datastore.DataStore" ;
            rdfs:label "OpenBIS Data Store" ;
            skos:definition "A openBIS database service hosting files." .
@@ -288,6 +302,12 @@ skos:definition rdf:type owl:AnnotationProperty .
       :openbis_json_key "as.dto.person.Person" ;
       rdfs:label "User" ;
       skos:definition "An named openBIS user." .
+
+
+###  http://www.w3.org/ns/dcat#DataService
+<http://www.w3.org/ns/dcat#DataService> rdf:type owl:Class ;
+                                        rdfs:subClassOf prov:SoftwareAgent ;
+                                        rdfs:label "Data Service" .
 
 
 ###  http://www.w3.org/ns/dcat#Dataset

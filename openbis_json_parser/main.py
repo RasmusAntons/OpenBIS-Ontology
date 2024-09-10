@@ -503,14 +503,29 @@ def fix_iris(graph, base_url=None):
     
     return graph
 
+def get_permid(graph,entitiy):
+    identifiers=[identifier for identifier in graph[entitiy:OBIS.has_identifier:] if graph.value(identifier,RDF.type)==OBIS.PermanentIdentifier]
+    if identifiers:
+        return graph.value(identifiers[0],RDF.value)
+    else:
+        return None
+
 def attach_distributions(graph, base_url=None):
+    print("attach distributions")
     for distribution in graph[: RDF.type : DCAT.Distribution]:
         permids = graph.objects(distribution, OBIS.dataset_permid)
         for permid in permids:
             identifer=next(graph.subjects(RDF.value,permid),None)
             if identifer:
                 dataset=next(graph.subjects(OBIS.has_identifier, identifer),None)
-                graph.add((dataset,DCAT.distribution,distribution))
-
+                if dataset:
+                    graph.add((dataset,DCAT.distribution,distribution))
+                    store=[store for store in graph.subjects(RDF.type,OBIS.DataStore) if store in graph.objects(dataset,OBIS.relates_to)][0]
+                    store_url=graph.value(store,DCAT.endpointURL)
+                    file_url=graph.value(distribution,OBIS.file_path)
+                    if store_url:
+                        obj=URIRef(f"{store_url}/datastore_server/{permid}/{file_url}")
+                        graph.add((distribution,DCAT.downloadURL,obj))
+                        print('adding tripple: {} {} {}'.format(distribution,DCAT.downloadURL,obj))
 
     return graph

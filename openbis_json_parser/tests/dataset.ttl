@@ -11,7 +11,7 @@
     dcterms:created "2024-09-04T16:22:00.279000"^^xsd:dateTimeStamp ;
     dcterms:modified "2024-09-04T16:22:00.316000"^^xsd:dateTimeStamp ;
     obis:code "DSS1" ;
-    dcat:downloadURL "https://xeo54:8128" .
+    dcat:endpointURL "https://xeo54:8128" .
 
 <https:/openbismantic.matolab.org/openbismantic/class/ATTACHMENT> a owl:Class ;
     dcterms:modified "2024-09-04T16:21:25.233000"^^xsd:dateTimeStamp ;
@@ -90,8 +90,10 @@
 
 <https:/openbismantic.matolab.org/openbismantic/distribution/20240904142300681-40/original/markdown_demo.md> a dcat:Distribution ;
     obis:dataset_permid "20240904142300681-40" ;
+    obis:file_path "original/markdown_demo.md" ;
     obis:has_identifier <https:/openbismantic.matolab.org/openbismantic/permanentidentifier/original/markdown_demo.md> ;
-    dcat:byteSize "4566" .
+    dcat:byteSize "4566" ;
+    dcat:downloadURL <https://xeo54:8128/datastore_server/20240904142300681-40/original/markdown_demo.md> .
 
 <https:/openbismantic.matolab.org/openbismantic/user/admin> a obis:User ;
     dcterms:created "2024-09-04T16:21:45.790000"^^xsd:dateTimeStamp ;

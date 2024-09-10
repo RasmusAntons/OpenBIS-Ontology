@@ -145,7 +145,7 @@ dcterms:contributor rdf:type owl:ObjectProperty ;
 ###  http://w3id.org/matolab/openbis/has_identifier
 :has_identifier rdf:type owl:ObjectProperty ;
                 owl:inverseOf :is_identifier_of ;
-                rdfs:domain owl:Thing ;
+                rdfs:domain prov:Entity ;
                 rdfs:range :Identifier ;
                 :openbis_json_key "filePath" ,
                                   "permId" ;
@@ -165,7 +165,7 @@ dcterms:contributor rdf:type owl:ObjectProperty ;
 ###  http://w3id.org/matolab/openbis/has_tag
 :has_tag rdf:type owl:ObjectProperty ;
          owl:inverseOf :is_tag_of ;
-         rdfs:domain owl:Thing ;
+         rdfs:domain prov:Entity ;
          rdfs:range :Identifier ;
          :openbis_json_key "tags" ;
          rdfs:label "has tag"@en ;
@@ -175,7 +175,7 @@ dcterms:contributor rdf:type owl:ObjectProperty ;
 ###  http://w3id.org/matolab/openbis/is_identifier_of
 :is_identifier_of rdf:type owl:ObjectProperty ;
                   rdfs:domain :Identifier ;
-                  rdfs:range owl:Thing ;
+                  rdfs:range prov:Entity ;
                   rdfs:label "is identifier of"@en ;
                   skos:definition "Inverse of has_identifier." .
 
@@ -183,7 +183,7 @@ dcterms:contributor rdf:type owl:ObjectProperty ;
 ###  http://w3id.org/matolab/openbis/is_tag_of
 :is_tag_of rdf:type owl:ObjectProperty ;
            rdfs:domain :Identifier ;
-           rdfs:range owl:Thing ;
+           rdfs:range prov:Entity ;
            rdfs:label "is tag of"@en ;
            skos:definition "Inverse of has_tag." .
 

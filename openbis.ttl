@@ -98,8 +98,31 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 #################################################################
+#    Datatypes
+#################################################################
+
+###  https://www.w3.org/2000/01/rdf-schema#Resource
+<https://www.w3.org/2000/01/rdf-schema#Resource> rdf:type rdfs:Datatype .
+
+
+#################################################################
 #    Object Properties
 #################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:ObjectProperty ;
+           rdfs:domain prov:Entity ;
+           rdfs:range prov:Agent ;
+           :openbis_json_key "registrator" .
+
+
+###  http://purl.org/dc/terms/contributor
+dcterms:contributor rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain prov:Entity ;
+                    rdfs:range prov:Agent ;
+                    :openbis_json_key "modifier" .
+
 
 ###  http://w3id.org/matolab/openbis/dataset_permid
 :dataset_permid rdf:type owl:ObjectProperty ;
@@ -169,6 +192,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 :relates_to rdf:type owl:ObjectProperty ,
                      owl:SymmetricProperty ;
             rdfs:domain :Collection ,
+                        :DataStore ,
                         :Object ,
                         :Project ,
                         :Space ;
@@ -193,21 +217,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 ###  http://www.w3.org/ns/dcat#distribution
 <http://www.w3.org/ns/dcat#distribution> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <http://www.w3.org/ns/dcat#Dataset> ;
+                                         rdfs:range <http://www.w3.org/ns/dcat#Distribution> ;
                                          rdfs:label "distribution" .
-
-
-###  http://www.w3.org/ns/dcat#downloadURL
-<http://www.w3.org/ns/dcat#downloadURL> rdf:type owl:ObjectProperty ;
-                                        rdfs:domain <http://www.w3.org/ns/dcat#Distribution> ;
-                                        rdfs:label "download URL" .
-
-
-###  http://www.w3.org/ns/dcat#endpointURL
-<http://www.w3.org/ns/dcat#endpointURL> rdf:type owl:ObjectProperty ;
-                                        rdfs:subPropertyOf owl:topObjectProperty ;
-                                        rdfs:domain <http://www.w3.org/ns/dcat#DataService> ;
-                                        :openbis_json_key "downloadUrl" ;
-                                        rdfs:label "endpoint URL" .
 
 
 #################################################################
@@ -216,13 +228,31 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 ###  http://w3id.org/matolab/openbis/file_path
 :file_path rdf:type owl:DatatypeProperty ;
+           rdfs:domain <http://www.w3.org/ns/dcat#Distribution> ;
+           rdfs:range xsd:string ;
            :openbis_json_key "path" .
 
 
 ###  http://www.w3.org/ns/dcat#byteSize
 <http://www.w3.org/ns/dcat#byteSize> rdf:type owl:DatatypeProperty ;
                                      rdfs:domain <http://www.w3.org/ns/dcat#Distribution> ;
+                                     rdfs:range xsd:nonNegativeInteger ;
                                      :openbis_json_key "fileLength" .
+
+
+###  http://www.w3.org/ns/dcat#downloadURL
+<http://www.w3.org/ns/dcat#downloadURL> rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                        rdfs:domain <http://www.w3.org/ns/dcat#Distribution> ;
+                                        rdfs:range <https://www.w3.org/2000/01/rdf-schema#Resource> .
+
+
+###  http://www.w3.org/ns/dcat#endpointURL
+<http://www.w3.org/ns/dcat#endpointURL> rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                        rdfs:domain <http://www.w3.org/ns/dcat#DataService> ;
+                                        rdfs:range <https://www.w3.org/2000/01/rdf-schema#Resource> ;
+                                        :openbis_json_key "downloadURL" .
 
 
 #################################################################
@@ -372,12 +402,6 @@ foaf:Person rdf:type owl:Class .
 #################################################################
 #    Annotations
 #################################################################
-
-dc:creator :openbis_json_key "registrator" .
-
-
-dcterms:contributor :openbis_json_key "modifier" .
-
 
 dcterms:modified :openbis_json_key "modificationDate" .
 

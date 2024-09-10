@@ -1,101 +1,107 @@
+@prefix collection: <https://openbismantic.matolab.org/openbismantic/collection/> .
+@prefix dataset: <https://openbismantic.matolab.org/openbismantic/dataset/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix obiclass: <https://openbismantic.matolab.org/openbismantic/class/> .
 @prefix obis: <http://w3id.org/matolab/openbis/> .
+@prefix object: <https://openbismantic.matolab.org/openbismantic/object/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix permanentidentifier: <https://openbismantic.matolab.org/openbismantic/permanentidentifier/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix user: <https://openbismantic.matolab.org/openbismantic/user/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://openbismantic.matolab.org/openbismantic/DSS1> a obis:DataStore ;
-    dcterms:created "2024-09-04T16:22:00.279000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2024-09-04T16:22:00.316000"^^xsd:dateTimeStamp ;
+    dcterms:created "2024-09-04T14:22:00.279000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2024-09-04T14:22:00.316000"^^xsd:dateTimeStamp ;
     obis:code "DSS1" ;
     dcat:endpointURL "https://xeo54:8128" .
 
-<https:/openbismantic.matolab.org/openbismantic/class/ATTACHMENT> a owl:Class ;
-    dcterms:modified "2024-09-04T16:21:25.233000"^^xsd:dateTimeStamp ;
+obiclass:ATTACHMENT a owl:Class ;
+    dcterms:modified "2024-09-04T14:21:25.233000"^^xsd:dateTimeStamp ;
     obis:code "ATTACHMENT" ;
-    obis:has_identifier <https:/openbismantic.matolab.org/openbismantic/permanentidentifier/ATTACHMENT> .
+    obis:has_identifier permanentidentifier:ATTACHMENT .
 
-<https:/openbismantic.matolab.org/openbismantic/class/COLLECTION> a owl:Class ;
-    dcterms:modified "2024-09-04T16:21:23.997000"^^xsd:dateTimeStamp ;
+obiclass:COLLECTION a owl:Class ;
+    dcterms:modified "2024-09-04T14:21:23.997000"^^xsd:dateTimeStamp ;
     obis:code "COLLECTION" ;
-    obis:has_identifier <https:/openbismantic.matolab.org/openbismantic/permanentidentifier/COLLECTION> ;
+    obis:has_identifier permanentidentifier:COLLECTION ;
     rdfs:subClassOf obis:Collection .
 
-<https:/openbismantic.matolab.org/openbismantic/class/EXPERIMENTAL_STEP> a owl:Class ;
-    dcterms:modified "2024-09-04T16:21:20.694000"^^xsd:dateTimeStamp ;
+obiclass:EXPERIMENTAL_STEP a owl:Class ;
+    dcterms:modified "2024-09-04T14:21:20.694000"^^xsd:dateTimeStamp ;
     obis:code "EXPERIMENTAL_STEP" ;
-    obis:has_identifier <https:/openbismantic.matolab.org/openbismantic/permanentidentifier/EXPERIMENTAL_STEP> ;
+    obis:has_identifier permanentidentifier:EXPERIMENTAL_STEP ;
     rdfs:subClassOf obis:Object .
 
-<https:/openbismantic.matolab.org/openbismantic/dataset/20240904142300681-40> a dcat:Dataset,
-        <https:/openbismantic.matolab.org/openbismantic/class/ATTACHMENT> ;
-    dc:creator <https:/openbismantic.matolab.org/openbismantic/user/admin> ;
-    dcterms:contributor <https:/openbismantic.matolab.org/openbismantic/user/admin> ;
-    dcterms:created "2024-09-04T16:23:01.351000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2024-09-04T16:23:01.351000"^^xsd:dateTimeStamp ;
+dataset:20240904142300681-40 a dcat:Dataset,
+        obiclass:ATTACHMENT ;
+    dc:creator user:admin ;
+    dcterms:contributor user:admin ;
+    dcterms:created "2024-09-04T14:23:01.351000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2024-09-04T14:23:01.351000"^^xsd:dateTimeStamp ;
     obis:code "20240904142300681-40" ;
-    obis:has_identifier <https:/openbismantic.matolab.org/openbismantic/permanentidentifier/20240904142300681-40> ;
+    obis:has_identifier permanentidentifier:20240904142300681-40 ;
     obis:relates_to <https://openbismantic.matolab.org/openbismantic/DSS1>,
-        <https:/openbismantic.matolab.org/openbismantic/collection/20240904142218052-25>,
-        <https:/openbismantic.matolab.org/openbismantic/dataset/20240904142300681-40> ;
-    dcat:distribution <https:/openbismantic.matolab.org/openbismantic/distribution/20240904142300681-40/original/markdown_demo.md> .
+        collection:20240904142218052-25,
+        dataset:20240904142300681-40 ;
+    dcat:distribution <https://openbismantic.matolab.org/openbismantic/distribution/20240904142300681-40/original/markdown_demo.md> .
 
-<https:/openbismantic.matolab.org/openbismantic/object/20240904142235538-33> a obis:Object,
-        <https:/openbismantic.matolab.org/openbismantic/class/EXPERIMENTAL_STEP> ;
-    dcterms:created "2024-09-04T16:22:35.538000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2024-09-04T16:23:01.351000"^^xsd:dateTimeStamp ;
+object:20240904142235538-33 a obis:Object,
+        obiclass:EXPERIMENTAL_STEP ;
+    dcterms:created "2024-09-04T14:22:35.538000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2024-09-04T14:23:01.351000"^^xsd:dateTimeStamp ;
     obis:code "EXP8" ;
     obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/object/20240904142235538-33> ;
+            obis:is_identifier_of object:20240904142235538-33 ;
             rdf:value "/EMODUL/LEBEDIGITAL/EXP8" ],
-        <https:/openbismantic.matolab.org/openbismantic/permanentidentifier/20240904142235538-33> .
+        permanentidentifier:20240904142235538-33 .
 
-<https:/openbismantic.matolab.org/openbismantic/permanentidentifier/20240904142218052-25> a obis:PermanentIdentifier ;
+permanentidentifier:20240904142218052-25 a obis:PermanentIdentifier ;
     rdf:value "20240904142218052-25" .
 
-<https:/openbismantic.matolab.org/openbismantic/permanentidentifier/20240904142235538-33> a obis:PermanentIdentifier ;
+permanentidentifier:20240904142235538-33 a obis:PermanentIdentifier ;
     rdf:value "20240904142235538-33" .
 
-<https:/openbismantic.matolab.org/openbismantic/permanentidentifier/20240904142300681-40> a obis:PermanentIdentifier ;
+permanentidentifier:20240904142300681-40 a obis:PermanentIdentifier ;
     rdf:value "20240904142300681-40" .
 
-<https:/openbismantic.matolab.org/openbismantic/permanentidentifier/ATTACHMENT> a obis:PermanentIdentifier ;
+permanentidentifier:ATTACHMENT a obis:PermanentIdentifier ;
     rdf:value "ATTACHMENT" .
 
-<https:/openbismantic.matolab.org/openbismantic/permanentidentifier/COLLECTION> a obis:PermanentIdentifier ;
+permanentidentifier:COLLECTION a obis:PermanentIdentifier ;
     rdf:value "COLLECTION" .
 
-<https:/openbismantic.matolab.org/openbismantic/permanentidentifier/EXPERIMENTAL_STEP> a obis:PermanentIdentifier ;
+permanentidentifier:EXPERIMENTAL_STEP a obis:PermanentIdentifier ;
     rdf:value "EXPERIMENTAL_STEP" .
 
-<https:/openbismantic.matolab.org/openbismantic/permanentidentifier/admin> a obis:PermanentIdentifier ;
+permanentidentifier:admin a obis:PermanentIdentifier ;
     rdf:value "admin" .
 
-<https:/openbismantic.matolab.org/openbismantic/permanentidentifier/original/markdown_demo.md> a obis:PermanentIdentifier ;
-    obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/distribution/20240904142300681-40/original/markdown_demo.md> ;
+<https://openbismantic.matolab.org/openbismantic/permanentidentifier/original/markdown_demo.md> a obis:PermanentIdentifier ;
+    obis:is_identifier_of <https://openbismantic.matolab.org/openbismantic/distribution/20240904142300681-40/original/markdown_demo.md> ;
     rdf:value "original/markdown_demo.md" .
 
-<https:/openbismantic.matolab.org/openbismantic/collection/20240904142218052-25> a obis:Collection,
-        <https:/openbismantic.matolab.org/openbismantic/class/COLLECTION> ;
-    dcterms:created "2024-09-04T16:22:18.052000"^^xsd:dateTimeStamp ;
-    dcterms:modified "2024-09-04T16:27:26.780000"^^xsd:dateTimeStamp ;
+collection:20240904142218052-25 a obis:Collection,
+        obiclass:COLLECTION ;
+    dcterms:created "2024-09-04T14:22:18.052000"^^xsd:dateTimeStamp ;
+    dcterms:modified "2024-09-04T14:27:26.780000"^^xsd:dateTimeStamp ;
     obis:code "LEBEDIGITAL_EMODUL_COLLECTION" ;
     obis:has_identifier [ a obis:Identifier ;
-            obis:is_identifier_of <https:/openbismantic.matolab.org/openbismantic/collection/20240904142218052-25> ;
+            obis:is_identifier_of collection:20240904142218052-25 ;
             rdf:value "/EMODUL/LEBEDIGITAL/LEBEDIGITAL_EMODUL_COLLECTION" ],
-        <https:/openbismantic.matolab.org/openbismantic/permanentidentifier/20240904142218052-25> .
+        permanentidentifier:20240904142218052-25 .
 
-<https:/openbismantic.matolab.org/openbismantic/distribution/20240904142300681-40/original/markdown_demo.md> a dcat:Distribution ;
+<https://openbismantic.matolab.org/openbismantic/distribution/20240904142300681-40/original/markdown_demo.md> a dcat:Distribution ;
     obis:dataset_permid "20240904142300681-40" ;
     obis:file_path "original/markdown_demo.md" ;
     obis:has_identifier <https:/openbismantic.matolab.org/openbismantic/permanentidentifier/original/markdown_demo.md> ;
     dcat:byteSize "4566" ;
     dcat:downloadURL <https://xeo54:8128/datastore_server/20240904142300681-40/original/markdown_demo.md> .
 
-<https:/openbismantic.matolab.org/openbismantic/user/admin> a obis:User ;
-    dcterms:created "2024-09-04T16:21:45.790000"^^xsd:dateTimeStamp ;
-    obis:has_identifier <https:/openbismantic.matolab.org/openbismantic/permanentidentifier/admin> .
+user:admin a obis:User ;
+    dcterms:created "2024-09-04T14:21:45.790000"^^xsd:dateTimeStamp ;
+    obis:has_identifier permanentidentifier:admin .
 

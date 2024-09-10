@@ -97,7 +97,7 @@ collection:20240904142218052-25 a obis:Collection,
 <https://openbismantic.matolab.org/openbismantic/distribution/20240904142300681-40/original/markdown_demo.md> a dcat:Distribution ;
     obis:dataset_permid "20240904142300681-40" ;
     obis:file_path "original/markdown_demo.md" ;
-    obis:has_identifier <https:/openbismantic.matolab.org/openbismantic/permanentidentifier/original/markdown_demo.md> ;
+    obis:has_identifier <https://openbismantic.matolab.org/openbismantic/permanentidentifier/original/markdown_demo.md> ;
     dcat:byteSize "4566" ;
     dcat:downloadURL <https://xeo54:8128/datastore_server/20240904142300681-40/original/markdown_demo.md> .
 

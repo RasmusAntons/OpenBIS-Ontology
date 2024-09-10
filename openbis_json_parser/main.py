@@ -315,7 +315,7 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                     # need to add filePath
                     if "filePath" in value.keys() and isinstance(value['filePath'],str):
                         print('filePath found')
-                        entity = add_identifier(graph, entity, identifier=BNode(),identifier_class=OBIS.PermanentIdentifier, label=value['filePath'])
+                        add_identifier(graph, entity, identifier=BNode(),identifier_class=OBIS.PermanentIdentifier, label=value['filePath'])
                 elif key == "permId" and isinstance(value, str):
                     graph.add(
                             (
@@ -362,6 +362,7 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                                         URIRef(str(item["@id"]), TEMP),
                                     )
                                 )
+                                print('adding tripple: {} {} {}'.format(entity,annotation,URIRef(str(item["@id"]), TEMP)))
                     else:
                         print(f"unhandled relation on entity {entity} with {key}.")
                 else:
@@ -369,6 +370,7 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                     annotation = get_obis_entity(key)
                     print("non list or dict object {} {}".format(key,value))
                     # skip if the value is not set
+                    print(entity,key,annotation,value,type(value))
                     if not value:
                         continue
                     # date value should be transformed to iso format
@@ -397,17 +399,18 @@ def iterate_json(data, graph, last_entity=None, base_url=None):
                                 URIRef("mailto:{}".format(value)),
                             )
                         )
-                    # these are properties haveing a singular entry which is a relativ id in the json output
+                    # these are properties having a singular entry which is a relativ id in the json output
                     elif (
                         entity
                         and annotation
-                        and key in ["project", "space", "experiment"]
+                        and annotation==OBIS.relates_to
                     ):
                         # these json keyword point to integers which relates to other entities
                         # graph.add((entity, annotation, _get_ns(base_url)[str(value)]))
                         graph.add((entity, annotation, URIRef(str(value), TEMP)))
-                    elif entity and annotation and isinstance(value, str):
-                        graph.add((entity, annotation, Literal(value)))
+                    elif entity and annotation and isinstance(value, (str,int,float)):
+                        graph.add((entity, annotation, Literal(str(value))))
+                        print('adding tripple: {} {} {}'.format(entity,annotation,Literal(str(value))))
                     else:
                         if key not in ["@type","@id"]:
                             print(f"possible unhandled annotation {key} with {value}")
@@ -434,6 +437,7 @@ def replace_iris(old: URIRef, new: URIRef, graph: Graph):
 
 
 def fix_iris(graph, base_url=None):
+
     # replace int iris with permids if possible
     for permid in graph[: RDF.type : OBIS.PermanentIdentifier]:
         # test=list(graph.triples((permid, None, None)))
@@ -446,7 +450,7 @@ def fix_iris(graph, base_url=None):
             identities_type = graph.value(identity, RDF.type)
             print(identity, identities_type, permid_value)
             if identities_type and permid_value:
-                type_str = identities_type.split("/")[-1].lower()
+                type_str = identities_type.split("#")[-1].split("/")[-1].lower()
                 prefix=type_str
                 if identities_type in [OWL.Class]:
                     type_str = "class"
@@ -454,7 +458,12 @@ def fix_iris(graph, base_url=None):
                 elif identities_type in [OWL.ObjectProperty]:
                     type_str = "object_property"
                     prefix="obisop"
-                new = URIRef(f"{type_str}/{permid_value}", _get_ns(base_url))
+                if identities_type in [DCAT.Distribution]:
+                    dataset_prmid=graph.value(identity,OBIS.dataset_permid)
+                    new = URIRef(f"{type_str}/{dataset_prmid}/{permid_value}", _get_ns(base_url))
+                    
+                else:
+                    new = URIRef(f"{type_str}/{permid_value}", _get_ns(base_url))
                 graph.bind(prefix, _get_ns(base_url)[f"{type_str}/"])
                 replace_iris(identity, new, graph)
                 print(identity, new)
@@ -471,20 +480,27 @@ def fix_iris(graph, base_url=None):
 
 
     for identifier in graph[: RDF.type : OBIS.PermanentIdentifier]:
-        type_str = str(OBIS.PermanentIdentifier).split("/")[-1].lower()
+        type_str = str(OBIS.PermanentIdentifier).split("#")[-1].split("/")[-1].lower()
         permid_value = str(graph.value(identifier, RDF.value))
         graph.bind(type_str, _get_ns(base_url)[f"{type_str}/"])
         new = URIRef(f"{type_str}/{permid_value}", _get_ns(base_url))
         replace_iris(identifier, new, graph)
-
-
+   
     #if still int id left try to replace them with OBIS.code
-    for entity in graph.subjects(None,None,unique=True):
-        if str(entity).rsplit("/",1)[-1].isnumeric():
-            code_value = graph.value(entity, OBIS.code)
-            if code_value:
-                new = _get_ns(base_url)[code_value]
-                replace_iris(entity, new, graph)
+    temp_entities=[subject for subject in graph.subjects(None,None,unique=True) if str(subject).rsplit("/",1)[-1].isnumeric()]
+    temp_entities+=[object for object in graph.objects(None,None,unique=True) if str(object).rsplit("/",1)[-1].isnumeric()]
+    for entity in temp_entities:
+        code_value = graph.value(entity, OBIS.code)
+        #print(entity,code_value)
+        if code_value:
+            new = _get_ns(base_url)[code_value]
+            replace_iris(entity, new, graph)
+        #remove probably if not meaningful
+        else:
+            print(list(graph[::entity]))
+            graph.remove((entity,None,None))
+            graph.remove((None,OBIS.relates_to,entity))
+    
     return graph
 
 def attach_distributions(graph, base_url=None):

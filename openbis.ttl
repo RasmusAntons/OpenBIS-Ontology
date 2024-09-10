@@ -103,10 +103,10 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 ###  http://w3id.org/matolab/openbis/dataset_permid
 :dataset_permid rdf:type owl:ObjectProperty ;
-                    rdfs:domain <http://www.w3.org/ns/dcat#Distribution> ;
-                    rdfs:range :PermanentIdentifier ;
-                    :openbis_json_key "dataSetId" ;
-                    rdfs:label "dataset permId" .
+                rdfs:domain <http://www.w3.org/ns/dcat#Distribution> ;
+                rdfs:range :PermanentIdentifier ;
+                :openbis_json_key "dataSetId" ;
+                rdfs:label "dataset permId" .
 
 
 ###  http://w3id.org/matolab/openbis/has_child
@@ -124,8 +124,8 @@ skos:definition rdf:type owl:AnnotationProperty .
                 owl:inverseOf :is_identifier_of ;
                 rdfs:domain owl:Thing ;
                 rdfs:range :Identifier ;
-                :openbis_json_key "permId",
-                              "filePath" ;
+                :openbis_json_key "filePath" ,
+                                  "permId" ;
                 rdfs:label "has identifier"@en ;
                 skos:definition "Relation pointing to an Identifier concretizing the Identity of the entity further." .
 
@@ -179,6 +179,7 @@ skos:definition rdf:type owl:AnnotationProperty .
             :openbis_json_key "attachments" ,
                               "components" ,
                               "dataSets" ,
+                              "dataStore" ,
                               "experiment" ,
                               "experiments" ,
                               "files" ,
@@ -199,6 +200,15 @@ skos:definition rdf:type owl:AnnotationProperty .
 <http://www.w3.org/ns/dcat#downloadURL> rdf:type owl:ObjectProperty ;
                                         :openbis_json_key "downloadUrl" ;
                                         rdfs:label "download URL" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.w3.org/ns/dcat#byteSize
+<http://www.w3.org/ns/dcat#byteSize> rdf:type owl:DatatypeProperty ;
+                                      :openbis_json_key "fileLength" .
 
 
 #################################################################

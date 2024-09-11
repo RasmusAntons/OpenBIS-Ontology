@@ -1,0 +1,446 @@
+@prefix : <http://w3id.org/matolab/openbis#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://w3id.org/matolab/openbis#> .
+
+<http://w3id.org/matolab/openbis> rdf:type owl:Ontology ;
+                                   owl:versionIRI <http://w3id.org/matolab/openbis/1.0.0> ;
+                                   <http://purl.org/dc/elements/1.1/contributor> "Andre Valdestilhas (Bundesanstalt für Materalprüfung und -forschung BAM)"@en ,
+                                                                                 "Mariam Rizkallah (Fraunhofer IFAM)"@en ,
+                                                                                 "Rasmus Antons (Fraunhofer IWM)"@en ,
+                                                                                 "Thomas Hanke (Fraunhofer IWM)"@en ;
+                                   <http://purl.org/dc/terms/bibliographicCitation> "obis: MatoLab openbis ontology. Version 1.0.0, http://w3id.org/matolab/ontology/" ;
+                                   <http://purl.org/dc/terms/created> "2024-01-15" ;
+                                   <http://purl.org/dc/terms/creator> "Matolab OpenBISmatic Team"@en ;
+                                   <http://purl.org/dc/terms/description> "A simple ontology with the scope to represent the database items of an OpenBIS instance semantically."@en ;
+                                   <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> ;
+                                   <http://purl.org/dc/terms/title> "Matolab OpenBIS Ontology (OpenBISOnt)"@en ;
+                                   <http://purl.org/vocab/vann/preferredNamespacePrefix> "obis"@en ;
+                                   <http://purl.org/vocab/vann/preferredNamespaceUri> "http://w3id.org/matolab/openbis" ;
+                                   rdfs:comment "This is a simple Ontology expaining the data model of OpenBIS."@en ;
+                                   owl:versionInfo "1.0.0"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/contributor
+<http://purl.org/dc/elements/1.1/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/bibliographicCitation
+<http://purl.org/dc/terms/bibliographicCitation> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://w3id.org/matolab/openbis/code
+<http://w3id.org/matolab/openbis/code> rdf:type owl:AnnotationProperty ;
+                                       <http://w3id.org/matolab/openbis/openbis_json_key> "code" ;
+                                       rdfs:range xsd:string .
+
+
+###  http://w3id.org/matolab/openbis/openbis_json_key
+<http://w3id.org/matolab/openbis/openbis_json_key> rdf:type owl:AnnotationProperty ;
+                                                   rdfs:range xsd:string .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment <http://w3id.org/matolab/openbis/openbis_json_key> "description" .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label <http://w3id.org/matolab/openbis/openbis_json_key> "label" .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  https://www.w3.org/2000/01/rdf-schema#Resource
+<https://www.w3.org/2000/01/rdf-schema#Resource> rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+                                          rdfs:range <http://www.w3.org/ns/prov#Agent> ;
+                                          <http://w3id.org/matolab/openbis/openbis_json_key> "registrator" .
+
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                       rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+                                       rdfs:range <http://www.w3.org/ns/prov#Agent> ;
+                                       <http://w3id.org/matolab/openbis/openbis_json_key> "modifier" .
+
+
+###  http://w3id.org/matolab/openbis/dataset_permid
+<http://w3id.org/matolab/openbis/dataset_permid> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain <http://www.w3.org/ns/dcat#Distribution> ;
+                                                 rdfs:range <http://w3id.org/matolab/openbis/PermanentIdentifier> ;
+                                                 <http://w3id.org/matolab/openbis/openbis_json_key> "dataSetId" ;
+                                                 rdfs:label "dataset permId" .
+
+
+###  http://w3id.org/matolab/openbis/has_child
+<http://w3id.org/matolab/openbis/has_child> rdf:type owl:ObjectProperty ;
+                                            owl:inverseOf <http://w3id.org/matolab/openbis/has_parent> ;
+                                            rdfs:domain <http://w3id.org/matolab/openbis/Object> ;
+                                            rdfs:range <http://w3id.org/matolab/openbis/Object> ;
+                                            <http://w3id.org/matolab/openbis/openbis_json_key> "children" ;
+                                            rdfs:label "has child"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Relation towards the child of an Object." .
+
+
+###  http://w3id.org/matolab/openbis/has_identifier
+<http://w3id.org/matolab/openbis/has_identifier> rdf:type owl:ObjectProperty ;
+                                                 owl:inverseOf <http://w3id.org/matolab/openbis/is_identifier_of> ;
+                                                 rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+                                                 rdfs:range <http://w3id.org/matolab/openbis/Identifier> ;
+                                                 <http://w3id.org/matolab/openbis/openbis_json_key> "filePath" ,
+                                                                                                    "permId" ;
+                                                 rdfs:label "has identifier"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Relation pointing to an Identifier concretizing the Identity of the entity further." .
+
+
+###  http://w3id.org/matolab/openbis/has_parent
+<http://w3id.org/matolab/openbis/has_parent> rdf:type owl:ObjectProperty ;
+                                             rdfs:domain <http://w3id.org/matolab/openbis/Object> ;
+                                             rdfs:range <http://w3id.org/matolab/openbis/Object> ;
+                                             <http://w3id.org/matolab/openbis/openbis_json_key> "parents" ;
+                                             rdfs:label "has parent"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "Inverse of has_child." .
+
+
+###  http://w3id.org/matolab/openbis/has_tag
+<http://w3id.org/matolab/openbis/has_tag> rdf:type owl:ObjectProperty ;
+                                          owl:inverseOf <http://w3id.org/matolab/openbis/is_tag_of> ;
+                                          rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+                                          rdfs:range <http://w3id.org/matolab/openbis/Identifier> ;
+                                          <http://w3id.org/matolab/openbis/openbis_json_key> "tags" ;
+                                          rdfs:label "has tag"@en ;
+                                          <http://www.w3.org/2004/02/skos/core#definition> "Relation pointing to an Tag concretizing the Category of the entity." .
+
+
+###  http://w3id.org/matolab/openbis/is_identifier_of
+<http://w3id.org/matolab/openbis/is_identifier_of> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain <http://w3id.org/matolab/openbis/Identifier> ;
+                                                   rdfs:range <http://www.w3.org/ns/prov#Entity> ;
+                                                   rdfs:label "is identifier of"@en ;
+                                                   <http://www.w3.org/2004/02/skos/core#definition> "Inverse of has_identifier." .
+
+
+###  http://w3id.org/matolab/openbis/is_tag_of
+<http://w3id.org/matolab/openbis/is_tag_of> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <http://w3id.org/matolab/openbis/Identifier> ;
+                                            rdfs:range <http://www.w3.org/ns/prov#Entity> ;
+                                            rdfs:label "is tag of"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Inverse of has_tag." .
+
+
+###  http://w3id.org/matolab/openbis/relates_to
+<http://w3id.org/matolab/openbis/relates_to> rdf:type owl:ObjectProperty ,
+                                                      owl:SymmetricProperty ;
+                                             rdfs:domain <http://w3id.org/matolab/openbis/Collection> ,
+                                                         <http://w3id.org/matolab/openbis/DataStore> ,
+                                                         <http://w3id.org/matolab/openbis/Object> ,
+                                                         <http://w3id.org/matolab/openbis/Project> ,
+                                                         <http://w3id.org/matolab/openbis/Space> ,
+                                                         <http://www.w3.org/ns/dcat#Dataset> ;
+                                             rdfs:range <http://w3id.org/matolab/openbis/Collection> ,
+                                                        <http://w3id.org/matolab/openbis/Object> ,
+                                                        <http://w3id.org/matolab/openbis/Project> ,
+                                                        <http://w3id.org/matolab/openbis/Space> ;
+                                             <http://w3id.org/matolab/openbis/openbis_json_key> "attachments" ,
+                                                                                                "components" ,
+                                                                                                "dataSets" ,
+                                                                                                "dataStore" ,
+                                                                                                "experiment" ,
+                                                                                                "experiments" ,
+                                                                                                "files" ,
+                                                                                                "project" ,
+                                                                                                "projects" ,
+                                                                                                "samples" ,
+                                                                                                "space" ;
+                                             rdfs:label "relates to"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A general relation of OpenBIS instance marking them related to each other." .
+
+
+###  http://www.w3.org/ns/dcat#distribution
+<http://www.w3.org/ns/dcat#distribution> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <http://www.w3.org/ns/dcat#Dataset> ;
+                                         rdfs:range <http://www.w3.org/ns/dcat#Distribution> ;
+                                         rdfs:label "distribution" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://w3id.org/matolab/openbis/file_path
+<http://w3id.org/matolab/openbis/file_path> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain <http://www.w3.org/ns/dcat#Distribution> ;
+                                            rdfs:range xsd:string ;
+                                            <http://w3id.org/matolab/openbis/openbis_json_key> "path" .
+
+
+###  http://www.w3.org/ns/dcat#byteSize
+<http://www.w3.org/ns/dcat#byteSize> rdf:type owl:DatatypeProperty ;
+                                     rdfs:domain <http://www.w3.org/ns/dcat#Distribution> ;
+                                     rdfs:range xsd:nonNegativeInteger ;
+                                     <http://w3id.org/matolab/openbis/openbis_json_key> "fileLength" .
+
+
+###  http://www.w3.org/ns/dcat#downloadURL
+<http://www.w3.org/ns/dcat#downloadURL> rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                        rdfs:domain <http://www.w3.org/ns/dcat#Distribution> ;
+                                        rdfs:range <https://www.w3.org/2000/01/rdf-schema#Resource> .
+
+
+###  http://www.w3.org/ns/dcat#endpointURL
+<http://www.w3.org/ns/dcat#endpointURL> rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                        rdfs:domain <http://www.w3.org/ns/dcat#DataService> ;
+                                        rdfs:range <https://www.w3.org/2000/01/rdf-schema#Resource> ;
+                                        <http://w3id.org/matolab/openbis/openbis_json_key> "downloadUrl" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://w3id.org/matolab/openbis/Collection
+<http://w3id.org/matolab/openbis/Collection> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                                             <http://w3id.org/matolab/openbis/openbis_json_key> "as.dto.experiment.Experiment" ;
+                                             rdfs:label "Collection" ;
+                                             <http://www.w3.org/2004/02/skos/core#altLabel> "Experiment" ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "An OpenBIS Collection of Objects and DataSets." .
+
+
+###  http://w3id.org/matolab/openbis/DataStore
+<http://w3id.org/matolab/openbis/DataStore> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://www.w3.org/ns/dcat#DataService> ;
+                                            <http://w3id.org/matolab/openbis/openbis_json_key> "as.dto.datastore.DataStore" ;
+                                            rdfs:label "OpenBIS Data Store" ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "A openBIS database service hosting files." .
+
+
+###  http://w3id.org/matolab/openbis/Identifier
+<http://w3id.org/matolab/openbis/Identifier> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                                             <http://w3id.org/matolab/openbis/openbis_json_key> "as.dto.experiment.id.ExperimentIdentifier" ,
+                                                                                                "as.dto.project.id.ProjectIdentifier" ,
+                                                                                                "as.dto.sample.id.SampleIdentifier" ;
+                                             rdfs:label "Identifier" ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A String as additional Identifier." .
+
+
+###  http://w3id.org/matolab/openbis/Object
+<http://w3id.org/matolab/openbis/Object> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                                         <http://w3id.org/matolab/openbis/openbis_json_key> "as.dto.sample.Sample" ;
+                                         rdfs:label "Object" ;
+                                         <http://www.w3.org/2004/02/skos/core#altLabel> "Sample" ;
+                                         <http://www.w3.org/2004/02/skos/core#definition> "An OpenBIS entity of an object." .
+
+
+###  http://w3id.org/matolab/openbis/PermanentIdentifier
+<http://w3id.org/matolab/openbis/PermanentIdentifier> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://w3id.org/matolab/openbis/Identifier> ;
+                                                      <http://w3id.org/matolab/openbis/openbis_json_key> "as.dto.dataset.id.DataSetPermId" ,
+                                                                                                         "as.dto.entitytype.id.EntityTypePermId" ,
+                                                                                                         "as.dto.experiment.id.ExperimentPermId" ,
+                                                                                                         "as.dto.person.id.PersonPermId" ,
+                                                                                                         "as.dto.project.id.ProjectPermId" ,
+                                                                                                         "as.dto.sample.id.SamplePermId" ,
+                                                                                                         "as.dto.space.id.SpacePermId" ;
+                                                      rdfs:label "Permanent Identifier" ;
+                                                      <http://www.w3.org/2004/02/skos/core#definition> "A additional String given by the OpenBIS data storage which will never be changed." .
+
+
+###  http://w3id.org/matolab/openbis/Project
+<http://w3id.org/matolab/openbis/Project> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                                          <http://w3id.org/matolab/openbis/openbis_json_key> "as.dto.project.Project" ;
+                                          rdfs:label "Project" ;
+                                          <http://www.w3.org/2004/02/skos/core#definition> "An OpenBIS Project." .
+
+
+###  http://w3id.org/matolab/openbis/Space
+<http://w3id.org/matolab/openbis/Space> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                                        <http://w3id.org/matolab/openbis/openbis_json_key> "as.dto.space.Space" ;
+                                        rdfs:label "Space" ;
+                                        <http://www.w3.org/2004/02/skos/core#definition> "An OpenBIS Space." .
+
+
+###  http://w3id.org/matolab/openbis/User
+<http://w3id.org/matolab/openbis/User> rdf:type owl:Class ;
+                                       owl:equivalentClass <http://www.w3.org/ns/prov#Agent> ;
+                                       rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ;
+                                       <http://w3id.org/matolab/openbis/openbis_json_key> "as.dto.person.Person" ;
+                                       rdfs:label "User" ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "An named openBIS user." .
+
+
+###  http://www.w3.org/ns/dcat#DataService
+<http://www.w3.org/ns/dcat#DataService> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://www.w3.org/ns/prov#SoftwareAgent> ;
+                                        rdfs:label "Data Service" .
+
+
+###  http://www.w3.org/ns/dcat#Dataset
+<http://www.w3.org/ns/dcat#Dataset> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                                    <http://w3id.org/matolab/openbis/openbis_json_key> "as.dto.dataset.DataSet" ;
+                                    rdfs:label "Data Set" ;
+                                    <http://www.w3.org/2004/02/skos/core#definition> "An folder where data files are stored. A data set has user-defined properties." .
+
+
+###  http://www.w3.org/ns/dcat#Distribution
+<http://www.w3.org/ns/dcat#Distribution> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                                         <http://w3id.org/matolab/openbis/openbis_json_key> "dss.dto.datasetfile.DataSetFile" ;
+                                         rdfs:label "Distribution"@en .
+
+
+###  http://www.w3.org/ns/prov#Agent
+<http://www.w3.org/ns/prov#Agent> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Entity
+<http://www.w3.org/ns/prov#Entity> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#SoftwareAgent
+<http://www.w3.org/ns/prov#SoftwareAgent> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://w3id.org/matolab/openbis/GeneralProtocols
+<http://w3id.org/matolab/openbis/GeneralProtocols> rdf:type owl:NamedIndividual ,
+                                                            <http://w3id.org/matolab/openbis/Collection> ;
+                                                   rdfs:label "General Protocols Collection, a default OpenBIS collection to contain the lab proceedures generally used in the lab." .
+
+
+###  http://w3id.org/matolab/openbis/Materials
+<http://w3id.org/matolab/openbis/Materials> rdf:type owl:NamedIndividual ,
+                                                     <http://w3id.org/matolab/openbis/Space> ;
+                                            rdfs:label "Materials Space, a default OpenBIS space for material entities." .
+
+
+###  http://w3id.org/matolab/openbis/Methods
+<http://w3id.org/matolab/openbis/Methods> rdf:type owl:NamedIndividual ,
+                                                   <http://w3id.org/matolab/openbis/Space> ;
+                                          rdfs:label "Methods Space, a default OpenBIS space for methods and proceedures." .
+
+
+###  http://w3id.org/matolab/openbis/Protocols
+<http://w3id.org/matolab/openbis/Protocols> rdf:type owl:NamedIndividual ,
+                                                     <http://w3id.org/matolab/openbis/Project> ;
+                                            rdfs:label "Protocols Project, a default OpenBIS project for proceedures." .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://purl.org/dc/terms/created> <http://w3id.org/matolab/openbis/openbis_json_key> "registrationDate" .
+
+
+<http://purl.org/dc/terms/modified> <http://w3id.org/matolab/openbis/openbis_json_key> "modificationDate" .
+
+
+rdf:type <http://w3id.org/matolab/openbis/openbis_json_key> "type" .
+
+
+rdf:value <http://w3id.org/matolab/openbis/openbis_json_key> "identifier" ,
+                                                             "permId" .
+
+
+
+owl:Class <http://w3id.org/matolab/openbis/openbis_json_key> "as.dto.dataset.DataSetType" ,
+                                                             "as.dto.experiment.ExperimentType" ,
+                                                             "as.dto.sample.SampleType" .
+
+
+owl:ObjectProperty <http://w3id.org/matolab/openbis/openbis_json_key> "as.dto.property.PropertyType" .
+
+
+<http://xmlns.com/foaf/0.1/family_name> <http://w3id.org/matolab/openbis/openbis_json_key> "lastName" .
+
+
+<http://xmlns.com/foaf/0.1/givenname> <http://w3id.org/matolab/openbis/openbis_json_key> "firstName" .
+
+
+<http://xmlns.com/foaf/0.1/mbox> <http://w3id.org/matolab/openbis/openbis_json_key> "email" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://w3id.org/matolab/openbis/Collection>
+                <http://w3id.org/matolab/openbis/Identifier>
+                <http://w3id.org/matolab/openbis/Object>
+                <http://w3id.org/matolab/openbis/Project>
+                <http://w3id.org/matolab/openbis/Space>
+                <http://w3id.org/matolab/openbis/User>
+              )
+] .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

@@ -1,0 +1,746 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "http://w3id.org/matolab/openbis/Collection"
+    }, {
+      "@id" : "http://w3id.org/matolab/openbis/Identifier"
+    }, {
+      "@id" : "http://w3id.org/matolab/openbis/Object"
+    }, {
+      "@id" : "http://w3id.org/matolab/openbis/Project"
+    }, {
+      "@id" : "http://w3id.org/matolab/openbis/Space"
+    }, {
+      "@id" : "http://w3id.org/matolab/openbis/User"
+    } ]
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/contributor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/creator",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "registrator"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#ObjectProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Agent"
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/bibliographicCitation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/contributor",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "modifier"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#ObjectProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Agent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/created",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "registrationDate"
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/modified",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "modificationDate"
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/elements/1.1/contributor" : [ {
+    "@language" : "en",
+    "@value" : "Andre Valdestilhas (Bundesanstalt für Materalprüfung und -forschung BAM)"
+  }, {
+    "@language" : "en",
+    "@value" : "Mariam Rizkallah (Fraunhofer IFAM)"
+  }, {
+    "@language" : "en",
+    "@value" : "Rasmus Antons (Fraunhofer IWM)"
+  }, {
+    "@language" : "en",
+    "@value" : "Thomas Hanke (Fraunhofer IWM)"
+  } ],
+  "http://purl.org/dc/terms/bibliographicCitation" : [ {
+    "@value" : "obis: MatoLab openbis ontology. Version 1.0.0, http://w3id.org/matolab/ontology/"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2024-01-15"
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@language" : "en",
+    "@value" : "Matolab OpenBISmatic Team"
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "A simple ontology with the scope to represent the database items of an OpenBIS instance semantically."
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@id" : "http://creativecommons.org/licenses/by/4.0/"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@language" : "en",
+    "@value" : "Matolab OpenBIS Ontology (OpenBISOnt)"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
+    "@language" : "en",
+    "@value" : "obis"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
+    "@value" : "http://w3id.org/matolab/openbis"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "This is a simple Ontology expaining the data model of OpenBIS."
+  } ],
+  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/1.0.0"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@language" : "en",
+    "@value" : "1.0.0"
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/Collection",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "as.dto.experiment.Experiment"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Class"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Collection"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#altLabel" : [ {
+    "@value" : "Experiment"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@value" : "An OpenBIS Collection of Objects and DataSets."
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/DataStore",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "as.dto.datastore.DataStore"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Class"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "OpenBIS Data Store"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/dcat#DataService"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@value" : "A openBIS database service hosting files."
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/GeneralProtocols",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/Collection"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "General Protocols Collection, a default OpenBIS collection to contain the lab proceedures generally used in the lab."
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/Identifier",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "as.dto.experiment.id.ExperimentIdentifier"
+  }, {
+    "@value" : "as.dto.project.id.ProjectIdentifier"
+  }, {
+    "@value" : "as.dto.sample.id.SampleIdentifier"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Class"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Identifier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@value" : "A String as additional Identifier."
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/Materials",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/Space"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Materials Space, a default OpenBIS space for material entities."
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/Methods",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/Space"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Methods Space, a default OpenBIS space for methods and proceedures."
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/Object",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "as.dto.sample.Sample"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Class"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Object"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#altLabel" : [ {
+    "@value" : "Sample"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@value" : "An OpenBIS entity of an object."
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/PermanentIdentifier",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "as.dto.dataset.id.DataSetPermId"
+  }, {
+    "@value" : "as.dto.entitytype.id.EntityTypePermId"
+  }, {
+    "@value" : "as.dto.experiment.id.ExperimentPermId"
+  }, {
+    "@value" : "as.dto.person.id.PersonPermId"
+  }, {
+    "@value" : "as.dto.project.id.ProjectPermId"
+  }, {
+    "@value" : "as.dto.sample.id.SamplePermId"
+  }, {
+    "@value" : "as.dto.space.id.SpacePermId"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Class"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Permanent Identifier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/Identifier"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@value" : "A additional String given by the OpenBIS data storage which will never be changed."
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/Project",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "as.dto.project.Project"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Class"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@value" : "An OpenBIS Project."
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/Protocols",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Protocols Project, a default OpenBIS project for proceedures."
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/Space",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "as.dto.space.Space"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Class"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Space"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@value" : "An OpenBIS Space."
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/User",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "as.dto.person.Person"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Class"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "User"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Agent"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@value" : "An named openBIS user."
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/code",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "code"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/dataset_permid",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "dataSetId"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#ObjectProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/ns/dcat#Distribution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "dataset permId"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/PermanentIdentifier"
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/file_path",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "path"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/ns/dcat#Distribution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/has_child",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "children"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#ObjectProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/Object"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has child"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/Object"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/has_parent"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@value" : "Relation towards the child of an Object."
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/has_identifier",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "filePath"
+  }, {
+    "@value" : "permId"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#ObjectProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has identifier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/Identifier"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/is_identifier_of"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@value" : "Relation pointing to an Identifier concretizing the Identity of the entity further."
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/has_parent",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "parents"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#ObjectProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/Object"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has parent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/Object"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@value" : "Inverse of has_child."
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/has_tag",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "tags"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#ObjectProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has tag"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/Identifier"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/is_tag_of"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@value" : "Relation pointing to an Tag concretizing the Category of the entity."
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/is_identifier_of",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#ObjectProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/Identifier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is identifier of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@value" : "Inverse of has_identifier."
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/is_tag_of",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#ObjectProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/Identifier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is tag of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@value" : "Inverse of has_tag."
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/openbis_json_key",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://w3id.org/matolab/openbis/relates_to",
+  "@type" : [ "http://www.w3.org/2002/07/owl#SymmetricProperty" ],
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "attachments"
+  }, {
+    "@value" : "components"
+  }, {
+    "@value" : "dataSets"
+  }, {
+    "@value" : "dataStore"
+  }, {
+    "@value" : "experiment"
+  }, {
+    "@value" : "experiments"
+  }, {
+    "@value" : "files"
+  }, {
+    "@value" : "project"
+  }, {
+    "@value" : "projects"
+  }, {
+    "@value" : "samples"
+  }, {
+    "@value" : "space"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#ObjectProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/Collection"
+  }, {
+    "@id" : "http://w3id.org/matolab/openbis/DataStore"
+  }, {
+    "@id" : "http://w3id.org/matolab/openbis/Object"
+  }, {
+    "@id" : "http://w3id.org/matolab/openbis/Project"
+  }, {
+    "@id" : "http://w3id.org/matolab/openbis/Space"
+  }, {
+    "@id" : "http://www.w3.org/ns/dcat#Dataset"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "relates to"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://w3id.org/matolab/openbis/Collection"
+  }, {
+    "@id" : "http://w3id.org/matolab/openbis/Object"
+  }, {
+    "@id" : "http://w3id.org/matolab/openbis/Project"
+  }, {
+    "@id" : "http://w3id.org/matolab/openbis/Space"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@value" : "A general relation of OpenBIS instance marking them related to each other."
+  } ]
+}, {
+  "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "type"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#value",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "identifier"
+  }, {
+    "@value" : "permId"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2000/01/rdf-schema#comment",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "description"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "label"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2002/07/owl#Class",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "as.dto.dataset.DataSetType"
+  }, {
+    "@value" : "as.dto.experiment.ExperimentType"
+  }, {
+    "@value" : "as.dto.sample.SampleType"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2002/07/owl#ObjectProperty",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "as.dto.property.PropertyType"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#altLabel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#definition",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/dcat#DataService",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Class"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Data Service"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#SoftwareAgent"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/dcat#Dataset",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "as.dto.dataset.DataSet"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Class"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Data Set"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@value" : "An folder where data files are stored. A data set has user-defined properties."
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/dcat#Distribution",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "dss.dto.datasetfile.DataSetFile"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Class"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Distribution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/dcat#byteSize",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "fileLength"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/ns/dcat#Distribution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/dcat#distribution",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#ObjectProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/ns/dcat#Dataset"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "distribution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/ns/dcat#Distribution"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/ns/dcat#Distribution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://www.w3.org/2000/01/rdf-schema#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/dcat#endpointURL",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "downloadUrl"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/ns/dcat#DataService"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://www.w3.org/2000/01/rdf-schema#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#Agent",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Class"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#Entity",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Class"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#SoftwareAgent",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Class"
+  } ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/Person",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Class"
+  } ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/family_name",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "lastName"
+  } ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/givenname",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "firstName"
+  } ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/mbox",
+  "http://w3id.org/matolab/openbis/openbis_json_key" : [ {
+    "@value" : "email"
+  } ]
+}, {
+  "@id" : "https://www.w3.org/2000/01/rdf-schema#Resource",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
+} ]

@@ -1,0 +1,707 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://w3id.org/matolab/openbis#"
+     xml:base="http://w3id.org/matolab/openbis"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:openbis="http://w3id.org/matolab/openbis/">
+    <owl:Ontology rdf:about="http://w3id.org/matolab/openbis">
+        <owl:versionIRI rdf:resource="http://w3id.org/matolab/openbis/1.0.0"/>
+        <dc:contributor xml:lang="en">Andre Valdestilhas (Bundesanstalt für Materalprüfung und -forschung BAM)</dc:contributor>
+        <dc:contributor xml:lang="en">Mariam Rizkallah (Fraunhofer IFAM)</dc:contributor>
+        <dc:contributor xml:lang="en">Rasmus Antons (Fraunhofer IWM)</dc:contributor>
+        <dc:contributor xml:lang="en">Thomas Hanke (Fraunhofer IWM)</dc:contributor>
+        <terms:bibliographicCitation>obis: MatoLab openbis ontology. Version 1.0.0, http://w3id.org/matolab/ontology/</terms:bibliographicCitation>
+        <terms:created>2024-01-15</terms:created>
+        <terms:creator xml:lang="en">Matolab OpenBISmatic Team</terms:creator>
+        <terms:description xml:lang="en">A simple ontology with the scope to represent the database items of an OpenBIS instance semantically.</terms:description>
+        <terms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+        <terms:title xml:lang="en">Matolab OpenBIS Ontology (OpenBISOnt)</terms:title>
+        <vann:preferredNamespacePrefix xml:lang="en">obis</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>http://w3id.org/matolab/openbis</vann:preferredNamespaceUri>
+        <rdfs:comment xml:lang="en">This is a simple Ontology expaining the data model of OpenBIS.</rdfs:comment>
+        <owl:versionInfo xml:lang="en">1.0.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/bibliographicCitation -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/bibliographicCitation"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/code -->
+
+
+    <owl:AnnotationProperty rdf:about="http://w3id.org/matolab/openbis/code">
+        <openbis:openbis_json_key>code</openbis:openbis_json_key>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/openbis_json_key -->
+
+
+    <owl:AnnotationProperty rdf:about="http://w3id.org/matolab/openbis/openbis_json_key">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
+        <openbis:openbis_json_key>description</openbis:openbis_json_key>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+        <openbis:openbis_json_key>label</openbis:openbis_json_key>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://www.w3.org/2000/01/rdf-schema#Resource -->
+
+
+    <rdfs:Datatype rdf:about="https://www.w3.org/2000/01/rdf-schema#Resource"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/creator">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <openbis:openbis_json_key>registrator</openbis:openbis_json_key>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/contributor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <openbis:openbis_json_key>modifier</openbis:openbis_json_key>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/dataset_permid -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/matolab/openbis/dataset_permid">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+        <rdfs:range rdf:resource="http://w3id.org/matolab/openbis/PermanentIdentifier"/>
+        <openbis:openbis_json_key>dataSetId</openbis:openbis_json_key>
+        <rdfs:label>dataset permId</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/has_child -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/matolab/openbis/has_child">
+        <owl:inverseOf rdf:resource="http://w3id.org/matolab/openbis/has_parent"/>
+        <rdfs:domain rdf:resource="http://w3id.org/matolab/openbis/Object"/>
+        <rdfs:range rdf:resource="http://w3id.org/matolab/openbis/Object"/>
+        <openbis:openbis_json_key>children</openbis:openbis_json_key>
+        <rdfs:label xml:lang="en">has child</rdfs:label>
+        <skos:definition>Relation towards the child of an Object.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/has_identifier -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/matolab/openbis/has_identifier">
+        <owl:inverseOf rdf:resource="http://w3id.org/matolab/openbis/is_identifier_of"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:range rdf:resource="http://w3id.org/matolab/openbis/Identifier"/>
+        <openbis:openbis_json_key>filePath</openbis:openbis_json_key>
+        <openbis:openbis_json_key>permId</openbis:openbis_json_key>
+        <rdfs:label xml:lang="en">has identifier</rdfs:label>
+        <skos:definition>Relation pointing to an Identifier concretizing the Identity of the entity further.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/has_parent -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/matolab/openbis/has_parent">
+        <rdfs:domain rdf:resource="http://w3id.org/matolab/openbis/Object"/>
+        <rdfs:range rdf:resource="http://w3id.org/matolab/openbis/Object"/>
+        <openbis:openbis_json_key>parents</openbis:openbis_json_key>
+        <rdfs:label xml:lang="en">has parent</rdfs:label>
+        <skos:definition>Inverse of has_child.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/has_tag -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/matolab/openbis/has_tag">
+        <owl:inverseOf rdf:resource="http://w3id.org/matolab/openbis/is_tag_of"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:range rdf:resource="http://w3id.org/matolab/openbis/Identifier"/>
+        <openbis:openbis_json_key>tags</openbis:openbis_json_key>
+        <rdfs:label xml:lang="en">has tag</rdfs:label>
+        <skos:definition>Relation pointing to an Tag concretizing the Category of the entity.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/is_identifier_of -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/matolab/openbis/is_identifier_of">
+        <rdfs:domain rdf:resource="http://w3id.org/matolab/openbis/Identifier"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:label xml:lang="en">is identifier of</rdfs:label>
+        <skos:definition>Inverse of has_identifier.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/is_tag_of -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/matolab/openbis/is_tag_of">
+        <rdfs:domain rdf:resource="http://w3id.org/matolab/openbis/Identifier"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:label xml:lang="en">is tag of</rdfs:label>
+        <skos:definition>Inverse of has_tag.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/relates_to -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/matolab/openbis/relates_to">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/matolab/openbis/Collection"/>
+        <rdfs:domain rdf:resource="http://w3id.org/matolab/openbis/DataStore"/>
+        <rdfs:domain rdf:resource="http://w3id.org/matolab/openbis/Object"/>
+        <rdfs:domain rdf:resource="http://w3id.org/matolab/openbis/Project"/>
+        <rdfs:domain rdf:resource="http://w3id.org/matolab/openbis/Space"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://w3id.org/matolab/openbis/Collection"/>
+        <rdfs:range rdf:resource="http://w3id.org/matolab/openbis/Object"/>
+        <rdfs:range rdf:resource="http://w3id.org/matolab/openbis/Project"/>
+        <rdfs:range rdf:resource="http://w3id.org/matolab/openbis/Space"/>
+        <openbis:openbis_json_key>attachments</openbis:openbis_json_key>
+        <openbis:openbis_json_key>components</openbis:openbis_json_key>
+        <openbis:openbis_json_key>dataSets</openbis:openbis_json_key>
+        <openbis:openbis_json_key>dataStore</openbis:openbis_json_key>
+        <openbis:openbis_json_key>experiment</openbis:openbis_json_key>
+        <openbis:openbis_json_key>experiments</openbis:openbis_json_key>
+        <openbis:openbis_json_key>files</openbis:openbis_json_key>
+        <openbis:openbis_json_key>project</openbis:openbis_json_key>
+        <openbis:openbis_json_key>projects</openbis:openbis_json_key>
+        <openbis:openbis_json_key>samples</openbis:openbis_json_key>
+        <openbis:openbis_json_key>space</openbis:openbis_json_key>
+        <rdfs:label xml:lang="en">relates to</rdfs:label>
+        <skos:definition>A general relation of OpenBIS instance marking them related to each other.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#distribution -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#distribution">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+        <rdfs:label>distribution</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/file_path -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/matolab/openbis/file_path">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <openbis:openbis_json_key>path</openbis:openbis_json_key>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#byteSize -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/dcat#byteSize">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <openbis:openbis_json_key>fileLength</openbis:openbis_json_key>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#downloadURL -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/dcat#downloadURL">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+        <rdfs:range rdf:resource="https://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#endpointURL -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/dcat#endpointURL">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#DataService"/>
+        <rdfs:range rdf:resource="https://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <openbis:openbis_json_key>downloadUrl</openbis:openbis_json_key>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/Collection -->
+
+
+    <owl:Class rdf:about="http://w3id.org/matolab/openbis/Collection">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <openbis:openbis_json_key>as.dto.experiment.Experiment</openbis:openbis_json_key>
+        <rdfs:label>Collection</rdfs:label>
+        <skos:altLabel>Experiment</skos:altLabel>
+        <skos:definition>An OpenBIS Collection of Objects and DataSets.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/DataStore -->
+
+
+    <owl:Class rdf:about="http://w3id.org/matolab/openbis/DataStore">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#DataService"/>
+        <openbis:openbis_json_key>as.dto.datastore.DataStore</openbis:openbis_json_key>
+        <rdfs:label>OpenBIS Data Store</rdfs:label>
+        <skos:definition>A openBIS database service hosting files.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/Identifier -->
+
+
+    <owl:Class rdf:about="http://w3id.org/matolab/openbis/Identifier">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <openbis:openbis_json_key>as.dto.experiment.id.ExperimentIdentifier</openbis:openbis_json_key>
+        <openbis:openbis_json_key>as.dto.project.id.ProjectIdentifier</openbis:openbis_json_key>
+        <openbis:openbis_json_key>as.dto.sample.id.SampleIdentifier</openbis:openbis_json_key>
+        <rdfs:label>Identifier</rdfs:label>
+        <skos:definition>A String as additional Identifier.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/Object -->
+
+
+    <owl:Class rdf:about="http://w3id.org/matolab/openbis/Object">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <openbis:openbis_json_key>as.dto.sample.Sample</openbis:openbis_json_key>
+        <rdfs:label>Object</rdfs:label>
+        <skos:altLabel>Sample</skos:altLabel>
+        <skos:definition>An OpenBIS entity of an object.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/PermanentIdentifier -->
+
+
+    <owl:Class rdf:about="http://w3id.org/matolab/openbis/PermanentIdentifier">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/matolab/openbis/Identifier"/>
+        <openbis:openbis_json_key>as.dto.dataset.id.DataSetPermId</openbis:openbis_json_key>
+        <openbis:openbis_json_key>as.dto.entitytype.id.EntityTypePermId</openbis:openbis_json_key>
+        <openbis:openbis_json_key>as.dto.experiment.id.ExperimentPermId</openbis:openbis_json_key>
+        <openbis:openbis_json_key>as.dto.person.id.PersonPermId</openbis:openbis_json_key>
+        <openbis:openbis_json_key>as.dto.project.id.ProjectPermId</openbis:openbis_json_key>
+        <openbis:openbis_json_key>as.dto.sample.id.SamplePermId</openbis:openbis_json_key>
+        <openbis:openbis_json_key>as.dto.space.id.SpacePermId</openbis:openbis_json_key>
+        <rdfs:label>Permanent Identifier</rdfs:label>
+        <skos:definition>A additional String given by the OpenBIS data storage which will never be changed.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/Project -->
+
+
+    <owl:Class rdf:about="http://w3id.org/matolab/openbis/Project">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <openbis:openbis_json_key>as.dto.project.Project</openbis:openbis_json_key>
+        <rdfs:label>Project</rdfs:label>
+        <skos:definition>An OpenBIS Project.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/Space -->
+
+
+    <owl:Class rdf:about="http://w3id.org/matolab/openbis/Space">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <openbis:openbis_json_key>as.dto.space.Space</openbis:openbis_json_key>
+        <rdfs:label>Space</rdfs:label>
+        <skos:definition>An OpenBIS Space.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/User -->
+
+
+    <owl:Class rdf:about="http://w3id.org/matolab/openbis/User">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <openbis:openbis_json_key>as.dto.person.Person</openbis:openbis_json_key>
+        <rdfs:label>User</rdfs:label>
+        <skos:definition>An named openBIS user.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#DataService -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#DataService">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
+        <rdfs:label>Data Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#Dataset -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Dataset">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <openbis:openbis_json_key>as.dto.dataset.DataSet</openbis:openbis_json_key>
+        <rdfs:label>Data Set</rdfs:label>
+        <skos:definition>An folder where data files are stored. A data set has user-defined properties.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#Distribution -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Distribution">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <openbis:openbis_json_key>dss.dto.datasetfile.DataSetFile</openbis:openbis_json_key>
+        <rdfs:label xml:lang="en">Distribution</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Agent -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Agent"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Entity -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Entity"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#SoftwareAgent -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#SoftwareAgent"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/GeneralProtocols -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/matolab/openbis/GeneralProtocols">
+        <rdf:type rdf:resource="http://w3id.org/matolab/openbis/Collection"/>
+        <rdfs:label>General Protocols Collection, a default OpenBIS collection to contain the lab proceedures generally used in the lab.</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/Materials -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/matolab/openbis/Materials">
+        <rdf:type rdf:resource="http://w3id.org/matolab/openbis/Space"/>
+        <rdfs:label>Materials Space, a default OpenBIS space for material entities.</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/Methods -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/matolab/openbis/Methods">
+        <rdf:type rdf:resource="http://w3id.org/matolab/openbis/Space"/>
+        <rdfs:label>Methods Space, a default OpenBIS space for methods and proceedures.</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/matolab/openbis/Protocols -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/matolab/openbis/Protocols">
+        <rdf:type rdf:resource="http://w3id.org/matolab/openbis/Project"/>
+        <rdfs:label>Protocols Project, a default OpenBIS project for proceedures.</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://purl.org/dc/terms/created">
+        <openbis:openbis_json_key>registrationDate</openbis:openbis_json_key>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/modified">
+        <openbis:openbis_json_key>modificationDate</openbis:openbis_json_key>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">
+        <openbis:openbis_json_key>type</openbis:openbis_json_key>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#value">
+        <openbis:openbis_json_key>identifier</openbis:openbis_json_key>
+        <openbis:openbis_json_key>permId</openbis:openbis_json_key>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Class">
+        <openbis:openbis_json_key>as.dto.dataset.DataSetType</openbis:openbis_json_key>
+        <openbis:openbis_json_key>as.dto.experiment.ExperimentType</openbis:openbis_json_key>
+        <openbis:openbis_json_key>as.dto.sample.SampleType</openbis:openbis_json_key>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#ObjectProperty">
+        <openbis:openbis_json_key>as.dto.property.PropertyType</openbis:openbis_json_key>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/family_name">
+        <openbis:openbis_json_key>lastName</openbis:openbis_json_key>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/givenname">
+        <openbis:openbis_json_key>firstName</openbis:openbis_json_key>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/mbox">
+        <openbis:openbis_json_key>email</openbis:openbis_json_key>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/matolab/openbis/Collection"/>
+            <rdf:Description rdf:about="http://w3id.org/matolab/openbis/Identifier"/>
+            <rdf:Description rdf:about="http://w3id.org/matolab/openbis/Object"/>
+            <rdf:Description rdf:about="http://w3id.org/matolab/openbis/Project"/>
+            <rdf:Description rdf:about="http://w3id.org/matolab/openbis/Space"/>
+            <rdf:Description rdf:about="http://w3id.org/matolab/openbis/User"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

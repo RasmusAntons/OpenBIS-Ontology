@@ -195,7 +195,8 @@ dcterms:contributor rdf:type owl:ObjectProperty ;
                         :DataStore ,
                         :Object ,
                         :Project ,
-                        :Space ;
+                        :Space ,
+                        <http://www.w3.org/ns/dcat#Dataset> ;
             rdfs:range :Collection ,
                        :Object ,
                        :Project ,
@@ -252,7 +253,7 @@ dcterms:contributor rdf:type owl:ObjectProperty ;
                                         rdfs:subPropertyOf owl:topDataProperty ;
                                         rdfs:domain <http://www.w3.org/ns/dcat#DataService> ;
                                         rdfs:range <https://www.w3.org/2000/01/rdf-schema#Resource> ;
-                                        :openbis_json_key "downloadURL" .
+                                        :openbis_json_key "downloadUrl" .
 
 
 #################################################################
@@ -342,7 +343,7 @@ dcterms:contributor rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3.org/ns/dcat#Dataset
 <http://www.w3.org/ns/dcat#Dataset> rdf:type owl:Class ;
-                                    rdfs:subClassOf :Collection ;
+                                    rdfs:subClassOf prov:Entity ;
                                     :openbis_json_key "as.dto.dataset.DataSet" ;
                                     rdfs:label "Data Set" ;
                                     skos:definition "An folder where data files are stored. A data set has user-defined properties." .

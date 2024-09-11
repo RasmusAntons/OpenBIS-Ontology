@@ -527,5 +527,4 @@ def attach_distributions(graph, base_url=None):
                         obj=URIRef(f"{store_url}/datastore_server/{permid}/{file_url}")
                         graph.add((distribution,DCAT.downloadURL,obj))
                         print('adding tripple: {} {} {}'.format(distribution,DCAT.downloadURL,obj))
-
     return graph
